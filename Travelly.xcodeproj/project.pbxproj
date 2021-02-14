@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */; };
+		CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */; };
+		CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6619225D9BCAD00998F66 /* RegisterProtocols.swift */; };
 		CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890EF25D96D5F006EA513 /* AppDelegate.swift */; };
 		CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890F125D96D5F006EA513 /* SceneDelegate.swift */; };
 		CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890F325D96D5F006EA513 /* ViewController.swift */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		CEA6619225D9BCAD00998F66 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		CEE890EC25D96D5F006EA513 /* Travelly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travelly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE890EF25D96D5F006EA513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE890F125D96D5F006EA513 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +41,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEA6618725D9BBDC00998F66 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CEA6618825D9BBE400998F66 /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CEA6618825D9BBE400998F66 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CEA6618A25D9BC4000998F66 /* Login */,
+				CEA6618925D9BC3400998F66 /* Register */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CEA6618925D9BC3400998F66 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */,
+				CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */,
+				CEA6619225D9BCAD00998F66 /* RegisterProtocols.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		CEA6618A25D9BC4000998F66 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		CEE890E325D96D5F006EA513 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +94,7 @@
 		CEE890EE25D96D5F006EA513 /* Travelly */ = {
 			isa = PBXGroup;
 			children = (
+				CEA6618725D9BBDC00998F66 /* Modules */,
 				CEE890EF25D96D5F006EA513 /* AppDelegate.swift */,
 				CEE890F125D96D5F006EA513 /* SceneDelegate.swift */,
 				CEE890F325D96D5F006EA513 /* ViewController.swift */,
@@ -133,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
+				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
 				CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */,
 				CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */,
 				CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */,
+				CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
