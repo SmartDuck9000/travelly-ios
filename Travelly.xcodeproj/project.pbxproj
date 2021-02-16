@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201825DC636300B508D8 /* AuthViewController.swift */; };
+		CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201B25DC637900B508D8 /* AuthProtocols.swift */; };
+		CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201E25DC638500B508D8 /* AuthPresenter.swift */; };
+		CE8F202225DC639100B508D8 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F202125DC639100B508D8 /* AuthAssembly.swift */; };
+		CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F202425DC639E00B508D8 /* AuthRouter.swift */; };
 		CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */; };
 		CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */; };
 		CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6619225D9BCAD00998F66 /* RegisterProtocols.swift */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE8F201825DC636300B508D8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		CE8F201B25DC637900B508D8 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
+		CE8F201E25DC638500B508D8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		CE8F202125DC639100B508D8 /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
+		CE8F202425DC639E00B508D8 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		CEA6619225D9BCAD00998F66 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
@@ -44,6 +54,8 @@
 		CEA6618725D9BBDC00998F66 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CEA6618A25D9BC4000998F66 /* Login */,
+				CEA6618925D9BC3400998F66 /* Register */,
 				CEA6618825D9BBE400998F66 /* Auth */,
 			);
 			path = Modules;
@@ -52,8 +64,11 @@
 		CEA6618825D9BBE400998F66 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				CEA6618A25D9BC4000998F66 /* Login */,
-				CEA6618925D9BC3400998F66 /* Register */,
+				CE8F201825DC636300B508D8 /* AuthViewController.swift */,
+				CE8F201B25DC637900B508D8 /* AuthProtocols.swift */,
+				CE8F201E25DC638500B508D8 /* AuthPresenter.swift */,
+				CE8F202125DC639100B508D8 /* AuthAssembly.swift */,
+				CE8F202425DC639E00B508D8 /* AuthRouter.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -177,9 +192,14 @@
 				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
 				CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */,
+				CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */,
+				CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */,
 				CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */,
+				CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */,
 				CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */,
+				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
 				CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */,
+				CE8F202225DC639100B508D8 /* AuthAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
