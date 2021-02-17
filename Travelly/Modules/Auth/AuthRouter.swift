@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class AuthRouter: AuthRouterProtocol {
+    func presentLoginWindow() {
+        
+    }
+    
+    func presentRegisterWindow() {
+        
+    }
+}

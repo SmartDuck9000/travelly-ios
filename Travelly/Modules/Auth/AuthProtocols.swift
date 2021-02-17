@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol AuthPresenterProtocol: AnyObject {
+    func login()
+    func register()
+}
+
+protocol AuthRouterProtocol: AnyObject {
+    func presentLoginWindow()
+    func presentRegisterWindow()
+}

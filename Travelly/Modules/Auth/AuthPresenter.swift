@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+
+class AuthPresenter: AuthPresenterProtocol {
+    func login() {
+        
+    }
+    
+    func register() {
+        
+    }
+}
