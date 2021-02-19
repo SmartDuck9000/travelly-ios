@@ -18,23 +18,29 @@ fileprivate struct LayoutConstants {
 
 class AuthViewController: UIViewController {
     
+    private var presenter: AuthPresenterProtocol?
+    
     private let authIconImageView = UIImageView()
     private let loginButton = UIButton()
     private let registerButton = UIButton()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
     }
     
+    public func setPresenter(_ presenter: AuthPresenterProtocol) {
+        self.presenter = presenter
+    }
+    
     @objc
     private func loginButtonTapped() {
-        
+        presenter?.login()
     }
     
     @objc
     private func registerButtonTapped() {
-        
+        presenter?.register()
     }
     
     private func setupView() {
