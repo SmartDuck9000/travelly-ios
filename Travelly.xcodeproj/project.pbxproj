@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE4B764C25E12CA600E4D8EC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CE4B764B25E12CA600E4D8EC /* Podfile */; };
 		CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201825DC636300B508D8 /* AuthViewController.swift */; };
 		CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201B25DC637900B508D8 /* AuthProtocols.swift */; };
 		CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201E25DC638500B508D8 /* AuthPresenter.swift */; };
@@ -26,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE4B764B25E12CA600E4D8EC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		CE8F201825DC636300B508D8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CE8F201B25DC637900B508D8 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		CE8F201E25DC638500B508D8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				CEE890EF25D96D5F006EA513 /* AppDelegate.swift */,
 				CEE890F125D96D5F006EA513 /* SceneDelegate.swift */,
 				CEE890F325D96D5F006EA513 /* ViewController.swift */,
-				CE4B764B25E12CA600E4D8EC /* Podfile */,
 				CEE890F825D96D63006EA513 /* Assets.xcassets */,
 				CEE890FA25D96D63006EA513 /* LaunchScreen.storyboard */,
 				CEE890FD25D96D63006EA513 /* Info.plist */,
@@ -202,7 +199,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4B764C25E12CA600E4D8EC /* Podfile in Resources */,
 				CEE890FC25D96D63006EA513 /* LaunchScreen.storyboard in Resources */,
 				CEE890F925D96D63006EA513 /* Assets.xcassets in Resources */,
 			);
