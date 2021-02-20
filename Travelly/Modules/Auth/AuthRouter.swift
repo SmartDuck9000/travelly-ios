@@ -17,11 +17,15 @@ class AuthRouter: AuthRouterProtocol {
     
     func presentLoginWindow() {
         let loginView = LoginViewController()
-        self.view.present(loginView, animated: false, completion: nil)
+        loginView.modalPresentationStyle = .fullScreen
+        
+        self.view.present(loginView, animated: true, completion: nil)
     }
     
     func presentRegisterWindow() {
         let registerView = RegisterViewController()
-        self.view.present(registerView, animated: false, completion: nil)
+        registerView.modalPresentationStyle = .fullScreen
+        
+        self.view.present(registerView, animated: true, completion: nil)
     }
 }

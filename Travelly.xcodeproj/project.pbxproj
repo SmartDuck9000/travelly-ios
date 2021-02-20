@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9BDDB401BE2F36B0E1AEEF41 /* Pods_Travelly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */; };
+		CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */; };
+		CE4B765825E13F5600E4D8EC /* DependencyContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B765725E13F5600E4D8EC /* DependencyContainerProtocol.swift */; };
+		CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B766125E1504C00E4D8EC /* DependencyRegistratorProtocol.swift */; };
 		CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201825DC636300B508D8 /* AuthViewController.swift */; };
 		CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201B25DC637900B508D8 /* AuthProtocols.swift */; };
 		CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201E25DC638500B508D8 /* AuthPresenter.swift */; };
@@ -28,6 +31,9 @@
 /* Begin PBXFileReference section */
 		5E5645290ADEB416C4D241CD /* Pods-Travelly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travelly.release.xcconfig"; path = "Target Support Files/Pods-Travelly/Pods-Travelly.release.xcconfig"; sourceTree = "<group>"; };
 		92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travelly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectContainer.swift; sourceTree = "<group>"; };
+		CE4B765725E13F5600E4D8EC /* DependencyContainerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerProtocol.swift; sourceTree = "<group>"; };
+		CE4B766125E1504C00E4D8EC /* DependencyRegistratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistratorProtocol.swift; sourceTree = "<group>"; };
 		CE8F201825DC636300B508D8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CE8F201B25DC637900B508D8 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		CE8F201E25DC638500B508D8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
@@ -66,13 +72,23 @@
 				E4C10CDA75BCD99143C07D32 /* Pods-Travelly.debug.xcconfig */,
 				5E5645290ADEB416C4D241CD /* Pods-Travelly.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE4B765325E13D7800E4D8EC /* DependencyService */ = {
+			isa = PBXGroup;
+			children = (
+				CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */,
+				CE4B765725E13F5600E4D8EC /* DependencyContainerProtocol.swift */,
+				CE4B766125E1504C00E4D8EC /* DependencyRegistratorProtocol.swift */,
+			);
+			path = DependencyService;
 			sourceTree = "<group>";
 		};
 		CE8F202725DC63E900B508D8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE4B765325E13D7800E4D8EC /* DependencyService */,
 				CE8F202825DC671700B508D8 /* Theme */,
 			);
 			path = Services;
@@ -280,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */,
+				CE4B765825E13F5600E4D8EC /* DependencyContainerProtocol.swift in Sources */,
 				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
 				CE8F202A25DC672A00B508D8 /* Colors.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
@@ -291,6 +309,7 @@
 				CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */,
 				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
 				CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */,
+				CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */,
 				CE95B41725E07240008DA51C /* LoginViewController.swift in Sources */,
 				CE8F202225DC639100B508D8 /* AuthAssembly.swift in Sources */,
 			);
