@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class AuthAssembly: AuthAssemblyProtocol {
+    func createModule() -> AuthViewController {
+        return AuthViewController()
+    }
+}
