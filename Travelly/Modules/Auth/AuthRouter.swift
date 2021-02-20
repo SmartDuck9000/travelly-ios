@@ -23,7 +23,8 @@ class AuthRouter: AuthRouterProtocol {
     }
     
     func presentRegisterWindow() {
-        let registerView = RegisterViewController()
+        let registerAssembly: RegisterAssemblyProtocol = RegisterAssembly()
+        let registerView = registerAssembly.createModule()
         registerView.modalPresentationStyle = .fullScreen
         
         self.view.present(registerView, animated: true, completion: nil)

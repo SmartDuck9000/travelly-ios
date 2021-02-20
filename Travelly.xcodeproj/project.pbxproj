@@ -21,6 +21,10 @@
 		CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */; };
 		CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */; };
 		CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6619225D9BCAD00998F66 /* RegisterProtocols.swift */; };
+		CEA9AACC25E1B65200BBE98C /* RegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AACB25E1B65200BBE98C /* RegisterData.swift */; };
+		CEA9AACF25E1B81100BBE98C /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AACE25E1B81100BBE98C /* RegisterRouter.swift */; };
+		CEA9AAD225E1B83400BBE98C /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AAD125E1B83400BBE98C /* RegisterInteractor.swift */; };
+		CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AAD425E1BA3500BBE98C /* RegisterAssembly.swift */; };
 		CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890EF25D96D5F006EA513 /* AppDelegate.swift */; };
 		CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890F125D96D5F006EA513 /* SceneDelegate.swift */; };
 		CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890F325D96D5F006EA513 /* ViewController.swift */; };
@@ -44,6 +48,10 @@
 		CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		CEA6619225D9BCAD00998F66 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
+		CEA9AACB25E1B65200BBE98C /* RegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterData.swift; sourceTree = "<group>"; };
+		CEA9AACE25E1B81100BBE98C /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		CEA9AAD125E1B83400BBE98C /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		CEA9AAD425E1BA3500BBE98C /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
 		CEE890EC25D96D5F006EA513 /* Travelly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travelly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE890EF25D96D5F006EA513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE890F125D96D5F006EA513 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 				CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */,
 				CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */,
 				CEA6619225D9BCAD00998F66 /* RegisterProtocols.swift */,
+				CEA9AACB25E1B65200BBE98C /* RegisterData.swift */,
+				CEA9AACE25E1B81100BBE98C /* RegisterRouter.swift */,
+				CEA9AAD125E1B83400BBE98C /* RegisterInteractor.swift */,
+				CEA9AAD425E1BA3500BBE98C /* RegisterAssembly.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -301,12 +313,16 @@
 				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
 				CE8F202A25DC672A00B508D8 /* Colors.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
+				CEA9AAD225E1B83400BBE98C /* RegisterInteractor.swift in Sources */,
+				CEA9AACF25E1B81100BBE98C /* RegisterRouter.swift in Sources */,
 				CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */,
 				CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */,
 				CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */,
 				CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */,
 				CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */,
 				CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */,
+				CEA9AACC25E1B65200BBE98C /* RegisterData.swift in Sources */,
+				CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */,
 				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
 				CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */,
 				CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */,

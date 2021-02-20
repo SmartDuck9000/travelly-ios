@@ -8,22 +8,63 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    private var presenter: RegisterPresenterProtocol?
+    
+    private let goBackButton = UIButton()
+    
+    private let emailField = UITextField()
+    private let firstNameField = UITextField()
+    private let lastNameField = UITextField()
+    
+    private let registerButton = UIButton()
+    
+    public func setPresenter(_ presenter: RegisterPresenterProtocol) {
+        self.presenter = presenter
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupView() {
+        view.backgroundColor = AppColorAppearance.appBackgroundColor
+        
+        setupGoBackButton()
+        setupEmailField()
+        setupFirstNameField()
+        setupLastNameField()
+        setupRegisterButton()
     }
-    */
+    
+    @objc
+    private func goBackButtonPressed() {
+        presenter?.goBack()
+    }
+    
+    @objc
+    private func registerButtonPressed() {
+        presenter?.register()
+    }
+    
+    private func setupGoBackButton() {
+        
+    }
+    
+    private func setupEmailField() {
+        
+    }
+    
+    private func setupFirstNameField() {
+        
+    }
+    
+    private func setupLastNameField() {
+        
+    }
+    
+    private func setupRegisterButton() {
+        
+    }
 
 }
