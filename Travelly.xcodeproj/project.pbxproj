@@ -16,7 +16,7 @@
 		CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201E25DC638500B508D8 /* AuthPresenter.swift */; };
 		CE8F202225DC639100B508D8 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F202125DC639100B508D8 /* AuthAssembly.swift */; };
 		CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F202425DC639E00B508D8 /* AuthRouter.swift */; };
-		CE8F202A25DC672A00B508D8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F202925DC672A00B508D8 /* Colors.swift */; };
+		CE8F202A25DC672A00B508D8 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F202925DC672A00B508D8 /* Buttons.swift */; };
 		CE95B41725E07240008DA51C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95B41625E07240008DA51C /* LoginViewController.swift */; };
 		CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */; };
 		CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */; };
@@ -25,6 +25,8 @@
 		CEA9AACF25E1B81100BBE98C /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AACE25E1B81100BBE98C /* RegisterRouter.swift */; };
 		CEA9AAD225E1B83400BBE98C /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AAD125E1B83400BBE98C /* RegisterInteractor.swift */; };
 		CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AAD425E1BA3500BBE98C /* RegisterAssembly.swift */; };
+		CEA9AADA25E1C67A00BBE98C /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AAD925E1C67A00BBE98C /* UITextFieldExtension.swift */; };
+		CEA9AADE25E1C70200BBE98C /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AADD25E1C70200BBE98C /* TextFields.swift */; };
 		CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890EF25D96D5F006EA513 /* AppDelegate.swift */; };
 		CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890F125D96D5F006EA513 /* SceneDelegate.swift */; };
 		CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890F325D96D5F006EA513 /* ViewController.swift */; };
@@ -43,7 +45,7 @@
 		CE8F201E25DC638500B508D8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		CE8F202125DC639100B508D8 /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
 		CE8F202425DC639E00B508D8 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		CE8F202925DC672A00B508D8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CE8F202925DC672A00B508D8 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		CE95B41625E07240008DA51C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		CEA9AACE25E1B81100BBE98C /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		CEA9AAD125E1B83400BBE98C /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		CEA9AAD425E1BA3500BBE98C /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
+		CEA9AAD925E1C67A00BBE98C /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		CEA9AADD25E1C70200BBE98C /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 		CEE890EC25D96D5F006EA513 /* Travelly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travelly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE890EF25D96D5F006EA513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE890F125D96D5F006EA513 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,17 +101,18 @@
 			isa = PBXGroup;
 			children = (
 				CE4B765325E13D7800E4D8EC /* DependencyService */,
-				CE8F202825DC671700B508D8 /* Theme */,
+				CE8F202825DC671700B508D8 /* Style */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		CE8F202825DC671700B508D8 /* Theme */ = {
+		CE8F202825DC671700B508D8 /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				CE8F202925DC672A00B508D8 /* Colors.swift */,
+				CE8F202925DC672A00B508D8 /* Buttons.swift */,
+				CEA9AADD25E1C70200BBE98C /* TextFields.swift */,
 			);
-			path = Theme;
+			path = Style;
 			sourceTree = "<group>";
 		};
 		CEA6618725D9BBDC00998F66 /* Modules */ = {
@@ -154,6 +159,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		CEA9AAD725E1C64D00BBE98C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9AAD925E1C67A00BBE98C /* UITextFieldExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CEE890E325D96D5F006EA513 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +188,7 @@
 		CEE890EE25D96D5F006EA513 /* Travelly */ = {
 			isa = PBXGroup;
 			children = (
+				CEA9AAD725E1C64D00BBE98C /* Extensions */,
 				CE8F202725DC63E900B508D8 /* Services */,
 				CEA6618725D9BBDC00998F66 /* Modules */,
 				CEE890EF25D96D5F006EA513 /* AppDelegate.swift */,
@@ -311,8 +325,9 @@
 				CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */,
 				CE4B765825E13F5600E4D8EC /* DependencyContainerProtocol.swift in Sources */,
 				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
-				CE8F202A25DC672A00B508D8 /* Colors.swift in Sources */,
+				CE8F202A25DC672A00B508D8 /* Buttons.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
+				CEA9AADE25E1C70200BBE98C /* TextFields.swift in Sources */,
 				CEA9AAD225E1B83400BBE98C /* RegisterInteractor.swift in Sources */,
 				CEA9AACF25E1B81100BBE98C /* RegisterRouter.swift in Sources */,
 				CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */,
@@ -324,6 +339,7 @@
 				CEA9AACC25E1B65200BBE98C /* RegisterData.swift in Sources */,
 				CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */,
 				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
+				CEA9AADA25E1C67A00BBE98C /* UITextFieldExtension.swift in Sources */,
 				CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */,
 				CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */,
 				CE95B41725E07240008DA51C /* LoginViewController.swift in Sources */,
