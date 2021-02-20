@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BDDB401BE2F36B0E1AEEF41 /* Pods_Travelly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */; };
 		CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201825DC636300B508D8 /* AuthViewController.swift */; };
 		CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201B25DC637900B508D8 /* AuthProtocols.swift */; };
 		CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201E25DC638500B508D8 /* AuthPresenter.swift */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E5645290ADEB416C4D241CD /* Pods-Travelly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travelly.release.xcconfig"; path = "Target Support Files/Pods-Travelly/Pods-Travelly.release.xcconfig"; sourceTree = "<group>"; };
+		92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travelly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8F201825DC636300B508D8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CE8F201B25DC637900B508D8 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		CE8F201E25DC638500B508D8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		CEE890F825D96D63006EA513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE890FB25D96D63006EA513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE890FD25D96D63006EA513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C10CDA75BCD99143C07D32 /* Pods-Travelly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travelly.debug.xcconfig"; path = "Target Support Files/Pods-Travelly/Pods-Travelly.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +53,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BDDB401BE2F36B0E1AEEF41 /* Pods_Travelly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EF341B0F2778359BD9CCE77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4C10CDA75BCD99143C07D32 /* Pods-Travelly.debug.xcconfig */,
+				5E5645290ADEB416C4D241CD /* Pods-Travelly.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE8F202725DC63E900B508D8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +131,8 @@
 			children = (
 				CEE890EE25D96D5F006EA513 /* Travelly */,
 				CEE890ED25D96D5F006EA513 /* Products */,
+				9EF341B0F2778359BD9CCE77 /* Pods */,
+				FCBC64DDB275784026201D6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +159,14 @@
 			path = Travelly;
 			sourceTree = "<group>";
 		};
+		FCBC64DDB275784026201D6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEE8910025D96D63006EA513 /* Build configuration list for PBXNativeTarget "Travelly" */;
 			buildPhases = (
+				19E15E8DBE7EC575489C089F /* [CP] Check Pods Manifest.lock */,
 				CEE890E825D96D5F006EA513 /* Sources */,
 				CEE890E925D96D5F006EA513 /* Frameworks */,
 				CEE890EA25D96D5F006EA513 /* Resources */,
+				71A833E97E7DCBB42E78780B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,6 +232,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19E15E8DBE7EC575489C089F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Travelly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71A833E97E7DCBB42E78780B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travelly/Pods-Travelly-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travelly/Pods-Travelly-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travelly/Pods-Travelly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEE890E825D96D5F006EA513 /* Sources */ = {
@@ -359,6 +428,7 @@
 		};
 		CEE8910125D96D63006EA513 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4C10CDA75BCD99143C07D32 /* Pods-Travelly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -378,6 +448,7 @@
 		};
 		CEE8910225D96D63006EA513 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E5645290ADEB416C4D241CD /* Pods-Travelly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
