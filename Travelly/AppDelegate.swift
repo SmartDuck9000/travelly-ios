@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func registerDependencies() {
         let authRegistrator: DependencyRegistratorProtocol = AuthAssembly()
+        let registerRegistrator: DependencyRegistratorProtocol = RegisterAssembly()
+        
         authRegistrator.registerDependencies()
+        registerRegistrator.registerDependencies()
     }
 
     // MARK: UISceneSession Lifecycle

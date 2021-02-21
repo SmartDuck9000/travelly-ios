@@ -11,16 +11,14 @@ struct MainButtonAppearance {
     static let backgroundColor = UIColor.systemOrange
     static let textColor = UIColor.white
     static let cornerRadiusRatio: CGFloat = 0.02
-    static let fontName = "Verdana"
-    static let fontSize: CGFloat = 20
+    static let font = UIFont(name: "Verdana", size: 20)
 }
 
 struct SpecialButtonAppearance {
     static let backgroundColor = UIColor.systemBlue
     static let textColor = UIColor.white
     static let cornerRadiusRatio: CGFloat = 0.02
-    static let fontName = "Verdana"
-    static let fontSize: CGFloat = 20
+    static let font = UIFont(name: "Verdana", size: 20)
 }
 
 struct AppColorAppearance {

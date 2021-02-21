@@ -24,6 +24,12 @@ class AuthViewController: UIViewController {
     private let loginButton = UIButton()
     private let registerButton = UIButton()
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -65,7 +71,7 @@ class AuthViewController: UIViewController {
         
         loginButton.setTitle("Войти", for: .normal)
         loginButton.setTitleColor(MainButtonAppearance.textColor, for: .normal)
-        loginButton.titleLabel?.font = UIFont(name: MainButtonAppearance.fontName, size: MainButtonAppearance.fontSize)
+        loginButton.titleLabel?.font = MainButtonAppearance.font
         
         loginButton.backgroundColor = MainButtonAppearance.backgroundColor
         loginButton.layer.cornerRadius = view.safeAreaLayoutGuide.layoutFrame.size.width * MainButtonAppearance.cornerRadiusRatio
@@ -93,7 +99,7 @@ class AuthViewController: UIViewController {
         
         registerButton.setTitle("Зарегестрироваться", for: .normal)
         registerButton.setTitleColor(SpecialButtonAppearance.textColor, for: .normal)
-        loginButton.titleLabel?.font = UIFont(name: SpecialButtonAppearance.fontName, size: SpecialButtonAppearance.fontSize)
+        loginButton.titleLabel?.font = SpecialButtonAppearance.font
         
         registerButton.backgroundColor = SpecialButtonAppearance.backgroundColor
         registerButton.layer.cornerRadius = view.safeAreaLayoutGuide.layoutFrame.size.width * SpecialButtonAppearance.cornerRadiusRatio
