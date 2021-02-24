@@ -13,32 +13,37 @@ class RegisterAssembly: RegisterAssemblyProtocol, DependencyRegistratorProtocol 
             return RegisterRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: RegisterInteractorProtocol.self, name: "RegisterInteractor") { () -> RegisterInteractorProtocol in
-            return RegisterInteractor()
+        AppDelegate.container.register(service: RegisterInteractorProtocol.self, name: "RegisterInteractor") { (networkService) -> RegisterInteractorProtocol in
+            return RegisterInteractor(networkService: networkService)
         }
         
         AppDelegate.container.register(service: RegisterPresenterProtocol.self, name: "RegisterPresenter") { (vc, router, interactor) -> RegisterPresenterProtocol in
             return RegisterPresenter(view: vc, router: router, interactor: interactor)
         }
         
+        AppDelegate.container.register(service: NetworkProtocol.self, name: "NetworkProtocol") { () in
+            return AlamofireNetworkService()
+        }
+        
         AppDelegate.container.register(service: RegisterViewController.self, name: "RegisterViewController") { () -> RegisterViewController in
             let vc = RegisterViewController()
             
-            guard let router = AppDelegate.container.resolve(service: RegisterRouterProtocol.self,
-                                                             name: "RegisterRouter",
-                                                             argument: vc)
+            guard let router = AppDelegate.container.resolve(service: RegisterRouterProtocol.self, name: "RegisterRouter", argument: vc)
             else {
                 return RegisterViewController()
             }
             
-            guard let interactor = AppDelegate.container.resolve(service: RegisterInteractorProtocol.self,
-                                                                 name: "RegisterInteractor")
+            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "NetworkProtocol") else {
+                return RegisterViewController()
+            }
+            
+            guard let interactor = AppDelegate.container.resolve(service: RegisterInteractorProtocol.self, name: "RegisterInteractor",
+                                                                 argument: networkService)
             else {
                 return RegisterViewController()
             }
             
-            guard let presenter = AppDelegate.container.resolve(service: RegisterPresenterProtocol.self,
-                                                                name: "RegisterPresenter",
+            guard let presenter = AppDelegate.container.resolve(service: RegisterPresenterProtocol.self, name: "RegisterPresenter",
                                                                 arguments: vc, router, interactor)
             else {
                 return RegisterViewController()

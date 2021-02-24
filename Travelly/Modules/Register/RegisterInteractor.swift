@@ -8,6 +8,13 @@
 import UIKit
 
 class RegisterInteractor: RegisterInteractorProtocol {
+    
+    private let networkService: NetworkProtocol
+    
+    init(networkService: NetworkProtocol) {
+        self.networkService = networkService
+    }
+    
     func registerUser(email: String, firstName: String, lastName: String) {
 //        let registerData = RegisterData(email: email, firstName: firstName, lastName: lastName)
     }
