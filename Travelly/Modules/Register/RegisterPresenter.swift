@@ -21,6 +21,30 @@ class RegisterPresenter: RegisterPresenterProtocol {
     }
     
     func register() {
+        guard let firstName = view.getFirstName() else {
+            showAuthError(message: "Для регистрации необходимо ввести имя")
+            return
+        }
+        
+        guard let lastName = view.getLastName() else {
+            showAuthError(message: "Для регистрации необходимо ввести фамилию")
+            return
+        }
+        
+        guard let email = view.getEmail() else {
+            showAuthError(message: "Для регистрации необходимо ввести почту")
+            return
+        }
+        
+        guard let password = view.getPassword() else {
+            showAuthError(message: "Для регистрации необходимо ввести пароль")
+            return
+        }
+        
+        interactor.registerUser(email: email, password: password, firstName: firstName, lastName: lastName)
+    }
+    
+    private func showAuthError(message: String) {
         
     }
 }

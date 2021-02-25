@@ -15,8 +15,8 @@ class RegisterInteractor: RegisterInteractorProtocol {
         self.networkService = networkService
     }
     
-    func registerUser(email: String, firstName: String, lastName: String) {
-        let registerData = RegisterData(email: email, firstName: firstName, lastName: lastName)
+    func registerUser(email: String, password: String, firstName: String, lastName: String) {
+        let registerData = RegisterData(email: email, password: password, firstName: firstName, lastName: lastName)
         networkService.post(query: "/api/auth/email_register", data: registerData, type: .https)
     }
 }

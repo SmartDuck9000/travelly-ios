@@ -17,9 +17,8 @@ protocol RegisterPresenterProtocol {
 protocol RegisterRouterProtocol {
     func goToPreviousWindow()
     func presentUserProfile()
-    func presentRegistrationError()
 }
 
 protocol RegisterInteractorProtocol {
-    func registerUser(email: String, firstName: String, lastName: String)
+    func registerUser(email: String, password: String, firstName: String, lastName: String)
 }

@@ -1,17 +1,17 @@
 //
-//  RegisterRouter.swift
+//  LoginRouter.swift
 //  Travelly
 //
-//  Created by Георгий Куликов on 21.02.2021.
+//  Created by Георгий Куликов on 26.02.2021.
 //
 
 import UIKit
 
-class RegisterRouter: RegisterRouterProtocol {
+class LoginRouter: LoginRouterProtocol {
     
-    private weak var view: RegisterViewController!
+    private weak var view: LoginViewController!
     
-    init(view: RegisterViewController) {
+    init(view: LoginViewController) {
         self.view = view
     }
     

@@ -26,9 +26,10 @@ class RegisterViewController: UIViewController {
     private let iconImageView = UIImageView()
     
     private let stackView = UIStackView()
-    private let emailField = UITextField()
     private let firstNameField = UITextField()
     private let lastNameField = UITextField()
+    private let passwordField = UITextField()
+    private let emailField = UITextField()
     
     private let registerButton = UIButton()
     
@@ -41,6 +42,22 @@ class RegisterViewController: UIViewController {
     public func setPresenter(_ presenter: RegisterPresenterProtocol) {
         self.presenter = presenter
     }
+    
+    public func getFirstName() -> String? {
+        return firstNameField.text
+    }
+    
+    public func getLastName() -> String? {
+        return lastNameField.text
+    }
+    
+    public func getEmail() -> String? {
+        return emailField.text
+    }
+    
+    public func getPassword() -> String? {
+        return passwordField.text
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +69,10 @@ class RegisterViewController: UIViewController {
         
         setupGoBackButton()
         setupStackView()
-        setupEmailField()
         setupFirstNameField()
         setupLastNameField()
+        setupEmailField()
+        setupPasswordField()
         setupIconImageView()
         setupRegisterButton()
     }
@@ -95,9 +113,10 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupStackView() {
-        stackView.addArrangedSubview(emailField)
         stackView.addArrangedSubview(firstNameField)
         stackView.addArrangedSubview(lastNameField)
+        stackView.addArrangedSubview(emailField)
+        stackView.addArrangedSubview(passwordField)
         
         stackView.axis = NSLayoutConstraint.Axis.vertical
         stackView.distribution = .equalSpacing
@@ -119,16 +138,20 @@ class RegisterViewController: UIViewController {
             constant: LayoutConstants.rightSpace).isActive = true
     }
     
-    private func setupEmailField() {
-        setup(field: emailField, placeholder: "Почта")
-    }
-    
     private func setupFirstNameField() {
         setup(field: firstNameField, placeholder: "Имя")
     }
     
     private func setupLastNameField() {
         setup(field: lastNameField, placeholder: "Фамилия")
+    }
+    
+    private func setupEmailField() {
+        setup(field: emailField, placeholder: "Почта")
+    }
+    
+    private func setupPasswordField() {
+        setup(field: passwordField, placeholder: "Пароль")
     }
     
     private func setup(field: UITextField, placeholder: String?) {
