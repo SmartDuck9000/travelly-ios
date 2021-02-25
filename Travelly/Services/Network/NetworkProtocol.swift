@@ -8,6 +8,8 @@
 import Foundation
 
 protocol NetworkProtocol {
-    func get(query: String) -> Data?
-    func post(query: String, data: Data?)
+    func get<Parameters: Encodable>(query: String, parameters: Parameters, type: ProtocolType) -> Data?
+    func get(query: String, type: ProtocolType) -> Data?
+    
+    func post<PostedData: Encodable>(query: String, data: PostedData, type: ProtocolType)
 }
