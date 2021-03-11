@@ -6,8 +6,8 @@
 //
 
 struct NetworkConfig {
-    let host: String = ""
-    let port: String = ""
+    let host: String = "0.0.0.0"
+    let port: String = "5002"
 }
 
 enum ProtocolType: String {

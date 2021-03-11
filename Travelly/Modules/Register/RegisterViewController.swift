@@ -181,7 +181,7 @@ class RegisterViewController: UIViewController {
         registerButton.backgroundColor = MainButtonAppearance.backgroundColor
         registerButton.layer.cornerRadius = view.safeAreaLayoutGuide.layoutFrame.size.width * MainButtonAppearance.cornerRadiusRatio
         
-        registerButton.isEnabled = false
+        registerButton.isEnabled = true
         registerButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
         
         registerButton.translatesAutoresizingMaskIntoConstraints = false
