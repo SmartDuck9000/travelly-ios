@@ -22,4 +22,8 @@ class LoginRouter: LoginRouterProtocol {
     func presentUserProfile() {
         
     }
+    
+    func showAuthError(message: String) {
+        
+    }
 }

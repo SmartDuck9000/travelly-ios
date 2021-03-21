@@ -17,6 +17,6 @@ protocol AuthRouterProtocol: AnyObject {
     func presentRegisterWindow()
 }
 
-protocol AuthAssemblyProtocol {
+protocol AuthAssemblyProtocol: AnyObject {
     func createModule() -> AuthViewController
 }

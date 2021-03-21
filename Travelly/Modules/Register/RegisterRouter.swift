@@ -22,4 +22,8 @@ class RegisterRouter: RegisterRouterProtocol {
     func presentUserProfile() {
         
     }
+    
+    func showAuthError(message: String) {
+        
+    }
 }

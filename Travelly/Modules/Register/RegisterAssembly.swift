@@ -13,16 +13,12 @@ class RegisterAssembly: RegisterAssemblyProtocol, DependencyRegistratorProtocol 
             return RegisterRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: RegisterInteractorProtocol.self, name: "RegisterInteractor") { (networkService) -> RegisterInteractorProtocol in
-            return RegisterInteractor(networkService: networkService)
+        AppDelegate.container.register(service: RegisterInteractorProtocol.self, name: "RegisterInteractor") { (networkService, dataStorageService) -> RegisterInteractorProtocol in
+            return RegisterInteractor(networkService: networkService, dataStorageService: dataStorageService)
         }
         
         AppDelegate.container.register(service: RegisterPresenterProtocol.self, name: "RegisterPresenter") { (vc, router, interactor) -> RegisterPresenterProtocol in
             return RegisterPresenter(view: vc, router: router, interactor: interactor)
-        }
-        
-        AppDelegate.container.register(service: NetworkProtocol.self, name: "NetworkProtocol") { () in
-            return AlamofireNetworkService()
         }
         
         AppDelegate.container.register(service: RegisterViewController.self, name: "RegisterViewController") { () -> RegisterViewController in
@@ -37,8 +33,12 @@ class RegisterAssembly: RegisterAssemblyProtocol, DependencyRegistratorProtocol 
                 return RegisterViewController()
             }
             
+            guard let dataStorageService = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "DataStorageProtocol") else {
+                return RegisterViewController()
+            }
+            
             guard let interactor = AppDelegate.container.resolve(service: RegisterInteractorProtocol.self, name: "RegisterInteractor",
-                                                                 argument: networkService)
+                                                                 arguments: networkService, dataStorageService)
             else {
                 return RegisterViewController()
             }
@@ -49,6 +49,7 @@ class RegisterAssembly: RegisterAssemblyProtocol, DependencyRegistratorProtocol 
                 return RegisterViewController()
             }
             
+            interactor.setPresenter(presenter)
             vc.setPresenter(presenter)
             return vc
         }

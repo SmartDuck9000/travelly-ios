@@ -23,6 +23,10 @@ class LoginPresenter: LoginPresenterProtocol {
         router.goToPreviousWindow()
     }
     
+    func openProfile() {
+        router.presentUserProfile()
+    }
+    
     func login() {
         guard let email = view.getEmail() else {
             showAuthError(message: "Для входа необходимо ввести почту")
@@ -37,7 +41,7 @@ class LoginPresenter: LoginPresenterProtocol {
         interactor.loginUser(email: email, password: password)
     }
     
-    private func showAuthError(message: String) {
+    func showAuthError(message: String) {
         
     }
 }

@@ -10,36 +10,38 @@ import Alamofire
 class AlamofireNetworkService: NetworkProtocol {
     let config = NetworkConfig()
     
-    func get<Parameters: Encodable>(query: String, parameters: Parameters, type: ProtocolType) -> Data? {
+    func get<Parameters: Encodable>(query: String, parameters: Parameters, type: ProtocolType, complition: @escaping (Data?, Error?) -> Void) {
         let urlQuery = type.rawValue + config.host + ":" + config.port + query
-        AF.request(urlQuery,
-                   method: .get,
-                   parameters: parameters,
-                   encoder: URLEncodedFormParameterEncoder.default).response { (response) in
-            debugPrint(response)
-        }
+        let urlEncoder = URLEncodedFormParameterEncoder.default
         
-        return nil
+        AF.request(urlQuery, method: .get, parameters: parameters, encoder: urlEncoder).response { (response) in
+            complition(response.data, self.getError(response: response))
+        }
     }
     
-    func get(query: String, type: ProtocolType) -> Data? {
+    func get(query: String, type: ProtocolType, complition: @escaping (Data?, Error?) -> Void) {
         let urlQuery = type.rawValue + config.host + ":" + config.port + query
         AF.request(urlQuery, method: .get).response { (response) in
-            debugPrint(response)
+            complition(response.data, self.getError(response: response))
         }
-        
-        return nil
     }
     
     
-    func post<PostedData: Encodable>(query: String, data: PostedData, type: ProtocolType) {
+    func post<PostedData: Encodable>(query: String, data: PostedData, type: ProtocolType, complition: @escaping (Data?, Error?) -> Void) {
         let urlQuery = type.rawValue + config.host + ":" + config.port + query
+        let jsonEncoder = JSONParameterEncoder.default
         
-        AF.request(urlQuery,
-                   method: .post,
-                   parameters: data,
-                   encoder: JSONParameterEncoder.default).response { (response) in
-            debugPrint(response)
+        AF.request(urlQuery, method: .post, parameters: data, encoder: jsonEncoder).response { (response) in
+            complition(response.data, self.getError(response: response))
         }
+    }
+    
+    private func getError(response: AFDataResponse<Data?>) -> Error? {
+        if case let .failure(error) = response.result {
+            let error = error as NSError
+            return error
+        }
+        
+        return nil
     }
 }

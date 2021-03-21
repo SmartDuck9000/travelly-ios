@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9BDDB401BE2F36B0E1AEEF41 /* Pods_Travelly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */; };
+		CE0E1BB62606A602004E8589 /* DataStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BB52606A602004E8589 /* DataStorageProtocol.swift */; };
+		CE0E1BBA2606B6B8004E8589 /* RealmDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BB92606B6B8004E8589 /* RealmDataStorage.swift */; };
+		CE0E1BCB2606BA2F004E8589 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCA2606BA2E004E8589 /* Entity.swift */; };
+		CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */; };
+		CE0E1BD72606D78C004E8589 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BD62606D78C004E8589 /* AuthData.swift */; };
 		CE483F4A25E70E9B00806B44 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE483F4925E70E9B00806B44 /* NetworkProtocol.swift */; };
 		CE483F4D25E70F0100806B44 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE483F4C25E70F0100806B44 /* AlamofireNetworkService.swift */; };
 		CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */; };
@@ -46,6 +51,11 @@
 /* Begin PBXFileReference section */
 		5E5645290ADEB416C4D241CD /* Pods-Travelly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travelly.release.xcconfig"; path = "Target Support Files/Pods-Travelly/Pods-Travelly.release.xcconfig"; sourceTree = "<group>"; };
 		92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travelly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0E1BB52606A602004E8589 /* DataStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageProtocol.swift; sourceTree = "<group>"; };
+		CE0E1BB92606B6B8004E8589 /* RealmDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStorage.swift; sourceTree = "<group>"; };
+		CE0E1BCA2606BA2E004E8589 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesRegistrator.swift; sourceTree = "<group>"; };
+		CE0E1BD62606D78C004E8589 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
 		CE483F4925E70E9B00806B44 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		CE483F4C25E70F0100806B44 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectContainer.swift; sourceTree = "<group>"; };
@@ -105,6 +115,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE0E1BB42606A5E6004E8589 /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CE0E1BB52606A602004E8589 /* DataStorageProtocol.swift */,
+				CE0E1BB92606B6B8004E8589 /* RealmDataStorage.swift */,
+				CE0E1BCA2606BA2E004E8589 /* Entity.swift */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		CE0E1BCD2606CE50004E8589 /* Registrator */ = {
+			isa = PBXGroup;
+			children = (
+				CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */,
+			);
+			path = Registrator;
+			sourceTree = "<group>";
+		};
 		CE483F4825E70E8A00806B44 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +156,8 @@
 		CE8F202725DC63E900B508D8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE0E1BCD2606CE50004E8589 /* Registrator */,
+				CE0E1BB42606A5E6004E8589 /* DataStorage */,
 				CE483F4825E70E8A00806B44 /* Network */,
 				CE4B765325E13D7800E4D8EC /* DependencyService */,
 				CE8F202825DC671700B508D8 /* Style */,
@@ -162,6 +192,7 @@
 				CE8F201E25DC638500B508D8 /* AuthPresenter.swift */,
 				CE8F202125DC639100B508D8 /* AuthAssembly.swift */,
 				CE8F202425DC639E00B508D8 /* AuthRouter.swift */,
+				CE0E1BD62606D78C004E8589 /* AuthData.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -370,17 +401,22 @@
 				CE6829C325E8526D00D894E4 /* LoginProtocols.swift in Sources */,
 				CE6829CF25E8583200D894E4 /* LoginData.swift in Sources */,
 				CEA9AACF25E1B81100BBE98C /* RegisterRouter.swift in Sources */,
+				CE0E1BD72606D78C004E8589 /* AuthData.swift in Sources */,
 				CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */,
 				CE6829C625E8571000D894E4 /* LoginPresenter.swift in Sources */,
+				CE0E1BBA2606B6B8004E8589 /* RealmDataStorage.swift in Sources */,
 				CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */,
 				CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */,
 				CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */,
 				CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */,
 				CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */,
 				CEA9AACC25E1B65200BBE98C /* RegisterData.swift in Sources */,
+				CE0E1BB62606A602004E8589 /* DataStorageProtocol.swift in Sources */,
 				CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */,
+				CE0E1BCB2606BA2F004E8589 /* Entity.swift in Sources */,
 				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
 				CEA9AADA25E1C67A00BBE98C /* UITextFieldExtension.swift in Sources */,
+				CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */,
 				CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */,
 				CE6829C025E836EC00D894E4 /* NetworkConfig.swift in Sources */,
 				CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */,

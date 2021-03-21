@@ -13,16 +13,12 @@ class LoginAssembly: LoginAssemblyProtocol, DependencyRegistratorProtocol {
             return LoginRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: LoginInteractorProtocol.self, name: "LoginInteractor") { (networkService) -> LoginInteractorProtocol in
-            return LoginInteractor(networkService: networkService)
+        AppDelegate.container.register(service: LoginInteractorProtocol.self, name: "LoginInteractor") { (networkService, dataStorageService) -> LoginInteractorProtocol in
+            return LoginInteractor(networkService: networkService, dataStorageService: dataStorageService)
         }
         
         AppDelegate.container.register(service: LoginPresenterProtocol.self, name: "LoginPresenter") { (vc, router, interactor) -> LoginPresenterProtocol in
             return LoginPresenter(view: vc, router: router, interactor: interactor)
-        }
-        
-        AppDelegate.container.register(service: NetworkProtocol.self, name: "NetworkProtocol") { () in
-            return AlamofireNetworkService()
         }
         
         AppDelegate.container.register(service: LoginViewController.self, name: "LoginViewController") { () -> LoginViewController in
@@ -37,8 +33,12 @@ class LoginAssembly: LoginAssemblyProtocol, DependencyRegistratorProtocol {
                 return LoginViewController()
             }
             
+            guard let dataStorageService = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "DataStorageProtocol") else {
+                return LoginViewController()
+            }
+            
             guard let interactor = AppDelegate.container.resolve(service: LoginInteractorProtocol.self, name: "LoginInteractor",
-                                                                 argument: networkService)
+                                                                 arguments: networkService, dataStorageService)
             else {
                 return LoginViewController()
             }
@@ -49,6 +49,7 @@ class LoginAssembly: LoginAssemblyProtocol, DependencyRegistratorProtocol {
                 return LoginViewController()
             }
             
+            interactor.setPresenter(presenter)
             vc.setPresenter(presenter)
             return vc
         }
