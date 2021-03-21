@@ -9,12 +9,25 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    public static let container: DependencyContainerProtocol = SwinjectContainer()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        registerDependencies()
+        
         return true
+    }
+    
+    private func registerDependencies() {
+        let serviceRegistrator: DependencyRegistratorProtocol = ServicesRegistrator()
+        let authRegistrator: DependencyRegistratorProtocol = AuthAssembly()
+        let registerRegistrator: DependencyRegistratorProtocol = RegisterAssembly()
+        
+        authRegistrator.registerDependencies()
+        registerRegistrator.registerDependencies()
+        serviceRegistrator.registerDependencies()
     }
 
     // MARK: UISceneSession Lifecycle
