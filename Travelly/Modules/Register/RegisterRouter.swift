@@ -19,7 +19,7 @@ class RegisterRouter: RegisterRouterProtocol {
         view.dismiss(animated: true, completion: nil)
     }
     
-    func presentUserProfile() {
+    func presentUserProfile(userId: Int) {
         
     }
     

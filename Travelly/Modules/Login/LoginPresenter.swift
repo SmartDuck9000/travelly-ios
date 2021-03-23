@@ -10,8 +10,8 @@ import UIKit
 class LoginPresenter: LoginPresenterProtocol {
     
     private weak var view: LoginViewController!
-    private var router: LoginRouterProtocol!
-    private var interactor: LoginInteractorProtocol!
+    private var router: LoginRouterProtocol
+    private var interactor: LoginInteractorProtocol
     
     required init(view: LoginViewController, router: LoginRouterProtocol, interactor: LoginInteractorProtocol) {
         self.view = view

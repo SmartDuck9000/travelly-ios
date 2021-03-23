@@ -13,6 +13,13 @@
 		CE0E1BCB2606BA2F004E8589 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCA2606BA2E004E8589 /* Entity.swift */; };
 		CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */; };
 		CE0E1BD72606D78C004E8589 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BD62606D78C004E8589 /* AuthData.swift */; };
+		CE4647962608ECA700359F91 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647952608ECA700359F91 /* ProfileProtocols.swift */; };
+		CE46479A2608ED7900359F91 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647992608ED7900359F91 /* ProfileData.swift */; };
+		CE46479E2608EF3D00359F91 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46479D2608EF3D00359F91 /* ProfileViewController.swift */; };
+		CE4647A22608F0A800359F91 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647A12608F0A800359F91 /* ProfilePresenter.swift */; };
+		CE4647A52608F0CC00359F91 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647A42608F0CC00359F91 /* ProfileInteractor.swift */; };
+		CE4647A82608F0F900359F91 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647A72608F0F900359F91 /* ProfileRouter.swift */; };
+		CE4647AB2608F10A00359F91 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647AA2608F10A00359F91 /* ProfileAssembly.swift */; };
 		CE483F4A25E70E9B00806B44 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE483F4925E70E9B00806B44 /* NetworkProtocol.swift */; };
 		CE483F4D25E70F0100806B44 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE483F4C25E70F0100806B44 /* AlamofireNetworkService.swift */; };
 		CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */; };
@@ -56,6 +63,13 @@
 		CE0E1BCA2606BA2E004E8589 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesRegistrator.swift; sourceTree = "<group>"; };
 		CE0E1BD62606D78C004E8589 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
+		CE4647952608ECA700359F91 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		CE4647992608ED7900359F91 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		CE46479D2608EF3D00359F91 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CE4647A12608F0A800359F91 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		CE4647A42608F0CC00359F91 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		CE4647A72608F0F900359F91 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		CE4647AA2608F10A00359F91 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		CE483F4925E70E9B00806B44 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		CE483F4C25E70F0100806B44 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectContainer.swift; sourceTree = "<group>"; };
@@ -133,6 +147,20 @@
 			path = Registrator;
 			sourceTree = "<group>";
 		};
+		CE4647922608EC8F00359F91 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE46479D2608EF3D00359F91 /* ProfileViewController.swift */,
+				CE4647952608ECA700359F91 /* ProfileProtocols.swift */,
+				CE4647992608ED7900359F91 /* ProfileData.swift */,
+				CE4647A12608F0A800359F91 /* ProfilePresenter.swift */,
+				CE4647A42608F0CC00359F91 /* ProfileInteractor.swift */,
+				CE4647A72608F0F900359F91 /* ProfileRouter.swift */,
+				CE4647AA2608F10A00359F91 /* ProfileAssembly.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		CE483F4825E70E8A00806B44 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +205,7 @@
 		CEA6618725D9BBDC00998F66 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE4647922608EC8F00359F91 /* Profile */,
 				CEA6618A25D9BC4000998F66 /* Login */,
 				CEA6618925D9BC3400998F66 /* Register */,
 				CEA6618825D9BBE400998F66 /* Auth */,
@@ -394,9 +423,12 @@
 				CE6829CC25E857F300D894E4 /* LoginInteractor.swift in Sources */,
 				CE483F4D25E70F0100806B44 /* AlamofireNetworkService.swift in Sources */,
 				CE8F202A25DC672A00B508D8 /* Buttons.swift in Sources */,
+				CE4647A82608F0F900359F91 /* ProfileRouter.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
 				CEA9AADE25E1C70200BBE98C /* TextFields.swift in Sources */,
 				CEA9AAD225E1B83400BBE98C /* RegisterInteractor.swift in Sources */,
+				CE46479A2608ED7900359F91 /* ProfileData.swift in Sources */,
+				CE4647A52608F0CC00359F91 /* ProfileInteractor.swift in Sources */,
 				CE483F4A25E70E9B00806B44 /* NetworkProtocol.swift in Sources */,
 				CE6829C325E8526D00D894E4 /* LoginProtocols.swift in Sources */,
 				CE6829CF25E8583200D894E4 /* LoginData.swift in Sources */,
@@ -405,11 +437,14 @@
 				CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */,
 				CE6829C625E8571000D894E4 /* LoginPresenter.swift in Sources */,
 				CE0E1BBA2606B6B8004E8589 /* RealmDataStorage.swift in Sources */,
+				CE4647A22608F0A800359F91 /* ProfilePresenter.swift in Sources */,
 				CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */,
+				CE4647962608ECA700359F91 /* ProfileProtocols.swift in Sources */,
 				CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */,
 				CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */,
 				CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */,
 				CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */,
+				CE4647AB2608F10A00359F91 /* ProfileAssembly.swift in Sources */,
 				CEA9AACC25E1B65200BBE98C /* RegisterData.swift in Sources */,
 				CE0E1BB62606A602004E8589 /* DataStorageProtocol.swift in Sources */,
 				CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */,
@@ -422,6 +457,7 @@
 				CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */,
 				CE95B41725E07240008DA51C /* LoginViewController.swift in Sources */,
 				CE6829C925E8572E00D894E4 /* LoginRouter.swift in Sources */,
+				CE46479E2608EF3D00359F91 /* ProfileViewController.swift in Sources */,
 				CE8F202225DC639100B508D8 /* AuthAssembly.swift in Sources */,
 				CE6829D225E858E900D894E4 /* LoginAssembly.swift in Sources */,
 			);

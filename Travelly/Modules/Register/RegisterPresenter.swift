@@ -7,8 +7,8 @@
 
 class RegisterPresenter: RegisterPresenterProtocol {
     private weak var view: RegisterViewController!
-    private var router: RegisterRouterProtocol!
-    private var interactor: RegisterInteractorProtocol!
+    private var router: RegisterRouterProtocol
+    private var interactor: RegisterInteractorProtocol
     
     required init(view: RegisterViewController, router: RegisterRouterProtocol, interactor: RegisterInteractorProtocol) {
         self.view = view
@@ -44,8 +44,8 @@ class RegisterPresenter: RegisterPresenterProtocol {
         interactor.registerUser(email: email, password: password, firstName: firstName, lastName: lastName)
     }
     
-    func openProfile() {
-        router.presentUserProfile()
+    func openProfile(userId: Int) {
+        router.presentUserProfile(userId: userId)
     }
     
     func showAuthError(message: String) {

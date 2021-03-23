@@ -33,7 +33,11 @@ class LoginInteractor: LoginInteractorProtocol {
                     self.presenter?.showAuthError(message: "")
                     return
                 }
-                self.dataStorageService.save(dataModel: authData)
+                
+                let tokens: SecurityTokens = SecurityTokens(accessToken: authData.accessToken,
+                                                            refreshToken: authData.refreshToken)
+                
+                self.dataStorageService.save(dataModel: tokens)
                 self.presenter?.openProfile()
             }
         }

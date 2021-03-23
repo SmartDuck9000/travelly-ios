@@ -24,10 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let serviceRegistrator: DependencyRegistratorProtocol = ServicesRegistrator()
         let authRegistrator: DependencyRegistratorProtocol = AuthAssembly()
         let registerRegistrator: DependencyRegistratorProtocol = RegisterAssembly()
+        let loginRegistrator: DependencyRegistratorProtocol = LoginAssembly()
+        let profileRegistrator: DependencyRegistratorProtocol = ProfileAssembly()
         
+        serviceRegistrator.registerDependencies()
         authRegistrator.registerDependencies()
         registerRegistrator.registerDependencies()
-        serviceRegistrator.registerDependencies()
+        loginRegistrator.registerDependencies()
+        profileRegistrator.registerDependencies()
     }
 
     // MARK: UISceneSession Lifecycle
