@@ -19,12 +19,22 @@ class AuthData: Codable {
     }
 }
 
-class SecurityTokens: Entity {
+class SecurityTokens: Entity, Codable {
+    dynamic var id: Int = 0
     var accessToken: String
     var refreshToken: String
     
     init(accessToken: String, refreshToken: String) {
         self.accessToken = accessToken
         self.refreshToken = refreshToken
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
+        case refreshToken = "refresh_token"
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }
