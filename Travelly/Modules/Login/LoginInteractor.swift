@@ -20,7 +20,7 @@ class LoginInteractor: LoginInteractorProtocol {
     
     func loginUser(email: String, password: String) {
         let loginData = LoginData(email: email, password: password)
-        networkService.post(query: "/api/auth/login", data: loginData, type: .http) { (data, error) in
+        networkService.post(query: "/api/auth/login", tokens: nil, data: loginData, type: .http) { (data, error, statusCode) in
             guard let data = data else {
                 self.presenter?.showAuthError(message: "")
                 return
@@ -37,7 +37,7 @@ class LoginInteractor: LoginInteractorProtocol {
                 let tokens: SecurityTokens = SecurityTokens(accessToken: authData.accessToken,
                                                             refreshToken: authData.refreshToken)
                 
-                self.dataStorageService.save(dataModel: tokens)
+                self.dataStorageService.save(entity: tokens)
                 self.presenter?.openProfile()
             }
         }
