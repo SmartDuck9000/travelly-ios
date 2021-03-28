@@ -38,7 +38,7 @@ class LoginInteractor: LoginInteractorProtocol {
                                                             refreshToken: authData.refreshToken)
                 
                 self.dataStorageService.save(entity: tokens)
-                self.presenter?.openProfile()
+                self.presenter?.openProfile(userId: authData.userId)
             }
         }
     }

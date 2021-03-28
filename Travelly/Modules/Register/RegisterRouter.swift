@@ -20,7 +20,9 @@ class RegisterRouter: RegisterRouterProtocol {
     }
     
     func presentUserProfile(userId: Int) {
-        
+        let profileAssembly: ProfileAssemblyProtocol = ProfileAssembly()
+        let profileView: ProfileViewController = profileAssembly.createModule(userId: userId)
+        view.present(profileView, animated: true, completion: nil)
     }
     
     func showAuthError(message: String) {

@@ -23,8 +23,8 @@ class LoginPresenter: LoginPresenterProtocol {
         router.goToPreviousWindow()
     }
     
-    func openProfile() {
-        router.presentUserProfile()
+    func openProfile(userId: Int) {
+        router.presentUserProfile(userId: userId)
     }
     
     func login() {
