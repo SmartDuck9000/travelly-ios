@@ -11,11 +11,9 @@ class RegisterInteractor: RegisterInteractorProtocol {
     
     private weak var presenter: RegisterPresenterProtocol?
     private let networkService: NetworkProtocol
-    private let dataStorageService: DataStorageProtocol
     
-    init(networkService: NetworkProtocol, dataStorageService: DataStorageProtocol) {
+    init(networkService: NetworkProtocol) {
         self.networkService = networkService
-        self.dataStorageService = dataStorageService
     }
     
     func registerUser(email: String, password: String, firstName: String, lastName: String) {
@@ -33,11 +31,8 @@ class RegisterInteractor: RegisterInteractorProtocol {
                     self.presenter?.showAuthError(message: "")
                     return
                 }
-                let tokens: SecurityTokens = SecurityTokens(accessToken: authData.accessToken,
-                                                            refreshToken: authData.refreshToken)
-                
-                self.dataStorageService.save(entity: tokens)
-                self.presenter?.openProfile(userId: authData.userId)
+                let tokens: SecurityTokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
+                self.presenter?.openProfile(userId: authData.userId, tokens: tokens)
             }
         }
     }

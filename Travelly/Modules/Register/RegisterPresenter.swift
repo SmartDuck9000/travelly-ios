@@ -44,8 +44,8 @@ class RegisterPresenter: RegisterPresenterProtocol {
         interactor.registerUser(email: email, password: password, firstName: firstName, lastName: lastName)
     }
     
-    func openProfile(userId: Int) {
-        router.presentUserProfile(userId: userId)
+    func openProfile(userId: Int, tokens: SecurityTokens) {
+        router.presentUserProfile(userId: userId, tokens: tokens)
     }
     
     func showAuthError(message: String) {

@@ -5,7 +5,7 @@
 //  Created by Георгий Куликов on 22.03.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol ProfilePresenterProtocol {
     func loadProfile()
@@ -13,6 +13,7 @@ protocol ProfilePresenterProtocol {
 
 protocol ProfileInteractorProtocol {
     func loadProfile(complition: @escaping (ProfileData?, Error?, Bool) -> Void)
+    func loadImage(to imageView: UIImageView, from url: String)
 }
 
 protocol ProfileRouterProtocol {
@@ -21,5 +22,5 @@ protocol ProfileRouterProtocol {
 }
 
 protocol ProfileAssemblyProtocol {
-    func createModule(userId: Int) -> ProfileViewController
+    func createModule(userId: Int, tokens: SecurityTokens) -> ProfileViewController
 }

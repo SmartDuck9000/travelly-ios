@@ -19,9 +19,9 @@ class LoginRouter: LoginRouterProtocol {
         view.dismiss(animated: true, completion: nil)
     }
     
-    func presentUserProfile(userId: Int) {
+    func presentUserProfile(userId: Int, tokens: SecurityTokens) {
         let profileAssembly: ProfileAssemblyProtocol = ProfileAssembly()
-        let profileView: ProfileViewController = profileAssembly.createModule(userId: userId)
+        let profileView: ProfileViewController = profileAssembly.createModule(userId: userId, tokens: tokens)
         view.present(profileView, animated: true, completion: nil)
     }
     

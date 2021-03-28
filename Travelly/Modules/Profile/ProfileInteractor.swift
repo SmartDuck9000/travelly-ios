@@ -10,38 +10,30 @@ import UIKit
 class ProfileInteractor: ProfileInteractorProtocol {
     
     private var networkService: NetworkProtocol
-    private var dataStorageService: DataStorageProtocol
-    private var tokens: SecurityTokens?
+    private var imageLoader: ImageLoaderProtocol
+    
+    private var tokens: SecurityTokens
     private var userId: Int
     
-    init(networkService: NetworkProtocol, dataStorageService: DataStorageProtocol, userId: Int) {
+    init(networkService: NetworkProtocol, imageLoader: ImageLoaderProtocol, userId: Int, tokens: SecurityTokens) {
         self.networkService = networkService
-        self.dataStorageService = dataStorageService
-        self.userId = userId
+        self.imageLoader = imageLoader
         
-        self.tokens = dataStorageService.getFirst(type: SecurityTokens.self)
+        self.userId = userId
+        self.tokens = tokens
     }
     
     func loadProfile(complition: @escaping (ProfileData?, Error?, Bool) -> Void) {
         networkService.get(query: "/api/users", tokens: tokens, parameters: UserIdData(userId: userId), type: .http) { (data, error, statusCode) in
             
             if statusCode == 401 {
-                if let tokens = self.tokens {
-                    self.networkService.refreshToken(query: "api/auth", tokens: tokens, type: .http) { (data, error, statusCode) in
-                        guard let data = data, let authData = try? JSONDecoder().decode(AuthData.self, from: data) else {
-                            self.dataStorageService.deleteFirst(type: SecurityTokens.self)
-                            complition(nil, error, true)
-                            return
-                        }
-                        let tokens: SecurityTokens = SecurityTokens(accessToken: authData.accessToken,
-                                                                    refreshToken: authData.refreshToken)
-                        
-                        self.dataStorageService.updateFirst(entity: tokens)
-                        self.loadProfile(complition: complition)
+                self.networkService.refreshToken(query: "api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
+                    guard let data = data, let authData = try? JSONDecoder().decode(AuthData.self, from: data) else {
+                        complition(nil, error, true)
+                        return
                     }
-                } else {
-                    self.dataStorageService.deleteFirst(type: SecurityTokens.self)
-                    complition(nil, error, true)
+                    self.tokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
+                    self.loadProfile(complition: complition)
                 }
             }
             
@@ -57,5 +49,9 @@ class ProfileInteractor: ProfileInteractorProtocol {
             
             complition(profileData, nil, false)
         }
+    }
+    
+    func loadImage(to imageView: UIImageView, from url: String) {
+        imageLoader.load(to: imageView, from: url)
     }
 }

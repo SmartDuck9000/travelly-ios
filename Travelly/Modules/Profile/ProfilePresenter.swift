@@ -29,6 +29,14 @@ class ProfilePresenter: ProfilePresenterProtocol {
                 print(err.localizedDescription)
                 self.router.showError(message: "")
             }
+            
+            guard let data = profileData else {
+                self.router.showError(message: "")
+                return
+            }
+            
+            self.view.set(name: "\(data.firstName) \(data.lastName)")
+            self.interactor.loadImage(to: self.view.getProfileImageView(), from: data.photoUrl)
         }
     }
 }

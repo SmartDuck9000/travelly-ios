@@ -15,15 +15,15 @@ class ProfileAssembly: ProfileAssemblyProtocol, DependencyRegistratorProtocol {
             return ProfileRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: ProfileInteractorProtocol.self, name: "ProfileInteractor") { (networkService, dataStorageService, userId) -> ProfileInteractorProtocol in
-            return ProfileInteractor(networkService: networkService, dataStorageService: dataStorageService, userId: userId)
+        AppDelegate.container.register(service: ProfileInteractorProtocol.self, name: "ProfileInteractor") { (networkService, imageLoader, userId, tokens) -> ProfileInteractorProtocol in
+            return ProfileInteractor(networkService: networkService, imageLoader: imageLoader, userId: userId, tokens: tokens)
         }
         
         AppDelegate.container.register(service: ProfilePresenterProtocol.self, name: "ProfilePresenter") { (vc, router, interactor) -> ProfilePresenterProtocol in
             return ProfilePresenter(view: vc, router: router, interactor: interactor)
         }
         
-        AppDelegate.container.register(service: ProfileViewController.self, name: "ProfileViewController") { (userId: Int) -> ProfileViewController in
+        AppDelegate.container.register(service: ProfileViewController.self, name: "ProfileViewController") { (userId: Int, tokens: SecurityTokens) -> ProfileViewController in
             let vc = ProfileViewController()
             
             guard let router = AppDelegate.container.resolve(service: ProfileRouterProtocol.self, name: "ProfileRouter", argument: vc)
@@ -35,12 +35,12 @@ class ProfileAssembly: ProfileAssemblyProtocol, DependencyRegistratorProtocol {
                 return ProfileViewController()
             }
             
-            guard let dataStorageService = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "DataStorageProtocol") else {
+            guard let imageLoader = AppDelegate.container.resolve(service: ImageLoaderProtocol.self, name: "ImageLoaderProtocol") else {
                 return ProfileViewController()
             }
             
             guard let interactor = AppDelegate.container.resolve(service: ProfileInteractorProtocol.self, name: "ProfileInteractor",
-                                                                 arguments: networkService, dataStorageService, userId)
+                                                                 arguments: networkService, imageLoader, userId, tokens)
             else {
                 return ProfileViewController()
             }
@@ -56,7 +56,7 @@ class ProfileAssembly: ProfileAssemblyProtocol, DependencyRegistratorProtocol {
         }
     }
     
-    func createModule(userId: Int) -> ProfileViewController {
-        return AppDelegate.container.resolve(service: ProfileViewController.self, name: "ProfileViewController", argument: userId) ?? ProfileViewController()
+    func createModule(userId: Int, tokens: SecurityTokens) -> ProfileViewController {
+        return AppDelegate.container.resolve(service: ProfileViewController.self, name: "ProfileViewController", arguments: userId, tokens) ?? ProfileViewController()
     }
 }
