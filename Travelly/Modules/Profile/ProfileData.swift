@@ -17,7 +17,7 @@ struct ProfileData: Codable {
     }
 }
 
-struct UserIdData {
+struct UserIdData: Codable {
     var userId: Int
     
     enum CodingKeys: String, CodingKey {

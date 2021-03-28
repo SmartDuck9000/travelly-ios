@@ -20,6 +20,15 @@ class ProfilePresenter: ProfilePresenterProtocol {
     }
     
     func loadProfile() {
-        
+        self.interactor.loadProfile { (profileData, error, needAuth) in
+            if needAuth {
+                self.router.presentAuth()
+            }
+            
+            if let err = error {
+                print(err.localizedDescription)
+                self.router.showError(message: "")
+            }
+        }
     }
 }

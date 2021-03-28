@@ -12,11 +12,12 @@ protocol ProfilePresenterProtocol {
 }
 
 protocol ProfileInteractorProtocol {
-    func loadProfile(complition: @escaping (ProfileData?, Error?) -> Void)
+    func loadProfile(complition: @escaping (ProfileData?, Error?, Bool) -> Void)
 }
 
 protocol ProfileRouterProtocol {
-    
+    func presentAuth()
+    func showError(message: String)
 }
 
 protocol ProfileAssemblyProtocol {

@@ -13,4 +13,14 @@ class ProfileRouter: ProfileRouterProtocol {
     init(view: ProfileViewController) {
         self.view = view
     }
+    
+    func presentAuth() {
+        let assembly: AuthAssemblyProtocol = AuthAssembly()
+        let authView: AuthViewController = assembly.createModule()
+        view.present(authView, animated: false, completion: nil)
+    }
+    
+    func showError(message: String) {
+        
+    }
 }
