@@ -65,7 +65,7 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = AppColorAppearance.appBackgroundColor
+        view.backgroundColor = AppColorAppearance.backgroundColor
         
         setupGoBackButton()
         setupStackView()

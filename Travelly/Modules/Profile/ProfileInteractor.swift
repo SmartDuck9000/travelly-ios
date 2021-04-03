@@ -54,4 +54,12 @@ class ProfileInteractor: ProfileInteractorProtocol {
     func loadImage(to imageView: UIImageView, from url: String) {
         imageLoader.load(to: imageView, from: url)
     }
+    
+    func getTokens() -> SecurityTokens {
+        return tokens
+    }
+    
+    func getUserId() -> Int {
+        return userId
+    }
 }

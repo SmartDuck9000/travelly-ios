@@ -50,15 +50,15 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupView() {
-        setupProfileContainerView()
+        setupProfileViewContainer()
         setupOptionsTable()
     }
     
-    private func setupProfileContainerView() {
+    private func setupProfileViewContainer() {
         setupProfileImageView()
         setupNameLabel()
         self.view.addSubview(profileViewContainer)
-        profileViewContainer.backgroundColor = AppColorAppearance.appColor
+        profileViewContainer.backgroundColor = HeaderAppearance.backgroungColor
         
         let safeArea = view.safeAreaLayoutGuide
         profileViewContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -69,6 +69,7 @@ class ProfileViewController: UIViewController {
     
     private func setupProfileImageView() {
         profileViewContainer.addSubview(profileImageView)
+        profileImageView.backgroundColor = HeaderAppearance.backgroungColor
         
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.centerYAnchor.constraint(equalTo: profileViewContainer.centerYAnchor).isActive = true
@@ -78,8 +79,9 @@ class ProfileViewController: UIViewController {
     private func setupNameLabel() {
         profileViewContainer.addSubview(nameLabel)
         
-        nameLabel.textColor = TableViewCellAppearance.textColor
-        nameLabel.font = TableViewCellAppearance.font
+        nameLabel.backgroundColor = HeaderAppearance.backgroungColor
+        nameLabel.textColor = HeaderAppearance.textColor
+        nameLabel.font = HeaderAppearance.font
         nameLabel.textAlignment = .left
         nameLabel.numberOfLines = .max
         
@@ -91,6 +93,37 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupOptionsTable() {
+        self.view.addSubview(optionsTabel)
         
+        optionsTabel.delegate = self
+        optionsTabel.register(ProfileOptionTableViewCell.self, forCellReuseIdentifier: "ProfileOptionTableViewCell")
+        optionsTabel.backgroundColor = TableViewAppearance.backgroungColor
+        
+        let safeArea = view.safeAreaLayoutGuide
+        optionsTabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        optionsTabel.topAnchor.constraint(equalTo: profileViewContainer.bottomAnchor).isActive = true
+        optionsTabel.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+        optionsTabel.leftAnchor.constraint(equalTo: safeArea.leftAnchor).isActive = true
+        optionsTabel.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.selectOption(at: indexPath.row)
+    }
+}
+
+extension ProfileViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter?.optionsCount() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let presenter = self.presenter else {
+            return tableView.dequeueReusableCell(withIdentifier: "ProfileOptionTableViewCell", for: indexPath)
+        }
+        return presenter.getOption(from: tableView, at: indexPath.row)
     }
 }

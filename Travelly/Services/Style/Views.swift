@@ -8,12 +8,19 @@
 import UIKit
 
 struct AppColorAppearance {
-    static let appBackgroundColor = UIColor.systemBackground
+    static let backgroundColor = UIColor.systemBackground
     static let appColor = UIColor.systemOrange
-    static let appTextColor = UIColor.white
+    static let textColor = UIColor.white
+    static let font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
 }
 
-struct TableViewCellAppearance {
+struct HeaderAppearance {
+    static let backgroungColor = UIColor.systemOrange
+    static let textColor = UIColor.white
+    static let font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+}
+
+struct TableViewAppearance {
     static let backgroungColor = UIColor.systemBackground
     static let textColor = UIColor.label
     static let font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
