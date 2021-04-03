@@ -13,6 +13,12 @@
 		CE0E1BCB2606BA2F004E8589 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCA2606BA2E004E8589 /* Entity.swift */; };
 		CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */; };
 		CE0E1BD72606D78C004E8589 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BD62606D78C004E8589 /* AuthData.swift */; };
+		CE2FEABA2618770D00AD5360 /* EditProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FEAB92618770D00AD5360 /* EditProfileData.swift */; };
+		CE2FEABD2618781500AD5360 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FEABC2618781500AD5360 /* EditProfileViewController.swift */; };
+		CE2FEAC02618792700AD5360 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FEABF2618792700AD5360 /* EditProfilePresenter.swift */; };
+		CE2FEAC32618795100AD5360 /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FEAC22618795100AD5360 /* EditProfileInteractor.swift */; };
+		CE2FEAC62618799700AD5360 /* EditProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FEAC52618799700AD5360 /* EditProfileRouter.swift */; };
+		CE2FEAC9261879AB00AD5360 /* EditProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FEAC8261879AB00AD5360 /* EditProfileAssembly.swift */; };
 		CE39863426109FA100267569 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39863326109FA100267569 /* Views.swift */; };
 		CE3986412610BEFA00267569 /* ImageLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3986402610BEFA00267569 /* ImageLoaderProtocol.swift */; };
 		CE3986452610C02400267569 /* KingfisherImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3986442610C02400267569 /* KingfisherImageLoader.swift */; };
@@ -28,6 +34,7 @@
 		CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */; };
 		CE4B765825E13F5600E4D8EC /* DependencyContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B765725E13F5600E4D8EC /* DependencyContainerProtocol.swift */; };
 		CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B766125E1504C00E4D8EC /* DependencyRegistratorProtocol.swift */; };
+		CE57F60A2617A85C00706327 /* EditProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57F6092617A85C00706327 /* EditProfileProtocols.swift */; };
 		CE6829C025E836EC00D894E4 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829BF25E836EC00D894E4 /* NetworkConfig.swift */; };
 		CE6829C325E8526D00D894E4 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829C225E8526D00D894E4 /* LoginProtocols.swift */; };
 		CE6829C625E8571000D894E4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829C525E8571000D894E4 /* LoginPresenter.swift */; };
@@ -35,6 +42,7 @@
 		CE6829CC25E857F300D894E4 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829CB25E857F300D894E4 /* LoginInteractor.swift */; };
 		CE6829CF25E8583200D894E4 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829CE25E8583200D894E4 /* LoginData.swift */; };
 		CE6829D225E858E900D894E4 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829D125E858E900D894E4 /* LoginAssembly.swift */; };
+		CE6BC3C02611D3BA00E27653 /* ProfileOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6BC3BF2611D3BA00E27653 /* ProfileOptionTableViewCell.swift */; };
 		CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201825DC636300B508D8 /* AuthViewController.swift */; };
 		CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201B25DC637900B508D8 /* AuthProtocols.swift */; };
 		CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201E25DC638500B508D8 /* AuthPresenter.swift */; };
@@ -66,6 +74,12 @@
 		CE0E1BCA2606BA2E004E8589 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesRegistrator.swift; sourceTree = "<group>"; };
 		CE0E1BD62606D78C004E8589 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
+		CE2FEAB92618770D00AD5360 /* EditProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileData.swift; sourceTree = "<group>"; };
+		CE2FEABC2618781500AD5360 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		CE2FEABF2618792700AD5360 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		CE2FEAC22618795100AD5360 /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
+		CE2FEAC52618799700AD5360 /* EditProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRouter.swift; sourceTree = "<group>"; };
+		CE2FEAC8261879AB00AD5360 /* EditProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileAssembly.swift; sourceTree = "<group>"; };
 		CE39863326109FA100267569 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		CE3986402610BEFA00267569 /* ImageLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderProtocol.swift; sourceTree = "<group>"; };
 		CE3986442610C02400267569 /* KingfisherImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageLoader.swift; sourceTree = "<group>"; };
@@ -81,6 +95,7 @@
 		CE4B765425E13DC000E4D8EC /* SwinjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectContainer.swift; sourceTree = "<group>"; };
 		CE4B765725E13F5600E4D8EC /* DependencyContainerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerProtocol.swift; sourceTree = "<group>"; };
 		CE4B766125E1504C00E4D8EC /* DependencyRegistratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistratorProtocol.swift; sourceTree = "<group>"; };
+		CE57F6092617A85C00706327 /* EditProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileProtocols.swift; sourceTree = "<group>"; };
 		CE6829BF25E836EC00D894E4 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		CE6829C225E8526D00D894E4 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		CE6829C525E8571000D894E4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -88,6 +103,7 @@
 		CE6829CB25E857F300D894E4 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		CE6829CE25E8583200D894E4 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		CE6829D125E858E900D894E4 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		CE6BC3BF2611D3BA00E27653 /* ProfileOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionTableViewCell.swift; sourceTree = "<group>"; };
 		CE8F201825DC636300B508D8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CE8F201B25DC637900B508D8 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		CE8F201E25DC638500B508D8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
@@ -172,6 +188,7 @@
 				CE4647A42608F0CC00359F91 /* ProfileInteractor.swift */,
 				CE4647A72608F0F900359F91 /* ProfileRouter.swift */,
 				CE4647AA2608F10A00359F91 /* ProfileAssembly.swift */,
+				CE6BC3BF2611D3BA00E27653 /* ProfileOptionTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -194,6 +211,34 @@
 				CE4B766125E1504C00E4D8EC /* DependencyRegistratorProtocol.swift */,
 			);
 			path = DependencyService;
+			sourceTree = "<group>";
+		};
+		CE57F6052617A71A00706327 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CE2FEABC2618781500AD5360 /* EditProfileViewController.swift */,
+				CE57F6092617A85C00706327 /* EditProfileProtocols.swift */,
+				CE2FEAB92618770D00AD5360 /* EditProfileData.swift */,
+				CE2FEABF2618792700AD5360 /* EditProfilePresenter.swift */,
+				CE2FEAC22618795100AD5360 /* EditProfileInteractor.swift */,
+				CE2FEAC52618799700AD5360 /* EditProfileRouter.swift */,
+				CE2FEAC8261879AB00AD5360 /* EditProfileAssembly.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		CE57F6062617A72E00706327 /* Tours */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tours;
+			sourceTree = "<group>";
+		};
+		CE57F6072617A74E00706327 /* CreateTour */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CreateTour;
 			sourceTree = "<group>";
 		};
 		CE8F202725DC63E900B508D8 /* Services */ = {
@@ -222,6 +267,9 @@
 		CEA6618725D9BBDC00998F66 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE57F6072617A74E00706327 /* CreateTour */,
+				CE57F6062617A72E00706327 /* Tours */,
+				CE57F6052617A71A00706327 /* EditProfile */,
 				CE4647922608EC8F00359F91 /* Profile */,
 				CEA6618A25D9BC4000998F66 /* Login */,
 				CEA6618925D9BC3400998F66 /* Register */,
@@ -440,9 +488,11 @@
 				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
 				CE6829CC25E857F300D894E4 /* LoginInteractor.swift in Sources */,
 				CE483F4D25E70F0100806B44 /* AlamofireNetworkService.swift in Sources */,
+				CE2FEABA2618770D00AD5360 /* EditProfileData.swift in Sources */,
 				CE8F202A25DC672A00B508D8 /* Buttons.swift in Sources */,
 				CE4647A82608F0F900359F91 /* ProfileRouter.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
+				CE2FEAC62618799700AD5360 /* EditProfileRouter.swift in Sources */,
 				CEA9AADE25E1C70200BBE98C /* TextFields.swift in Sources */,
 				CEA9AAD225E1B83400BBE98C /* RegisterInteractor.swift in Sources */,
 				CE46479A2608ED7900359F91 /* ProfileData.swift in Sources */,
@@ -467,19 +517,25 @@
 				CE4647AB2608F10A00359F91 /* ProfileAssembly.swift in Sources */,
 				CEA9AACC25E1B65200BBE98C /* RegisterData.swift in Sources */,
 				CE0E1BB62606A602004E8589 /* DataStorageProtocol.swift in Sources */,
+				CE57F60A2617A85C00706327 /* EditProfileProtocols.swift in Sources */,
 				CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */,
+				CE2FEAC32618795100AD5360 /* EditProfileInteractor.swift in Sources */,
 				CE0E1BCB2606BA2F004E8589 /* Entity.swift in Sources */,
 				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
 				CEA9AADA25E1C67A00BBE98C /* UITextFieldExtension.swift in Sources */,
 				CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */,
 				CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */,
+				CE2FEAC02618792700AD5360 /* EditProfilePresenter.swift in Sources */,
 				CE6829C025E836EC00D894E4 /* NetworkConfig.swift in Sources */,
 				CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */,
 				CE95B41725E07240008DA51C /* LoginViewController.swift in Sources */,
 				CE6829C925E8572E00D894E4 /* LoginRouter.swift in Sources */,
 				CE46479E2608EF3D00359F91 /* ProfileViewController.swift in Sources */,
 				CE8F202225DC639100B508D8 /* AuthAssembly.swift in Sources */,
+				CE6BC3C02611D3BA00E27653 /* ProfileOptionTableViewCell.swift in Sources */,
+				CE2FEABD2618781500AD5360 /* EditProfileViewController.swift in Sources */,
 				CE6829D225E858E900D894E4 /* LoginAssembly.swift in Sources */,
+				CE2FEAC9261879AB00AD5360 /* EditProfileAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
