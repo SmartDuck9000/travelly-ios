@@ -52,6 +52,16 @@ class AlamofireNetworkService: NetworkProtocol {
         }
     }
     
+    func put<PutData: Encodable>(query: String, tokens: SecurityTokens, data: PutData, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
+        let urlQuery = type.rawValue + config.host + ":" + config.port + query
+        let jsonEncoder = JSONParameterEncoder.default
+        let headers = getAuthHeaders(token: tokens.accessToken)
+        
+        AF.request(urlQuery, method: .put, parameters: data, encoder: jsonEncoder, headers: headers).response { (response) in
+            complition(response.data, self.getError(response: response), response.response?.statusCode)
+        }
+    }
+    
     func refreshToken(query: String, tokens: SecurityTokens, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
         let urlQuery = type.rawValue + config.host + ":" + config.port + query
         let headers = getAuthHeaders(token: tokens.refreshToken)
