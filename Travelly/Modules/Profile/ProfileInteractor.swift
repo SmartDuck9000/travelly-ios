@@ -31,6 +31,7 @@ class ProfileInteractor: ProfileInteractorProtocol {
             if statusCode == 401 {
                 self.networkService.refreshToken(query: "api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
                     guard let data = data, let authData = try? JSONDecoder().decode(AuthData.self, from: data) else {
+                        self.dataStorage.deleteFirst(type: AuthData.self)
                         complition(nil, error, true)
                         return
                     }
