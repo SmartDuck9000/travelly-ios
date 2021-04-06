@@ -7,8 +7,12 @@
 
 import UIKit
 
-fileprivate struct LayoutContants {
+fileprivate struct LayoutConstants {
     static let photoLeftSpace: CGFloat = 10
+    
+    static let saveButtonLeftSpace: CGFloat = 15
+    static let saveButtonRightSpace: CGFloat = -15
+    static let saveButtonHeight: CGFloat = 40
     
     static let firstNamePlaceholder = "Имя"
     static let lastNamePlaceholder = "Фамилия"
@@ -32,21 +36,48 @@ class EditProfileViewController: UIViewController {
     private let emailField = UITextField()
     private let oldPasswordField = UITextField()
     private let newPasswordField = UITextField()
+    
+    private let saveButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    @objc
+    private func saveChanges() {
+        presenter?.saveChanges()
+    }
+    
     func set(presenter: EditProfilePresenterProtocol) {
         self.presenter = presenter
     }
     
-    private func setupView() {
-        setupContainerView()
-        setupFieldStackView()
+    func getFirstName() -> String? {
+        return firstNameField.text
     }
     
+    func getLastName() -> String? {
+        return lastNameField.text
+    }
+    
+    func getEmail() -> String? {
+        return emailField.text
+    }
+    
+    func getOldPassword() -> String? {
+        return oldPasswordField.text
+    }
+    
+    func getNewPassword() -> String? {
+        return newPasswordField.text
+    }
+    
+    private func setupView() {
+        setupContainerView()
+        setupSaveButton()
+        setupFieldStackView()
+    }
     
     private func setupContainerView() {
         self.view.addSubview(containerView)
@@ -66,7 +97,7 @@ class EditProfileViewController: UIViewController {
         
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         photoImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-        photoImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: LayoutContants.photoLeftSpace).isActive = true
+        photoImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: LayoutConstants.photoLeftSpace).isActive = true
     }
     
     private func setupNameFieldStackView() {
@@ -83,11 +114,11 @@ class EditProfileViewController: UIViewController {
     }
     
     private func setupFirstNameField() {
-        setup(stackView: nameFieldStackView, field: firstNameField, placeholder: LayoutContants.firstNamePlaceholder)
+        setup(stackView: nameFieldStackView, field: firstNameField, placeholder: LayoutConstants.firstNamePlaceholder)
     }
 
     private func setupLastNameField() {
-        setup(stackView: nameFieldStackView, field: lastNameField, placeholder: LayoutContants.lastNamePlaceholder)
+        setup(stackView: nameFieldStackView, field: lastNameField, placeholder: LayoutConstants.lastNamePlaceholder)
     }
     
     
@@ -97,7 +128,7 @@ class EditProfileViewController: UIViewController {
         
         fieldStackView.translatesAutoresizingMaskIntoConstraints = false
         fieldStackView.topAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-        fieldStackView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+        fieldStackView.bottomAnchor.constraint(equalTo: saveButton.topAnchor).isActive = true
         fieldStackView.leftAnchor.constraint(equalTo: safeArea.leftAnchor).isActive = true
         fieldStackView.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
         
@@ -107,15 +138,15 @@ class EditProfileViewController: UIViewController {
     }
     
     private func setupEmailField() {
-        setup(stackView: fieldStackView, field: emailField, placeholder: LayoutContants.emailPlaceholder)
+        setup(stackView: fieldStackView, field: emailField, placeholder: LayoutConstants.emailPlaceholder)
     }
     
     private func setupOldPasswordField() {
-        setup(stackView: fieldStackView, field: oldPasswordField, placeholder: LayoutContants.oldPasswordPlaceholder)
+        setup(stackView: fieldStackView, field: oldPasswordField, placeholder: LayoutConstants.oldPasswordPlaceholder)
     }
     
     private func setupNewPasswordField() {
-        setup(stackView: fieldStackView, field: newPasswordField, placeholder: LayoutContants.newPasswordPlaceholder)
+        setup(stackView: fieldStackView, field: newPasswordField, placeholder: LayoutConstants.newPasswordPlaceholder)
     }
     
     private func setup(stackView: UIStackView, field: UITextField, placeholder: String?) {
@@ -135,5 +166,17 @@ class EditProfileViewController: UIViewController {
         field.heightAnchor.constraint(equalToConstant: AuthTextFieldAppearance.height).isActive = true
         field.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
         field.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
+    }
+    
+    private func setupSaveButton() {
+        self.view.addSubview(saveButton)
+        saveButton.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
+        let safeArea = self.view.safeAreaLayoutGuide
+        
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: LayoutConstants.saveButtonLeftSpace).isActive = true
+        saveButton.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: LayoutConstants.saveButtonRightSpace).isActive = true
+        saveButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: LayoutConstants.saveButtonHeight).isActive = true
     }
 }

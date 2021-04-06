@@ -13,8 +13,8 @@ class RegisterAssembly: RegisterAssemblyProtocol, DependencyRegistratorProtocol 
             return RegisterRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: RegisterInteractorProtocol.self, name: "RegisterInteractor") { (networkService) -> RegisterInteractorProtocol in
-            return RegisterInteractor(networkService: networkService)
+        AppDelegate.container.register(service: RegisterInteractorProtocol.self, name: "RegisterInteractor") { (networkService, dataStorage) -> RegisterInteractorProtocol in
+            return RegisterInteractor(networkService: networkService, dataStorage: dataStorage)
         }
         
         AppDelegate.container.register(service: RegisterPresenterProtocol.self, name: "RegisterPresenter") { (vc, router, interactor) -> RegisterPresenterProtocol in
@@ -33,8 +33,12 @@ class RegisterAssembly: RegisterAssemblyProtocol, DependencyRegistratorProtocol 
                 return RegisterViewController()
             }
             
+            guard let dataStorage = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "RealmDataStorage") else {
+                return RegisterViewController()
+            }
+            
             guard let interactor = AppDelegate.container.resolve(service: RegisterInteractorProtocol.self, name: "RegisterInteractor",
-                                                                 argument: networkService)
+                                                                 arguments: networkService, dataStorage)
             else {
                 return RegisterViewController()
             }

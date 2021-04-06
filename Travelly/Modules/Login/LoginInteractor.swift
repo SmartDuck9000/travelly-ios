@@ -11,9 +11,11 @@ class LoginInteractor: LoginInteractorProtocol {
     
     private weak var presenter: LoginPresenterProtocol?
     private let networkService: NetworkProtocol
+    private let dataStorage: DataStorageProtocol
     
-    init(networkService: NetworkProtocol) {
+    init(networkService: NetworkProtocol, dataStorage: DataStorageProtocol) {
         self.networkService = networkService
+        self.dataStorage = dataStorage
     }
     
     func loginUser(email: String, password: String) {
@@ -33,6 +35,7 @@ class LoginInteractor: LoginInteractorProtocol {
                 }
                 
                 let tokens: SecurityTokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
+                self.dataStorage.save(entity: authData)
                 self.presenter?.openProfile(userId: authData.userId, tokens: tokens)
             }
         }

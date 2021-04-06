@@ -14,8 +14,8 @@ class EditProfileAssembly: EditProfileAssemblyProtocol, DependencyRegistratorPro
             return EditProfileRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: EditProfileInteractorProtocol.self, name: "EditProfileInteractor") { (networkService, imageLoader, userId, tokens) -> EditProfileInteractorProtocol in
-            return EditProfileInteractor(networkService: networkService, imageLoader: imageLoader, userId: userId, tokens: tokens)
+        AppDelegate.container.register(service: EditProfileInteractorProtocol.self, name: "EditProfileInteractor") { (networkService, dataStorage, imageLoader, userId, tokens) -> EditProfileInteractorProtocol in
+            return EditProfileInteractor(networkService: networkService, dataStorage: dataStorage, imageLoader: imageLoader, userId: userId, tokens: tokens)
         }
         
         AppDelegate.container.register(service: EditProfilePresenterProtocol.self, name: "EditProfilePresenter") { (vc, router, interactor) -> EditProfilePresenterProtocol in
@@ -34,12 +34,15 @@ class EditProfileAssembly: EditProfileAssemblyProtocol, DependencyRegistratorPro
                 return EditProfileViewController()
             }
             
+            guard let dataStorage = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "RealmDataStorage") else {
+                return EditProfileViewController()
+            }
+            
             guard let imageLoader = AppDelegate.container.resolve(service: ImageLoaderProtocol.self, name: "ImageLoaderProtocol") else {
                 return EditProfileViewController()
             }
             
-            guard let interactor = AppDelegate.container.resolve(service: EditProfileInteractorProtocol.self, name: "EditProfileInteractor",
-                                                                 arguments: networkService, imageLoader, userId, tokens)
+            guard let interactor = AppDelegate.container.resolve(service: EditProfileInteractorProtocol.self, name: "EditProfileInteractor", arguments: networkService, dataStorage, imageLoader, userId, tokens)
             else {
                 return EditProfileViewController()
             }

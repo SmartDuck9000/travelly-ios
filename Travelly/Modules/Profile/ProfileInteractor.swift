@@ -9,15 +9,17 @@ import UIKit
 
 class ProfileInteractor: ProfileInteractorProtocol {
     
-    private var networkService: NetworkProtocol
-    private var imageLoader: ImageLoaderProtocol
+    private let networkService: NetworkProtocol
+    private let imageLoader: ImageLoaderProtocol
+    private let dataStorage: DataStorageProtocol
     
     private var tokens: SecurityTokens
     private var userId: Int
     
-    init(networkService: NetworkProtocol, imageLoader: ImageLoaderProtocol, userId: Int, tokens: SecurityTokens) {
+    init(networkService: NetworkProtocol, dataStorage: DataStorageProtocol, imageLoader: ImageLoaderProtocol, userId: Int, tokens: SecurityTokens) {
         self.networkService = networkService
         self.imageLoader = imageLoader
+        self.dataStorage = dataStorage
         
         self.userId = userId
         self.tokens = tokens
@@ -33,6 +35,7 @@ class ProfileInteractor: ProfileInteractorProtocol {
                         return
                     }
                     self.tokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
+                    self.dataStorage.updateFirst(entity: authData)
                     self.loadProfile(complition: complition)
                 }
             }

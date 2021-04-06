@@ -15,8 +15,8 @@ class ProfileAssembly: ProfileAssemblyProtocol, DependencyRegistratorProtocol {
             return ProfileRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: ProfileInteractorProtocol.self, name: "ProfileInteractor") { (networkService, imageLoader, userId, tokens) -> ProfileInteractorProtocol in
-            return ProfileInteractor(networkService: networkService, imageLoader: imageLoader, userId: userId, tokens: tokens)
+        AppDelegate.container.register(service: ProfileInteractorProtocol.self, name: "ProfileInteractor") { (networkService, dataStorage, imageLoader, userId, tokens) -> ProfileInteractorProtocol in
+            return ProfileInteractor(networkService: networkService, dataStorage: dataStorage, imageLoader: imageLoader, userId: userId, tokens: tokens)
         }
         
         AppDelegate.container.register(service: ProfilePresenterProtocol.self, name: "ProfilePresenter") { (vc, router, interactor) -> ProfilePresenterProtocol in
@@ -35,12 +35,16 @@ class ProfileAssembly: ProfileAssemblyProtocol, DependencyRegistratorProtocol {
                 return ProfileViewController()
             }
             
+            guard let dataStorage = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "RealmDataStorage") else {
+                return ProfileViewController()
+            }
+            
             guard let imageLoader = AppDelegate.container.resolve(service: ImageLoaderProtocol.self, name: "ImageLoaderProtocol") else {
                 return ProfileViewController()
             }
             
             guard let interactor = AppDelegate.container.resolve(service: ProfileInteractorProtocol.self, name: "ProfileInteractor",
-                                                                 arguments: networkService, imageLoader, userId, tokens)
+                                                                 arguments: networkService, dataStorage, imageLoader, userId, tokens)
             else {
                 return ProfileViewController()
             }

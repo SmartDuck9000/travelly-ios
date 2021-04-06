@@ -7,15 +7,26 @@
 
 import UIKit
 
-class AuthData: Codable {
+class AuthData: Entity, Codable {
+    dynamic var id: Int = 0
     var userId: Int
     var accessToken: String
     var refreshToken: String
+    
+    init(userId: Int, accessToken: String, refreshToken: String) {
+        self.userId = userId
+        self.accessToken = accessToken
+        self.refreshToken = refreshToken
+    }
     
     enum CodingKeys: String, CodingKey {
         case userId = "user_id"
         case accessToken = "access_token"
         case refreshToken = "refresh_token"
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }
 

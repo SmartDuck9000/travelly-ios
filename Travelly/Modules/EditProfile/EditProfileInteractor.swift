@@ -9,15 +9,18 @@ import UIKit
 
 class EditProfileInteractor: EditProfileInteractorProtocol {
     
-    private var networkService: NetworkProtocol
-    private var imageLoader: ImageLoaderProtocol
+    private let networkService: NetworkProtocol
+    private let imageLoader: ImageLoaderProtocol
+    private let dataStorage: DataStorageProtocol
     
     private var userId: Int
     private var tokens: SecurityTokens
     
-    init(networkService: NetworkProtocol, imageLoader: ImageLoaderProtocol, userId: Int, tokens: SecurityTokens) {
+    init(networkService: NetworkProtocol, dataStorage: DataStorageProtocol, imageLoader: ImageLoaderProtocol, userId: Int, tokens: SecurityTokens) {
         self.networkService = networkService
         self.imageLoader = imageLoader
+        self.dataStorage = dataStorage
+        
         self.userId = userId
         self.tokens = tokens
     }

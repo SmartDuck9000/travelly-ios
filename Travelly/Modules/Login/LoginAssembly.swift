@@ -13,8 +13,8 @@ class LoginAssembly: LoginAssemblyProtocol, DependencyRegistratorProtocol {
             return LoginRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: LoginInteractorProtocol.self, name: "LoginInteractor") { (networkService) -> LoginInteractorProtocol in
-            return LoginInteractor(networkService: networkService)
+        AppDelegate.container.register(service: LoginInteractorProtocol.self, name: "LoginInteractor") { (networkService, dataStorage) -> LoginInteractorProtocol in
+            return LoginInteractor(networkService: networkService, dataStorage: dataStorage)
         }
         
         AppDelegate.container.register(service: LoginPresenterProtocol.self, name: "LoginPresenter") { (vc, router, interactor) -> LoginPresenterProtocol in
@@ -33,8 +33,12 @@ class LoginAssembly: LoginAssemblyProtocol, DependencyRegistratorProtocol {
                 return LoginViewController()
             }
             
+            guard let dataStorage = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "RealmDataStorage") else {
+                return LoginViewController()
+            }
+            
             guard let interactor = AppDelegate.container.resolve(service: LoginInteractorProtocol.self, name: "LoginInteractor",
-                                                                 argument: networkService)
+                                                                 arguments: networkService, dataStorage)
             else {
                 return LoginViewController()
             }
