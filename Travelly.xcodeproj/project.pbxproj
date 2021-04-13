@@ -10,7 +10,6 @@
 		9BDDB401BE2F36B0E1AEEF41 /* Pods_Travelly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */; };
 		CE0E1BB62606A602004E8589 /* DataStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BB52606A602004E8589 /* DataStorageProtocol.swift */; };
 		CE0E1BBA2606B6B8004E8589 /* RealmDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BB92606B6B8004E8589 /* RealmDataStorage.swift */; };
-		CE0E1BCB2606BA2F004E8589 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCA2606BA2E004E8589 /* Entity.swift */; };
 		CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */; };
 		CE0E1BD72606D78C004E8589 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BD62606D78C004E8589 /* AuthData.swift */; };
 		CE2FEABA2618770D00AD5360 /* EditProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FEAB92618770D00AD5360 /* EditProfileData.swift */; };
@@ -64,6 +63,7 @@
 		CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE890F325D96D5F006EA513 /* ViewController.swift */; };
 		CEE890F925D96D63006EA513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE890F825D96D63006EA513 /* Assets.xcassets */; };
 		CEE890FC25D96D63006EA513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE890FA25D96D63006EA513 /* LaunchScreen.storyboard */; };
+		CEFBE9E1262361B800B12566 /* OptionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBE9E0262361B800B12566 /* OptionsInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +71,6 @@
 		92A1BE50488A5581B7F08CDF /* Pods_Travelly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travelly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0E1BB52606A602004E8589 /* DataStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageProtocol.swift; sourceTree = "<group>"; };
 		CE0E1BB92606B6B8004E8589 /* RealmDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStorage.swift; sourceTree = "<group>"; };
-		CE0E1BCA2606BA2E004E8589 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesRegistrator.swift; sourceTree = "<group>"; };
 		CE0E1BD62606D78C004E8589 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
 		CE2FEAB92618770D00AD5360 /* EditProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileData.swift; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 		CEE890F825D96D63006EA513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE890FB25D96D63006EA513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE890FD25D96D63006EA513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFBE9E0262361B800B12566 /* OptionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInteractor.swift; sourceTree = "<group>"; };
 		E4C10CDA75BCD99143C07D32 /* Pods-Travelly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travelly.debug.xcconfig"; path = "Target Support Files/Pods-Travelly/Pods-Travelly.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +156,6 @@
 			children = (
 				CE0E1BB52606A602004E8589 /* DataStorageProtocol.swift */,
 				CE0E1BB92606B6B8004E8589 /* RealmDataStorage.swift */,
-				CE0E1BCA2606BA2E004E8589 /* Entity.swift */,
 			);
 			path = DataStorage;
 			sourceTree = "<group>";
@@ -186,6 +185,7 @@
 				CE4647992608ED7900359F91 /* ProfileData.swift */,
 				CE4647A12608F0A800359F91 /* ProfilePresenter.swift */,
 				CE4647A42608F0CC00359F91 /* ProfileInteractor.swift */,
+				CEFBE9E0262361B800B12566 /* OptionsInteractor.swift */,
 				CE4647A72608F0F900359F91 /* ProfileRouter.swift */,
 				CE4647AA2608F10A00359F91 /* ProfileAssembly.swift */,
 				CE6BC3BF2611D3BA00E27653 /* ProfileOptionTableViewCell.swift */,
@@ -485,6 +485,7 @@
 				CE3986452610C02400267569 /* KingfisherImageLoader.swift in Sources */,
 				CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */,
 				CE4B765825E13F5600E4D8EC /* DependencyContainerProtocol.swift in Sources */,
+				CEFBE9E1262361B800B12566 /* OptionsInteractor.swift in Sources */,
 				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
 				CE6829CC25E857F300D894E4 /* LoginInteractor.swift in Sources */,
 				CE483F4D25E70F0100806B44 /* AlamofireNetworkService.swift in Sources */,
@@ -520,7 +521,6 @@
 				CE57F60A2617A85C00706327 /* EditProfileProtocols.swift in Sources */,
 				CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */,
 				CE2FEAC32618795100AD5360 /* EditProfileInteractor.swift in Sources */,
-				CE0E1BCB2606BA2F004E8589 /* Entity.swift in Sources */,
 				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
 				CEA9AADA25E1C67A00BBE98C /* UITextFieldExtension.swift in Sources */,
 				CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */,
