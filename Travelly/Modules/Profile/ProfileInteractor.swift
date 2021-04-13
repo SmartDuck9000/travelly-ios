@@ -39,19 +39,27 @@ class ProfileInteractor: ProfileInteractorProtocol {
                     self.dataStorage.update(authData: authData)
                     self.loadProfile(complition: complition)
                 }
+            } else {
+                if error != nil {
+                    complition(nil, error, false)
+                    return
+                }
+                
+                guard let data = data else {
+                    complition(nil, error, false)
+                    return
+                }
+                
+                guard let profileData = try? JSONDecoder().decode(ProfileData.self, from: data) else {
+                    if let strData = String(data: data, encoding: .utf8) {
+                        print(strData)
+                    }
+                    complition(nil, error, false)
+                    return
+                }
+                
+                complition(profileData, nil, false)
             }
-            
-            if error != nil {
-                complition(nil, error, false)
-                return
-            }
-            
-            guard let data = data, let profileData = try? JSONDecoder().decode(ProfileData.self, from: data) else {
-                complition(nil, error, false)
-                return
-            }
-            
-            complition(profileData, nil, false)
         }
     }
     
