@@ -166,7 +166,7 @@ class LoginViewController: UIViewController {
         loginButton.backgroundColor = MainButtonAppearance.backgroundColor
         loginButton.layer.cornerRadius = view.safeAreaLayoutGuide.layoutFrame.size.width * MainButtonAppearance.cornerRadiusRatio
         
-        loginButton.isEnabled = false
+        loginButton.isEnabled = true
         loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         
         loginButton.translatesAutoresizingMaskIntoConstraints = false
