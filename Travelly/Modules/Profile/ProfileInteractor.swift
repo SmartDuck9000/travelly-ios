@@ -26,17 +26,17 @@ class ProfileInteractor: ProfileInteractorProtocol {
     }
     
     func loadProfile(complition: @escaping (ProfileData?, Error?, Bool) -> Void) {
-        networkService.get(query: "/api/users", tokens: tokens, parameters: UserIdData(userId: userId), type: .http) { (data, error, statusCode) in
+        networkService.get(query: "0.0.0.0:5001/api/users", tokens: tokens, parameters: UserIdData(userId: userId), type: .http) { (data, error, statusCode) in
             
             if statusCode == 401 {
                 self.networkService.refreshToken(query: "api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
                     guard let data = data, let authData = try? JSONDecoder().decode(AuthData.self, from: data) else {
-                        self.dataStorage.deleteFirst(type: AuthData.self)
+                        self.dataStorage.deleteAuthData()
                         complition(nil, error, true)
                         return
                     }
                     self.tokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
-                    self.dataStorage.updateFirst(entity: authData)
+                    self.dataStorage.update(authData: authData)
                     self.loadProfile(complition: complition)
                 }
             }
@@ -55,8 +55,8 @@ class ProfileInteractor: ProfileInteractorProtocol {
         }
     }
     
-    func loadImage(to imageView: UIImageView, from url: String) {
-        imageLoader.load(to: imageView, from: url)
+    func loadImage(to imageView: UIImageView, from url: String, with cornerRadius: CGFloat, _ placeholder: String? = nil) {
+        imageLoader.load(to: imageView, from: url, with: cornerRadius, placeholder)
     }
     
     func getTokens() -> SecurityTokens {

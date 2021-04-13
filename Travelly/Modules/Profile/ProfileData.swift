@@ -24,3 +24,7 @@ struct UserIdData: Codable {
         case userId = "user_id"
     }
 }
+
+struct ProfileOptionData {
+    var name: String
+}

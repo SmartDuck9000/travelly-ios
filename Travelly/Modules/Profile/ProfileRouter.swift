@@ -8,8 +8,8 @@
 import UIKit
 
 class ProfileRouter: ProfileRouterProtocol {
+    
     private var view: ProfileViewController
-    private var optionsCount = 4
     
     init(view: ProfileViewController) {
         self.view = view
@@ -25,25 +25,38 @@ class ProfileRouter: ProfileRouterProtocol {
         
     }
     
-    func getOptionsCount() -> Int {
-        return optionsCount
-    }
-    
-    func openEditProfileOption(with userId: Int, _ tokens: SecurityTokens) {
+    func openEditProfile(with userId: Int, _ tokens: SecurityTokens) {
         
     }
     
-    func openCreateTourOption(with userId: Int, _ tokens: SecurityTokens) {
+    func openCreateTour(with userId: Int, _ tokens: SecurityTokens) {
         
     }
     
-    func openToursOption(with userId: Int, _ tokens: SecurityTokens) {
+    func openTours(with userId: Int, _ tokens: SecurityTokens) {
         
     }
     
-    func openAuthOption() {
+    func openHotels(with userId: Int, _ tokens: SecurityTokens) {
+        
+    }
+    
+    func openRestaurants(with userId: Int, _ tokens: SecurityTokens) {
+        
+    }
+    
+    func openEvents(with userId: Int, _ tokens: SecurityTokens) {
+        
+    }
+    
+    func openTickets(with userId: Int, _ tokens: SecurityTokens) {
+        
+    }
+    
+    func exit() {
         let assembly: AuthAssemblyProtocol = AuthAssembly()
         let authView: AuthViewController = assembly.createModule()
+        authView.modalPresentationStyle = .fullScreen
         view.present(authView, animated: false, completion: nil)
     }
 }

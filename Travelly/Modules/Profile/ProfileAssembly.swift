@@ -19,8 +19,12 @@ class ProfileAssembly: ProfileAssemblyProtocol, DependencyRegistratorProtocol {
             return ProfileInteractor(networkService: networkService, dataStorage: dataStorage, imageLoader: imageLoader, userId: userId, tokens: tokens)
         }
         
-        AppDelegate.container.register(service: ProfilePresenterProtocol.self, name: "ProfilePresenter") { (vc, router, interactor) -> ProfilePresenterProtocol in
-            return ProfilePresenter(view: vc, router: router, interactor: interactor)
+        AppDelegate.container.register(service: OptionsInteractorProtocol.self, name: "OptionsInteractor") {
+            return OptionsInteractor()
+        }
+        
+        AppDelegate.container.register(service: ProfilePresenterProtocol.self, name: "ProfilePresenter") { (vc, router, profileInteractor, optionsInteractor) -> ProfilePresenterProtocol in
+            return ProfilePresenter(view: vc, router: router, profileInteractor: profileInteractor, optionsInteractor: optionsInteractor)
         }
         
         AppDelegate.container.register(service: ProfileViewController.self, name: "ProfileViewController") { (userId: Int, tokens: SecurityTokens) -> ProfileViewController in
@@ -31,7 +35,7 @@ class ProfileAssembly: ProfileAssemblyProtocol, DependencyRegistratorProtocol {
                 return ProfileViewController()
             }
             
-            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "NetworkProtocol") else {
+            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "AlamofireNetworkProtocol") else {
                 return ProfileViewController()
             }
             
@@ -43,14 +47,19 @@ class ProfileAssembly: ProfileAssemblyProtocol, DependencyRegistratorProtocol {
                 return ProfileViewController()
             }
             
-            guard let interactor = AppDelegate.container.resolve(service: ProfileInteractorProtocol.self, name: "ProfileInteractor",
-                                                                 arguments: networkService, dataStorage, imageLoader, userId, tokens)
+            guard let profileInteractor = AppDelegate.container.resolve(service: ProfileInteractorProtocol.self, name: "ProfileInteractor", arguments: networkService, dataStorage, imageLoader, userId, tokens)
+            else {
+                return ProfileViewController()
+            }
+            
+            guard let optionsInteractor = AppDelegate.container.resolve(service: OptionsInteractorProtocol.self,
+                                                                        name: "OptionsInteractor")
             else {
                 return ProfileViewController()
             }
             
             guard let presenter = AppDelegate.container.resolve(service: ProfilePresenterProtocol.self, name: "ProfilePresenter",
-                                                                arguments: vc, router, interactor)
+                                                                arguments: vc, router, profileInteractor, optionsInteractor)
             else {
                 return ProfileViewController()
             }

@@ -10,17 +10,19 @@ import UIKit
 class ProfilePresenter: ProfilePresenterProtocol {
     
     private weak var view: ProfileViewController!
-    private var interactor: ProfileInteractorProtocol
+    private var profileInteractor: ProfileInteractorProtocol
+    private var optionsInteractor: OptionsInteractorProtocol
     private var router: ProfileRouterProtocol
     
-    init(view: ProfileViewController, router: ProfileRouterProtocol, interactor: ProfileInteractorProtocol) {
+    init(view: ProfileViewController, router: ProfileRouterProtocol, profileInteractor: ProfileInteractorProtocol, optionsInteractor: OptionsInteractorProtocol) {
         self.view = view
-        self.interactor = interactor
+        self.profileInteractor = profileInteractor
+        self.optionsInteractor = optionsInteractor
         self.router = router
     }
     
     func loadProfile() {
-        self.interactor.loadProfile { (profileData, error, needAuth) in
+        self.profileInteractor.loadProfile { (profileData, error, needAuth) in
             if needAuth {
                 self.router.openAuth()
             }
@@ -36,31 +38,64 @@ class ProfilePresenter: ProfilePresenterProtocol {
             }
             
             self.view.set(name: "\(data.firstName) \(data.lastName)")
-            self.interactor.loadImage(to: self.view.getProfileImageView(), from: data.photoUrl)
+            let imageSize: CGFloat = self.view.getProfileImageSize()
+            self.profileInteractor.loadImage(to: self.view.getProfileImageView(), from: data.photoUrl, with: imageSize / 2, "ImagePlaceholder")
         }
     }
     
     func optionsCount() -> Int {
-        return router.getOptionsCount()
+        return optionsInteractor.optionsCount()
     }
     
-    func getOption(from tableView: UITableView, at index: Int) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-    func selectOption(at index: Int) {
-        let userId = interactor.getUserId()
-        let tokens = interactor.getTokens()
+    func configureOptionCell(_ cell: ProfileOptionTableViewCell, at index: Int) {
+        guard let optionData = optionsInteractor.getProfileOptionData(at: index) else { return }
+        cell.setOptionName(optionData.name)
+        cell.setupCell()
         
         switch index {
         case 0:
-            router.openEditProfileOption(with: userId, tokens)
+            cell.setImage(UIImage(named: "EditImage"))
         case 1:
-            router.openCreateTourOption(with: userId, tokens)
+            cell.setImage(UIImage(named: "AddImage"))
         case 2:
-            router.openToursOption(with: userId, tokens)
+            cell.setImage(UIImage(named: "MyToursImage"))
         case 3:
-            router.openAuthOption()
+            cell.setImage(UIImage(named: "HotelImage"))
+        case 4:
+            cell.setImage(UIImage(named: "RestaurantImage"))
+        case 5:
+            cell.setImage(UIImage(named: "EventImage"))
+        case 6:
+            cell.setImage(UIImage(named: "TicketImage"))
+        case 7:
+            cell.setImage(UIImage(named: "ExitImage"))
+            cell.setTextColor(.red)
+        default:
+            print("No option at index: \(index)")
+        }
+    }
+    
+    func selectOption(at index: Int) {
+        let userId = profileInteractor.getUserId()
+        let tokens = profileInteractor.getTokens()
+        
+        switch index {
+        case 0:
+            router.openEditProfile(with: userId, tokens)
+        case 1:
+            router.openCreateTour(with: userId, tokens)
+        case 2:
+            router.openTours(with: userId, tokens)
+        case 3:
+            router.openHotels(with: userId, tokens)
+        case 4:
+            router.openRestaurants(with: userId, tokens)
+        case 5:
+            router.openEvents(with: userId, tokens)
+        case 6:
+            router.openTickets(with: userId, tokens)
+        case 7:
+            router.exit()
         default:
             print("No option at index: \(index)")
         }
