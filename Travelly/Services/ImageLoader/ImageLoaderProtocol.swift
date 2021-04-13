@@ -8,5 +8,5 @@
 import UIKit
 
 protocol ImageLoaderProtocol {
-    func load(to imageView: UIImageView, from url: String)
+    func load(to imageView: UIImageView, from url: String, with cornerRadius: CGFloat, _ placeholder: String?)
 }
