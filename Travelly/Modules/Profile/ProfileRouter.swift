@@ -58,6 +58,6 @@ class ProfileRouter: ProfileRouterProtocol {
         let assembly: AuthAssemblyProtocol = AuthAssembly()
         let authView: AuthViewController = assembly.createModule()
         authView.modalPresentationStyle = .fullScreen
-        view.present(authView, animated: false, completion: nil)
+        view.present(authView, animated: true, completion: nil)
     }
 }

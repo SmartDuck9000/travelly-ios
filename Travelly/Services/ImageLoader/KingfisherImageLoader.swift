@@ -18,7 +18,8 @@ class KingfisherImageLoader: ImageLoaderProtocol {
             placeholderImage = UIImage()
         }
         
-        let processor = RoundCornerImageProcessor(cornerRadius: cornerRadius)
+        let size = cornerRadius * 2
+        let processor = ResizingImageProcessor(referenceSize: CGSize(width: size, height: size)) |> RoundCornerImageProcessor(cornerRadius: cornerRadius)
         
         imageView.kf.setImage(with: URL(string: url),
                               placeholder: placeholderImage,

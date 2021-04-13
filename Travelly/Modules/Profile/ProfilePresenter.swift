@@ -95,6 +95,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
         case 6:
             router.openTickets(with: userId, tokens)
         case 7:
+            profileInteractor.deleteAuthData()
             router.exit()
         default:
             print("No option at index: \(index)")

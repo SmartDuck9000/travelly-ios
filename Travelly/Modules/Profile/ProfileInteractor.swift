@@ -30,7 +30,12 @@ class ProfileInteractor: ProfileInteractorProtocol {
             
             if statusCode == 401 {
                 self.networkService.refreshToken(query: "api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
-                    guard let data = data, let authData = try? JSONDecoder().decode(AuthData.self, from: data) else {
+                    guard let data = data else {
+                        self.dataStorage.deleteAuthData()
+                        complition(nil, error, true)
+                        return
+                    }
+                    guard let authData = try? JSONDecoder().decode(AuthData.self, from: data) else {
                         self.dataStorage.deleteAuthData()
                         complition(nil, error, true)
                         return
@@ -73,5 +78,9 @@ class ProfileInteractor: ProfileInteractorProtocol {
     
     func getUserId() -> Int {
         return userId
+    }
+    
+    func deleteAuthData() {
+        self.dataStorage.deleteAuthData()
     }
 }

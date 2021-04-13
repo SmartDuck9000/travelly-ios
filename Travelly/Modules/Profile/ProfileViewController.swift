@@ -15,7 +15,9 @@ fileprivate struct LayoutConstants {
     static let containerViewHeight: CGFloat = 150
     
     static let profileImageTopSpace: CGFloat = 15
+    static let profileImageLeftSpace: CGFloat = 20
     static let profileImageBottomSpace: CGFloat = -15
+    static let nameLabelHeight: CGFloat = 30
     
     static let profileTopSpace: CGFloat = 0
     static let profileBottomSpace: CGFloat = 0
@@ -83,6 +85,8 @@ class ProfileViewController: UIViewController {
     private func setupProfileImageView() {
         profileViewContainer.addSubview(profileImageView)
         profileImageView.backgroundColor = HeaderAppearance.backgroundColor
+        profileImageView.layer.cornerRadius = (LayoutConstants.containerViewHeight - LayoutConstants.profileImageTopSpace * 2) / 2
+        profileImageView.clipsToBounds = true
         
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.topAnchor.constraint(equalTo: profileViewContainer.topAnchor,
@@ -90,7 +94,7 @@ class ProfileViewController: UIViewController {
         profileImageView.bottomAnchor.constraint(equalTo: profileViewContainer.bottomAnchor,
                                                  constant: LayoutConstants.profileImageBottomSpace).isActive = true
         profileImageView.leftAnchor.constraint(equalTo: profileViewContainer.leftAnchor,
-                                               constant: LayoutConstants.leftSpace).isActive = true
+                                               constant: LayoutConstants.profileImageLeftSpace).isActive = true
         profileImageView.widthAnchor.constraint(
             equalToConstant: LayoutConstants.containerViewHeight - LayoutConstants.profileImageTopSpace * 2
         ).isActive = true
@@ -107,7 +111,7 @@ class ProfileViewController: UIViewController {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.topAnchor.constraint(equalTo: profileViewContainer.topAnchor, constant: LayoutConstants.topSpace).isActive = true
-        nameLabel.bottomAnchor.constraint(equalTo: profileViewContainer.bottomAnchor, constant: LayoutConstants.bottomSpace).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: LayoutConstants.nameLabelHeight).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: LayoutConstants.leftSpace).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: profileViewContainer.rightAnchor, constant: LayoutConstants.rightSpace).isActive = true
     }

@@ -20,6 +20,7 @@ protocol ProfileInteractorProtocol {
     
     func getTokens() -> SecurityTokens
     func getUserId() -> Int
+    func deleteAuthData()
 }
 
 protocol OptionsInteractorProtocol {
