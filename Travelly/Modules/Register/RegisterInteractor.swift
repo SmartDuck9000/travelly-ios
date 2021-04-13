@@ -20,7 +20,7 @@ class RegisterInteractor: RegisterInteractorProtocol {
     
     func registerUser(email: String, password: String, firstName: String, lastName: String) {
         let registerData = RegisterData(email: email, password: password, firstName: firstName, lastName: lastName)
-        networkService.post(query: "/api/auth/email_register", tokens: nil, data: registerData, type: .http) { (data, error, statusCode) in
+        networkService.post(query: "0.0.0.0:5002/api/auth/email_register", tokens: nil, data: registerData, type: .http) { (data, error, statusCode) in
             guard let data = data else {
                 self.presenter?.showAuthError(message: "")
                 return
@@ -30,11 +30,12 @@ class RegisterInteractor: RegisterInteractorProtocol {
                 self.presenter?.showAuthError(message: "")
             } else {
                 guard let authData = try? JSONDecoder().decode(AuthData.self, from: data) else {
+                    print(String(data: data, encoding: .utf8) ?? "")
                     self.presenter?.showAuthError(message: "")
                     return
                 }
                 let tokens: SecurityTokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
-                self.dataStorage.save(entity: authData)
+                self.dataStorage.save(authData: authData)
                 self.presenter?.openProfile(userId: authData.userId, tokens: tokens)
             }
         }

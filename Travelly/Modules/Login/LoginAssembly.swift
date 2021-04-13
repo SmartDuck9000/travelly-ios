@@ -29,7 +29,7 @@ class LoginAssembly: LoginAssemblyProtocol, DependencyRegistratorProtocol {
                 return LoginViewController()
             }
             
-            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "NetworkProtocol") else {
+            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "AlamofireNetworkProtocol") else {
                 return LoginViewController()
             }
             

@@ -6,18 +6,13 @@
 //
 
 import UIKit
+import RealmSwift
 
-class AuthData: Entity, Codable {
-    dynamic var id: Int = 0
-    var userId: Int
-    var accessToken: String
-    var refreshToken: String
-    
-    init(userId: Int, accessToken: String, refreshToken: String) {
-        self.userId = userId
-        self.accessToken = accessToken
-        self.refreshToken = refreshToken
-    }
+class AuthData: Object, Codable {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var userId: Int
+    @objc dynamic var accessToken: String
+    @objc dynamic var refreshToken: String
     
     enum CodingKeys: String, CodingKey {
         case userId = "user_id"
@@ -30,8 +25,7 @@ class AuthData: Entity, Codable {
     }
 }
 
-class SecurityTokens: Entity, Codable {
-    dynamic var id: Int = 0
+struct SecurityTokens: Codable {
     var accessToken: String
     var refreshToken: String
     
@@ -43,9 +37,5 @@ class SecurityTokens: Entity, Codable {
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
         case refreshToken = "refresh_token"
-    }
-    
-    override static func primaryKey() -> String? {
-        return "id"
     }
 }

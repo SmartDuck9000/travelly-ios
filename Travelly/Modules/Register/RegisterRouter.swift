@@ -21,7 +21,8 @@ class RegisterRouter: RegisterRouterProtocol {
     
     func presentUserProfile(userId: Int, tokens: SecurityTokens) {
         let profileAssembly: ProfileAssemblyProtocol = ProfileAssembly()
-        let profileView: ProfileViewController = profileAssembly.createModule(userId: userId, tokens: tokens)
+        let profileView = profileAssembly.createModule(userId: userId, tokens: tokens)
+        profileView.modalPresentationStyle = .fullScreen
         view.present(profileView, animated: true, completion: nil)
     }
     

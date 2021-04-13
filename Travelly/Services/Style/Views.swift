@@ -15,7 +15,7 @@ struct AppColorAppearance {
 }
 
 struct HeaderAppearance {
-    static let backgroungColor = UIColor.systemOrange
+    static let backgroundColor = UIColor.systemOrange
     static let textColor = UIColor.white
     static let font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
 }
@@ -24,4 +24,10 @@ struct TableViewAppearance {
     static let backgroungColor = UIColor.systemBackground
     static let textColor = UIColor.label
     static let font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+}
+
+struct TableViewCellAppearance {
+    static let backgroungColor = UIColor.systemBackground
+    static let textColor = UIColor.label
+    static let font = UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize)
 }

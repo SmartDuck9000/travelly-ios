@@ -8,10 +8,9 @@
 import Alamofire
 
 class AlamofireNetworkService: NetworkProtocol {
-    let config = NetworkConfig()
     
     func get<Parameters: Encodable>(query: String, tokens: SecurityTokens?, parameters: Parameters, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
-        let urlQuery = type.rawValue + config.host + ":" + config.port + query
+        let urlQuery = type.rawValue + query
         let urlEncoder = URLEncodedFormParameterEncoder.default
         var headers: HTTPHeaders?
         
@@ -25,7 +24,7 @@ class AlamofireNetworkService: NetworkProtocol {
     }
     
     func get(query: String, tokens: SecurityTokens?, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
-        let urlQuery = type.rawValue + config.host + ":" + config.port + query
+        let urlQuery = type.rawValue + query
         var headers: HTTPHeaders?
         
         if let accesToken = tokens?.accessToken {
@@ -39,7 +38,7 @@ class AlamofireNetworkService: NetworkProtocol {
     
     
     func post<PostedData: Encodable>(query: String, tokens: SecurityTokens?, data: PostedData, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
-        let urlQuery = type.rawValue + config.host + ":" + config.port + query
+        let urlQuery = type.rawValue + query
         let jsonEncoder = JSONParameterEncoder.default
         var headers: HTTPHeaders?
         
@@ -53,7 +52,7 @@ class AlamofireNetworkService: NetworkProtocol {
     }
     
     func put<PutData: Encodable>(query: String, tokens: SecurityTokens, data: PutData, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
-        let urlQuery = type.rawValue + config.host + ":" + config.port + query
+        let urlQuery = type.rawValue + query
         let jsonEncoder = JSONParameterEncoder.default
         let headers = getAuthHeaders(token: tokens.accessToken)
         
@@ -63,7 +62,7 @@ class AlamofireNetworkService: NetworkProtocol {
     }
     
     func refreshToken(query: String, tokens: SecurityTokens, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
-        let urlQuery = type.rawValue + config.host + ":" + config.port + query
+        let urlQuery = type.rawValue + query
         let headers = getAuthHeaders(token: tokens.refreshToken)
         
         AF.request(urlQuery, method: .get, headers: headers).response { (response) in

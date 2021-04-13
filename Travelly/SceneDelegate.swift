@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let dataStorage: DataStorageProtocol = RealmDataStorage()
-        if let authData = dataStorage.getFirst(type: AuthData.self) {
+        if let authData = dataStorage.getAuthData() {
             let assembly: ProfileAssemblyProtocol = ProfileAssembly()
             let tokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
             window?.rootViewController = assembly.createModule(userId: authData.userId, tokens: tokens)
