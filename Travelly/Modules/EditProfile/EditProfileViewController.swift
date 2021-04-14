@@ -31,7 +31,7 @@ fileprivate struct LayoutConstants {
     static let nameStackLeftSpace: CGFloat = 15
     static let nameStackRightSpace: CGFloat = -15
     
-    static let emailPlaceholder = "Новая почта"
+    static let emailPlaceholder = "Почта"
     static let oldPasswordPlaceholder = "Пароль"
     static let newPasswordPlaceholder = "Новый пароль"
 }

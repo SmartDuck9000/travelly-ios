@@ -40,10 +40,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        presenter?.loadProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        presenter?.loadProfile()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
     }

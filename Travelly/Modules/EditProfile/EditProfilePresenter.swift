@@ -66,13 +66,28 @@ class EditProfilePresenter: EditProfilePresenterProtocol {
                                              lastName: lastName,
                                              photoUrl: "")
         
+        let editComplition: (Error?, Bool, Bool) -> Void = { (error, wrongPassword, needAuth) in
+            if let err = error {
+                print(err.localizedDescription)
+            }
+            
+            if needAuth {
+                self.interactor.deleteAuthData()
+                self.router.openAuth()
+            }
+            
+            if wrongPassword {
+                self.router.showError(message: "Неверный пароль")
+            }
+        }
+        
         if view.isImageChanged(), let newImage = view.getPhotoImageView().image {
             interactor.getUrl(for: newImage) { (urlString) in
                 newProfileData.photoUrl = urlString ?? ""
-                self.interactor.updateProfileData(newProfileData)
+                self.interactor.updateProfileData(newProfileData, complition: editComplition)
             }
         } else {
-            interactor.updateProfileData(newProfileData)
+            interactor.updateProfileData(newProfileData, complition: editComplition)
         }
     }
 }

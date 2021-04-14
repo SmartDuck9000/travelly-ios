@@ -18,16 +18,19 @@ protocol EditProfilePresenterProtocol {
 }
 
 protocol EditProfileInteractorProtocol {
-    func updateProfileData(_ data: EditProfileData)
+    func updateProfileData(_ data: EditProfileData, complition: @escaping (Error?, Bool, Bool) -> Void)
     func getUserId() -> Int
     
     func getFirstName() -> String
     func getLastName() -> String
     func getUrl(for image: UIImage, complition: @escaping (String?) -> Void)
     func loadImage(to imageView: UIImageView, with cornerRadius: CGFloat, _ placeholder: String?)
+    
+    func deleteAuthData()
 }
 
 protocol EditProfileRouterProtocol {
     func showError(message: String)
     func closeEditProfileOption()
+    func openAuth()
 }

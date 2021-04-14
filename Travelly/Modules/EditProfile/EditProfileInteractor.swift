@@ -31,9 +31,29 @@ class EditProfileInteractor: EditProfileInteractorProtocol {
         self.profileData = profileData
     }
     
-    func updateProfileData(_ data: EditProfileData) {
-        networkService.put(query: "/api/users", tokens: tokens, data: data, type: .http) { (data, error, code) in
-            
+    func updateProfileData(_ newProfileData: EditProfileData, complition: @escaping (Error?, Bool, Bool) -> Void) {
+        networkService.put(query: "/api/users", tokens: tokens, data: newProfileData, type: .http) { (data, error, statusCode) in
+            if statusCode == 401 {
+                self.networkService.refreshToken(query: "api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
+                    guard let data = data else {
+                        self.dataStorage.deleteAuthData()
+                        complition(error, false, true)
+                        return
+                    }
+                    guard let authData = try? JSONDecoder().decode(AuthData.self, from: data) else {
+                        self.dataStorage.deleteAuthData()
+                        complition(error, false, true)
+                        return
+                    }
+                    self.tokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
+                    self.dataStorage.update(authData: authData)
+                    self.updateProfileData(newProfileData, complition: complition)
+                }
+            } else if statusCode == 400 {
+                complition(error, true, false)
+            } else {
+                complition(error, false, false)
+            }
         }
     }
     
@@ -57,5 +77,9 @@ class EditProfileInteractor: EditProfileInteractorProtocol {
     
     func loadImage(to imageView: UIImageView, with cornerRadius: CGFloat, _ placeholder: String?) {
         imageLoader.load(to: imageView, from: profileData.photoUrl, with: cornerRadius, placeholder)
+    }
+    
+    func deleteAuthData() {
+        self.dataStorage.deleteAuthData()
     }
 }
