@@ -32,7 +32,7 @@ class EditProfileInteractor: EditProfileInteractorProtocol {
     }
     
     func updateProfileData(_ newProfileData: EditProfileData, complition: @escaping (Error?, Bool, Bool) -> Void) {
-        networkService.put(query: "/api/users", tokens: tokens, data: newProfileData, type: .http) { (data, error, statusCode) in
+        networkService.put(query: "0.0.0.0:5001/api/users", tokens: tokens, data: newProfileData, type: .http) { (data, error, statusCode) in
             if statusCode == 401 {
                 self.networkService.refreshToken(query: "api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
                     guard let data = data else {
