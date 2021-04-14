@@ -16,6 +16,8 @@ class ProfileInteractor: ProfileInteractorProtocol {
     private var tokens: SecurityTokens
     private var userId: Int
     
+    private var profileData: ProfileData?
+    
     init(networkService: NetworkProtocol, dataStorage: DataStorageProtocol, imageLoader: ImageLoaderProtocol, userId: Int, tokens: SecurityTokens) {
         self.networkService = networkService
         self.imageLoader = imageLoader
@@ -78,6 +80,14 @@ class ProfileInteractor: ProfileInteractorProtocol {
     
     func getUserId() -> Int {
         return userId
+    }
+    
+    func getProfileData() -> ProfileData? {
+        return profileData
+    }
+    
+    func setProfileData(profileData: ProfileData) {
+        self.profileData = profileData
     }
     
     func deleteAuthData() {

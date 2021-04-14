@@ -26,8 +26,10 @@ class ProfileRouter: ProfileRouterProtocol {
         
     }
     
-    func openEditProfile(with userId: Int, _ tokens: SecurityTokens) {
-        
+    func openEditProfile(with userId: Int, _ tokens: SecurityTokens, _ profileData: ProfileData) {
+        let editProfileAssembly: EditProfileAssemblyProtocol = EditProfileAssembly()
+        let editProfileView = editProfileAssembly.createModule(with: userId, tokens, profileData)
+        view.navigationController?.pushViewController(editProfileView, animated: true)
     }
     
     func openCreateTour(with userId: Int, _ tokens: SecurityTokens) {

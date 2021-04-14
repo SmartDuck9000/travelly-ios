@@ -25,7 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let authData = dataStorage.getAuthData() {
             let assembly: ProfileAssemblyProtocol = ProfileAssembly()
             let tokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
-            window?.rootViewController = assembly.createModule(userId: authData.userId, tokens: tokens)
+            
+            let profileView = assembly.createModule(userId: authData.userId, tokens: tokens)
+            let navigationController = UINavigationController(rootViewController: profileView)
+            navigationController.modalPresentationStyle = .fullScreen
+            
+            window?.rootViewController = navigationController
         } else {
             let assembly: AuthAssemblyProtocol = AuthAssembly()
             window?.rootViewController = assembly.createModule()

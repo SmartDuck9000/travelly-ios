@@ -22,8 +22,9 @@ class LoginRouter: LoginRouterProtocol {
     func presentUserProfile(userId: Int, tokens: SecurityTokens) {
         let profileAssembly: ProfileAssemblyProtocol = ProfileAssembly()
         let profileView = profileAssembly.createModule(userId: userId, tokens: tokens)
-        profileView.modalPresentationStyle = .fullScreen
-        view.present(profileView, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: profileView)
+        navigationController.modalPresentationStyle = .fullScreen
+        view.present(navigationController, animated: true, completion: nil)
     }
     
     func showAuthError(message: String) {

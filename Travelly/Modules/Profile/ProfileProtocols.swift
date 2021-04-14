@@ -20,6 +20,10 @@ protocol ProfileInteractorProtocol {
     
     func getTokens() -> SecurityTokens
     func getUserId() -> Int
+    
+    func getProfileData() -> ProfileData?
+    func setProfileData(profileData: ProfileData)
+    
     func deleteAuthData()
 }
 
@@ -32,7 +36,7 @@ protocol ProfileRouterProtocol {
     func openAuth()
     func showError(message: String)
     
-    func openEditProfile(with userId: Int, _ tokens: SecurityTokens)
+    func openEditProfile(with userId: Int, _ tokens: SecurityTokens, _ profileData: ProfileData)
     func openCreateTour(with userId: Int, _ tokens: SecurityTokens)
     func openTours(with userId: Int, _ tokens: SecurityTokens)
     func openHotels(with userId: Int, _ tokens: SecurityTokens)

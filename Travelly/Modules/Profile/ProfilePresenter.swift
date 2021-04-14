@@ -40,6 +40,8 @@ class ProfilePresenter: ProfilePresenterProtocol {
             self.view.set(name: "\(data.firstName) \(data.lastName)")
             let imageSize: CGFloat = self.view.getProfileImageSize()
             self.profileInteractor.loadImage(to: self.view.getProfileImageView(), from: data.photoUrl, with: imageSize / 2, "ImagePlaceholder")
+            
+            self.profileInteractor.setProfileData(profileData: data)
         }
     }
     
@@ -81,7 +83,8 @@ class ProfilePresenter: ProfilePresenterProtocol {
         
         switch index {
         case 0:
-            router.openEditProfile(with: userId, tokens)
+            guard let profileData = profileInteractor.getProfileData() else { return }
+            router.openEditProfile(with: userId, tokens, profileData)
         case 1:
             router.openCreateTour(with: userId, tokens)
         case 2:

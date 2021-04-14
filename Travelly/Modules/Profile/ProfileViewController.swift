@@ -43,6 +43,16 @@ class ProfileViewController: UIViewController {
         presenter?.loadProfile()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
+    }
+    
     func setPresenter(_ presenter: ProfilePresenterProtocol) {
         self.presenter = presenter
     }
@@ -137,6 +147,7 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        optionsTabel.deselectRow(at: indexPath, animated: true)
         presenter?.selectOption(at: indexPath.row)
     }
 }
