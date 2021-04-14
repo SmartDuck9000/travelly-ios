@@ -47,6 +47,18 @@ class SwinjectContainer: DependencyContainerProtocol {
         }
     }
     
+    func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(service: Service.Type, name: String, factory: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service) {
+        container.register(service, name: name) { (_, arg1, arg2, arg3, arg4, arg5, arg6) -> Service in
+            factory(arg1, arg2, arg3, arg4, arg5, arg6)
+        }
+    }
+    
+    func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(service: Service.Type, name: String, factory: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service) {
+        container.register(service, name: name) { (_, arg1, arg2, arg3, arg4, arg5, arg6, arg7) -> Service in
+            factory(arg1, arg2, arg3, arg4, arg5, arg6, arg7)
+        }
+    }
+    
     public func resolve<Service>(service: Service.Type, name: String) -> Service? {
         return container.resolve(service, name: name)
     }
@@ -69,5 +81,13 @@ class SwinjectContainer: DependencyContainerProtocol {
     
     func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5>(service: Service.Type, name: String, arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5) -> Service? {
         return container.resolve(service, name: name, arguments: arg1, arg2, arg3, arg4, arg5)
+    }
+    
+    func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(service: Service.Type, name: String, arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6) -> Service? {
+        return container.resolve(service, name: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6)
+    }
+    
+    func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(service: Service.Type, name: String, arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7) -> Service? {
+        return container.resolve(service, name: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7)
     }
 }

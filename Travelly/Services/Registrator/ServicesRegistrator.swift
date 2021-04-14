@@ -20,5 +20,9 @@ class ServicesRegistrator: DependencyRegistratorProtocol {
         AppDelegate.container.register(service: ImageLoaderProtocol.self, name: "ImageLoaderProtocol") { () in
             return KingfisherImageLoader()
         }
+        
+        AppDelegate.container.register(service: ImageHostingServiceProtocol.self, name: "CloudinaryImageHostingService") { () in
+            return CloudinaryImageHostingService()
+        }
     }
 }

@@ -42,6 +42,8 @@
 		CE6829CF25E8583200D894E4 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829CE25E8583200D894E4 /* LoginData.swift */; };
 		CE6829D225E858E900D894E4 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829D125E858E900D894E4 /* LoginAssembly.swift */; };
 		CE6BC3C02611D3BA00E27653 /* ProfileOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6BC3BF2611D3BA00E27653 /* ProfileOptionTableViewCell.swift */; };
+		CE8C9DA826272BE6003E9563 /* ImageHostingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C9DA726272BE6003E9563 /* ImageHostingServiceProtocol.swift */; };
+		CE8C9DAC26272C71003E9563 /* CloudinaryImageHostingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C9DAB26272C71003E9563 /* CloudinaryImageHostingService.swift */; };
 		CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201825DC636300B508D8 /* AuthViewController.swift */; };
 		CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201B25DC637900B508D8 /* AuthProtocols.swift */; };
 		CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201E25DC638500B508D8 /* AuthPresenter.swift */; };
@@ -103,6 +105,8 @@
 		CE6829CE25E8583200D894E4 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		CE6829D125E858E900D894E4 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		CE6BC3BF2611D3BA00E27653 /* ProfileOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionTableViewCell.swift; sourceTree = "<group>"; };
+		CE8C9DA726272BE6003E9563 /* ImageHostingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHostingServiceProtocol.swift; sourceTree = "<group>"; };
+		CE8C9DAB26272C71003E9563 /* CloudinaryImageHostingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinaryImageHostingService.swift; sourceTree = "<group>"; };
 		CE8F201825DC636300B508D8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CE8F201B25DC637900B508D8 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		CE8F201E25DC638500B508D8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
@@ -241,9 +245,19 @@
 			path = CreateTour;
 			sourceTree = "<group>";
 		};
+		CE8C9DA626272BD2003E9563 /* ImageHosting */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C9DA726272BE6003E9563 /* ImageHostingServiceProtocol.swift */,
+				CE8C9DAB26272C71003E9563 /* CloudinaryImageHostingService.swift */,
+			);
+			path = ImageHosting;
+			sourceTree = "<group>";
+		};
 		CE8F202725DC63E900B508D8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C9DA626272BD2003E9563 /* ImageHosting */,
 				CE39863F2610BEEF00267569 /* ImageLoader */,
 				CE0E1BCD2606CE50004E8589 /* Registrator */,
 				CE0E1BB42606A5E6004E8589 /* DataStorage */,
@@ -496,6 +510,7 @@
 				CE2FEAC62618799700AD5360 /* EditProfileRouter.swift in Sources */,
 				CEA9AADE25E1C70200BBE98C /* TextFields.swift in Sources */,
 				CEA9AAD225E1B83400BBE98C /* RegisterInteractor.swift in Sources */,
+				CE8C9DA826272BE6003E9563 /* ImageHostingServiceProtocol.swift in Sources */,
 				CE46479A2608ED7900359F91 /* ProfileData.swift in Sources */,
 				CE4647A52608F0CC00359F91 /* ProfileInteractor.swift in Sources */,
 				CE39863426109FA100267569 /* Views.swift in Sources */,
@@ -521,6 +536,7 @@
 				CE57F60A2617A85C00706327 /* EditProfileProtocols.swift in Sources */,
 				CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */,
 				CE2FEAC32618795100AD5360 /* EditProfileInteractor.swift in Sources */,
+				CE8C9DAC26272C71003E9563 /* CloudinaryImageHostingService.swift in Sources */,
 				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
 				CEA9AADA25E1C67A00BBE98C /* UITextFieldExtension.swift in Sources */,
 				CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */,
