@@ -14,15 +14,15 @@ class EditProfileAssembly: EditProfileAssemblyProtocol, DependencyRegistratorPro
             return EditProfileRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: EditProfileInteractorProtocol.self, name: "EditProfileInteractor") { (networkService, dataStorage, imageLoader, userId, tokens) -> EditProfileInteractorProtocol in
-            return EditProfileInteractor(networkService: networkService, dataStorage: dataStorage, imageLoader: imageLoader, userId: userId, tokens: tokens)
+        AppDelegate.container.register(service: EditProfileInteractorProtocol.self, name: "EditProfileInteractor") { (networkService, dataStorage, imageLoader, imageHosting, userId, tokens, profileData) -> EditProfileInteractorProtocol in
+            return EditProfileInteractor(networkService: networkService, dataStorage: dataStorage, imageLoader: imageLoader, imageHosting: imageHosting, userId: userId, tokens: tokens, profileData: profileData)
         }
         
         AppDelegate.container.register(service: EditProfilePresenterProtocol.self, name: "EditProfilePresenter") { (vc, router, interactor) -> EditProfilePresenterProtocol in
             return EditProfilePresenter(view: vc, router: router, interactor: interactor)
         }
         
-        AppDelegate.container.register(service: EditProfileViewController.self, name: "EditProfileViewController") { (userId: Int, tokens: SecurityTokens) -> EditProfileViewController in
+        AppDelegate.container.register(service: EditProfileViewController.self, name: "EditProfileViewController") { (userId: Int, tokens: SecurityTokens, profileData: ProfileData) -> EditProfileViewController in
             let vc = EditProfileViewController()
             
             guard let router = AppDelegate.container.resolve(service: EditProfileRouterProtocol.self, name: "EditProfileRouter", argument: vc)
@@ -30,7 +30,7 @@ class EditProfileAssembly: EditProfileAssemblyProtocol, DependencyRegistratorPro
                 return EditProfileViewController()
             }
             
-            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "NetworkProtocol") else {
+            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "AlamofireNetworkProtocol") else {
                 return EditProfileViewController()
             }
             
@@ -42,7 +42,11 @@ class EditProfileAssembly: EditProfileAssemblyProtocol, DependencyRegistratorPro
                 return EditProfileViewController()
             }
             
-            guard let interactor = AppDelegate.container.resolve(service: EditProfileInteractorProtocol.self, name: "EditProfileInteractor", arguments: networkService, dataStorage, imageLoader, userId, tokens)
+            guard let imageHosting = AppDelegate.container.resolve(service: ImageHostingServiceProtocol.self, name: "CloudinaryImageHostingService") else {
+                return EditProfileViewController()
+            }
+            
+            guard let interactor = AppDelegate.container.resolve(service: EditProfileInteractorProtocol.self, name: "EditProfileInteractor", arguments: networkService, dataStorage, imageLoader, imageHosting, userId, tokens, profileData)
             else {
                 return EditProfileViewController()
             }
@@ -58,7 +62,9 @@ class EditProfileAssembly: EditProfileAssemblyProtocol, DependencyRegistratorPro
         }
     }
     
-    func createModule(with userId: Int, _ tokens: SecurityTokens) -> EditProfileViewController {
-        return AppDelegate.container.resolve(service: EditProfileViewController.self, name: "EditProfileViewController") ?? EditProfileViewController()
+    func createModule(with userId: Int, _ tokens: SecurityTokens, _ profileData: ProfileData) -> EditProfileViewController {
+        return AppDelegate.container.resolve(service: EditProfileViewController.self,
+                                             name: "EditProfileViewController",
+                                             arguments: userId, tokens, profileData) ?? EditProfileViewController()
     }
 }

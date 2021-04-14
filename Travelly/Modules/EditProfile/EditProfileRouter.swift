@@ -18,4 +18,8 @@ class EditProfileRouter: EditProfileRouterProtocol {
     func closeEditProfileOption() {
         self.view.navigationController?.popViewController(animated: true)
     }
+    
+    func showError(message: String) {
+        
+    }
 }
