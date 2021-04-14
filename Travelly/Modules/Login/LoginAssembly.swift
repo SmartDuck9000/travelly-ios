@@ -13,8 +13,8 @@ class LoginAssembly: LoginAssemblyProtocol, DependencyRegistratorProtocol {
             return LoginRouter(view: vc)
         }
         
-        AppDelegate.container.register(service: LoginInteractorProtocol.self, name: "LoginInteractor") { (networkService, dataStorageService) -> LoginInteractorProtocol in
-            return LoginInteractor(networkService: networkService, dataStorageService: dataStorageService)
+        AppDelegate.container.register(service: LoginInteractorProtocol.self, name: "LoginInteractor") { (networkService, dataStorage) -> LoginInteractorProtocol in
+            return LoginInteractor(networkService: networkService, dataStorage: dataStorage)
         }
         
         AppDelegate.container.register(service: LoginPresenterProtocol.self, name: "LoginPresenter") { (vc, router, interactor) -> LoginPresenterProtocol in
@@ -29,16 +29,16 @@ class LoginAssembly: LoginAssemblyProtocol, DependencyRegistratorProtocol {
                 return LoginViewController()
             }
             
-            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "NetworkProtocol") else {
+            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "AlamofireNetworkProtocol") else {
                 return LoginViewController()
             }
             
-            guard let dataStorageService = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "DataStorageProtocol") else {
+            guard let dataStorage = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "RealmDataStorage") else {
                 return LoginViewController()
             }
             
             guard let interactor = AppDelegate.container.resolve(service: LoginInteractorProtocol.self, name: "LoginInteractor",
-                                                                 arguments: networkService, dataStorageService)
+                                                                 arguments: networkService, dataStorage)
             else {
                 return LoginViewController()
             }

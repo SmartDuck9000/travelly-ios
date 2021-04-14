@@ -8,6 +8,8 @@
 import UIKit
 
 fileprivate struct LayoutConstants {
+    static let goBackImageSize: CGFloat = 30
+    
     static let leftSpace: CGFloat = 15
     static let rightSpace: CGFloat = -15
     static let bottomSpace: CGFloat = -20
@@ -56,7 +58,7 @@ class LoginViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = AppColorAppearance.appBackgroundColor
+        view.backgroundColor = AppColorAppearance.backgroundColor
         
         setupGoBackButton()
         setupStackView()
@@ -80,10 +82,14 @@ class LoginViewController: UIViewController {
         self.view.addSubview(goBackButton)
         goBackButton.addTarget(self, action: #selector(goBackButtonPressed), for: .touchUpInside)
         
+        let xmarkImage = UIImage(named: "TravellyXmark.png")
+        
         goBackButton.translatesAutoresizingMaskIntoConstraints = false
-        goBackButton.setImage(UIImage(named: "arrow.left"), for: .normal)
-        goBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        goBackButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        goBackButton.setImage(xmarkImage, for: .normal)
+        goBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: LayoutConstants.topSpace).isActive = true
+        goBackButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: LayoutConstants.leftSpace).isActive = true
+        goBackButton.heightAnchor.constraint(equalToConstant: LayoutConstants.goBackImageSize).isActive = true
+        goBackButton.widthAnchor.constraint(equalToConstant: LayoutConstants.goBackImageSize).isActive = true
     }
     
     private func setupIconImageView() {
@@ -160,7 +166,7 @@ class LoginViewController: UIViewController {
         loginButton.backgroundColor = MainButtonAppearance.backgroundColor
         loginButton.layer.cornerRadius = view.safeAreaLayoutGuide.layoutFrame.size.width * MainButtonAppearance.cornerRadiusRatio
         
-        loginButton.isEnabled = false
+        loginButton.isEnabled = true
         loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         
         loginButton.translatesAutoresizingMaskIntoConstraints = false

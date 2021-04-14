@@ -21,8 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         
-        let assembly: AuthAssemblyProtocol = AuthAssembly()
-        window?.rootViewController = assembly.createModule()
+        let dataStorage: DataStorageProtocol = RealmDataStorage()
+        if let authData = dataStorage.getAuthData() {
+            let assembly: ProfileAssemblyProtocol = ProfileAssembly()
+            let tokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
+            
+            let profileView = assembly.createModule(userId: authData.userId, tokens: tokens)
+            let navigationController = UINavigationController(rootViewController: profileView)
+            navigationController.modalPresentationStyle = .fullScreen
+            
+            window?.rootViewController = navigationController
+        } else {
+            let assembly: AuthAssemblyProtocol = AuthAssembly()
+            window?.rootViewController = assembly.createModule()
+        }
+        
         window?.makeKeyAndVisible()
     }
 

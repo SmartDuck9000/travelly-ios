@@ -8,31 +8,65 @@
 import Alamofire
 
 class AlamofireNetworkService: NetworkProtocol {
-    let config = NetworkConfig()
     
-    func get<Parameters: Encodable>(query: String, parameters: Parameters, type: ProtocolType, complition: @escaping (Data?, Error?) -> Void) {
-        let urlQuery = type.rawValue + config.host + ":" + config.port + query
+    func get<Parameters: Encodable>(query: String, tokens: SecurityTokens?, parameters: Parameters, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
+        let urlQuery = type.rawValue + query
         let urlEncoder = URLEncodedFormParameterEncoder.default
+        var headers: HTTPHeaders?
         
-        AF.request(urlQuery, method: .get, parameters: parameters, encoder: urlEncoder).response { (response) in
-            complition(response.data, self.getError(response: response))
+        if let accesToken = tokens?.accessToken {
+            headers = getAuthHeaders(token: accesToken)
+        }
+        
+        AF.request(urlQuery, method: .get, parameters: parameters, encoder: urlEncoder, headers: headers).response { (response) in
+            complition(response.data, self.getError(response: response), response.response?.statusCode)
         }
     }
     
-    func get(query: String, type: ProtocolType, complition: @escaping (Data?, Error?) -> Void) {
-        let urlQuery = type.rawValue + config.host + ":" + config.port + query
-        AF.request(urlQuery, method: .get).response { (response) in
-            complition(response.data, self.getError(response: response))
+    func get(query: String, tokens: SecurityTokens?, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
+        let urlQuery = type.rawValue + query
+        var headers: HTTPHeaders?
+        
+        if let accesToken = tokens?.accessToken {
+            headers = getAuthHeaders(token: accesToken)
+        }
+        
+        AF.request(urlQuery, method: .get, headers: headers).response { (response) in
+            complition(response.data, self.getError(response: response), response.response?.statusCode)
         }
     }
     
     
-    func post<PostedData: Encodable>(query: String, data: PostedData, type: ProtocolType, complition: @escaping (Data?, Error?) -> Void) {
-        let urlQuery = type.rawValue + config.host + ":" + config.port + query
+    func post<PostedData: Encodable>(query: String, tokens: SecurityTokens?, data: PostedData, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
+        let urlQuery = type.rawValue + query
         let jsonEncoder = JSONParameterEncoder.default
+        var headers: HTTPHeaders?
         
-        AF.request(urlQuery, method: .post, parameters: data, encoder: jsonEncoder).response { (response) in
-            complition(response.data, self.getError(response: response))
+        if let accesToken = tokens?.accessToken {
+            headers = getAuthHeaders(token: accesToken)
+        }
+        
+        AF.request(urlQuery, method: .post, parameters: data, encoder: jsonEncoder, headers: headers).response { (response) in
+            complition(response.data, self.getError(response: response), response.response?.statusCode)
+        }
+    }
+    
+    func put<PutData: Encodable>(query: String, tokens: SecurityTokens, data: PutData, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
+        let urlQuery = type.rawValue + query
+        let jsonEncoder = JSONParameterEncoder.default
+        let headers = getAuthHeaders(token: tokens.accessToken)
+        
+        AF.request(urlQuery, method: .put, parameters: data, encoder: jsonEncoder, headers: headers).response { (response) in
+            complition(response.data, self.getError(response: response), response.response?.statusCode)
+        }
+    }
+    
+    func refreshToken(query: String, tokens: SecurityTokens, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
+        let urlQuery = type.rawValue + query
+        let headers = getAuthHeaders(token: tokens.refreshToken)
+        
+        AF.request(urlQuery, method: .get, headers: headers).response { (response) in
+            complition(response.data, self.getError(response: response), response.response?.statusCode)
         }
     }
     
@@ -43,5 +77,13 @@ class AlamofireNetworkService: NetworkProtocol {
         }
         
         return nil
+    }
+    
+    private func getAuthHeaders(token: String) -> HTTPHeaders {
+        let headers: HTTPHeaders = [
+            .authorization("Bearer \(token)"),
+            .accept("application/json")
+        ]
+        return headers
     }
 }

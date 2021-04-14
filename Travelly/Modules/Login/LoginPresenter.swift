@@ -10,8 +10,8 @@ import UIKit
 class LoginPresenter: LoginPresenterProtocol {
     
     private weak var view: LoginViewController!
-    private var router: LoginRouterProtocol!
-    private var interactor: LoginInteractorProtocol!
+    private var router: LoginRouterProtocol
+    private var interactor: LoginInteractorProtocol
     
     required init(view: LoginViewController, router: LoginRouterProtocol, interactor: LoginInteractorProtocol) {
         self.view = view
@@ -23,8 +23,8 @@ class LoginPresenter: LoginPresenterProtocol {
         router.goToPreviousWindow()
     }
     
-    func openProfile() {
-        router.presentUserProfile()
+    func openProfile(userId: Int, tokens: SecurityTokens) {
+        router.presentUserProfile(userId: userId, tokens: tokens)
     }
     
     func login() {

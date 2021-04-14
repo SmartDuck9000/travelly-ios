@@ -16,7 +16,8 @@ class AuthRouter: AuthRouterProtocol {
     }
     
     func presentLoginWindow() {
-        let loginView = LoginViewController()
+        let loginAssembly: LoginAssemblyProtocol = LoginAssembly()
+        let loginView = loginAssembly.createModule()
         loginView.modalPresentationStyle = .fullScreen
         
         self.view.present(loginView, animated: true, completion: nil)

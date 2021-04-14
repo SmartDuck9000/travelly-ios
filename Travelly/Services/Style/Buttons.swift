@@ -20,9 +20,3 @@ struct SpecialButtonAppearance {
     static let cornerRadiusRatio: CGFloat = 0.02
     static let font = UIFont(name: "Verdana", size: 20)
 }
-
-struct AppColorAppearance {
-    static let appBackgroundColor = UIColor.white
-    static let appColor = UIColor.systemOrange
-    static let appTextColor = UIColor.white
-}

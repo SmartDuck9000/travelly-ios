@@ -11,14 +11,14 @@ protocol RegisterAssemblyProtocol: AnyObject {
 
 protocol RegisterPresenterProtocol: AnyObject {
     func goBack()
-    func openProfile()
+    func openProfile(userId: Int, tokens: SecurityTokens)
     func register()
     func showAuthError(message: String)
 }
 
 protocol RegisterRouterProtocol: AnyObject {
     func goToPreviousWindow()
-    func presentUserProfile()
+    func presentUserProfile(userId: Int, tokens: SecurityTokens)
     func showAuthError(message: String)
 }
 

@@ -8,6 +8,8 @@
 
 
 protocol DataStorageProtocol {
-    func save<DataModel: Entity>(dataModel: DataModel)
-    func getFirst<DataModel: Entity>(type: DataModel.Type) -> DataModel?
+    func save(authData: AuthData)
+    func getAuthData() -> AuthData?
+    func update(authData: AuthData)
+    func deleteAuthData()
 }

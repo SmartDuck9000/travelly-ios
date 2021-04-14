@@ -6,4 +6,6 @@ target 'Travelly' do
     pod 'Swinject'
     pod 'Alamofire', '~> 5.2'
     pod 'RealmSwift'
+    pod 'Kingfisher', '~> 6.0'
+    pod 'Cloudinary', '~> 2.0'
 end

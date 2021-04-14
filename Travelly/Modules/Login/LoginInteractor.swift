@@ -11,16 +11,16 @@ class LoginInteractor: LoginInteractorProtocol {
     
     private weak var presenter: LoginPresenterProtocol?
     private let networkService: NetworkProtocol
-    private let dataStorageService: DataStorageProtocol
+    private let dataStorage: DataStorageProtocol
     
-    init(networkService: NetworkProtocol, dataStorageService: DataStorageProtocol) {
+    init(networkService: NetworkProtocol, dataStorage: DataStorageProtocol) {
         self.networkService = networkService
-        self.dataStorageService = dataStorageService
+        self.dataStorage = dataStorage
     }
     
     func loginUser(email: String, password: String) {
         let loginData = LoginData(email: email, password: password)
-        networkService.post(query: "/api/auth/login", data: loginData, type: .http) { (data, error) in
+        networkService.post(query: "0.0.0.0:5002/api/auth/login", tokens: nil, data: loginData, type: .http) { (data, error, statusCode) in
             guard let data = data else {
                 self.presenter?.showAuthError(message: "")
                 return
@@ -33,8 +33,10 @@ class LoginInteractor: LoginInteractorProtocol {
                     self.presenter?.showAuthError(message: "")
                     return
                 }
-                self.dataStorageService.save(dataModel: authData)
-                self.presenter?.openProfile()
+                
+                let tokens: SecurityTokens = SecurityTokens(accessToken: authData.accessToken, refreshToken: authData.refreshToken)
+                self.dataStorage.save(authData: authData)
+                self.presenter?.openProfile(userId: authData.userId, tokens: tokens)
             }
         }
     }

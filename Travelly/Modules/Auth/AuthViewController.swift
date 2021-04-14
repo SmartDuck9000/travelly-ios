@@ -50,7 +50,7 @@ class AuthViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = AppColorAppearance.appBackgroundColor
+        view.backgroundColor = AppColorAppearance.backgroundColor
         
         setupAuthIconImageView()
         setupLoginButton()
