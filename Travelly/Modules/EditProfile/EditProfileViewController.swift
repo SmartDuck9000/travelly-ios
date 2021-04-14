@@ -51,8 +51,6 @@ class EditProfileViewController: UIViewController {
     private let emailField = UITextField()
     private let oldPasswordField = UITextField()
     private let newPasswordField = UITextField()
-    
-    private let saveButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +68,11 @@ class EditProfileViewController: UIViewController {
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    @objc
+    private func goBack() {
+        presenter?.goBack()
     }
     
     func showError(message: String) {
@@ -127,11 +130,28 @@ class EditProfileViewController: UIViewController {
     private func setupView() {
         self.view.backgroundColor = AppColorAppearance.backgroundColor
         
-        setupSaveButton()
+        setupNavigationBar()
         setupContainerView()
         setupFieldStackView()
         
         presenter?.setupProfileData()
+    }
+    
+    private func setupNavigationBar() {
+        self.navigationController?.navigationBar.barTintColor = NavigationBarAppearance.backgroundColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+        let backArrowImage = UIImage(named: "BackArrow")
+        let backButton = UIButton()
+        backButton.setTitle("Профиль", for: .normal)
+        backButton.setImage(backArrowImage, for: .normal)
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        
+        let saveButton = UIButton()
+        saveButton.setTitle("Сохранить", for: .normal)
+        saveButton.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: saveButton)
     }
     
     private func setupContainerView() {
@@ -249,27 +269,6 @@ class EditProfileViewController: UIViewController {
         field.heightAnchor.constraint(equalToConstant: AuthTextFieldAppearance.height).isActive = true
         field.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
         field.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
-    }
-    
-    
-    private func setupSaveButton() {
-        self.view.addSubview(saveButton)
-        
-        saveButton.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
-        saveButton.setTitle(LayoutConstants.saveButtonTitle, for: .normal)
-        saveButton.setTitleColor(MainButtonAppearance.textColor, for: .normal)
-        saveButton.titleLabel?.font = MainButtonAppearance.font
-        
-        saveButton.backgroundColor = MainButtonAppearance.backgroundColor
-        saveButton.layer.cornerRadius = view.safeAreaLayoutGuide.layoutFrame.size.width * MainButtonAppearance.cornerRadiusRatio
-        
-        let safeArea = self.view.safeAreaLayoutGuide
-        saveButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        saveButton.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: LayoutConstants.saveButtonLeftSpace).isActive = true
-        saveButton.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: LayoutConstants.saveButtonRightSpace).isActive = true
-        saveButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
-        saveButton.heightAnchor.constraint(equalToConstant: LayoutConstants.saveButtonHeight).isActive = true
     }
 }
 

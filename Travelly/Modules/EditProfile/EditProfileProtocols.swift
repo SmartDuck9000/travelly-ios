@@ -13,6 +13,7 @@ protocol EditProfileAssemblyProtocol {
 
 protocol EditProfilePresenterProtocol {
     func setupProfileData()
+    func goBack()
     func saveChanges()
 }
 
@@ -22,7 +23,7 @@ protocol EditProfileInteractorProtocol {
     
     func getFirstName() -> String
     func getLastName() -> String
-    func getUrl(for image: UIImage) -> String
+    func getUrl(for image: UIImage, complition: @escaping (String?) -> Void)
     func loadImage(to imageView: UIImageView, with cornerRadius: CGFloat, _ placeholder: String?)
 }
 

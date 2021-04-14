@@ -8,5 +8,5 @@
 import UIKit
 
 protocol ImageHostingServiceProtocol {
-    func getUrl(for image: UIImage) -> String
+    func getUrl(for image: UIImage, complition: @escaping (String?) -> Void)
 }

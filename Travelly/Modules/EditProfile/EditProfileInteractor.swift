@@ -49,8 +49,10 @@ class EditProfileInteractor: EditProfileInteractorProtocol {
         return profileData.lastName
     }
     
-    func getUrl(for image: UIImage) -> String {
-        return imageHosting.getUrl(for: image)
+    func getUrl(for image: UIImage, complition: @escaping (String?) -> Void) {
+        imageHosting.getUrl(for: image) { (urlString) in
+            complition(urlString)
+        }
     }
     
     func loadImage(to imageView: UIImageView, with cornerRadius: CGFloat, _ placeholder: String?) {

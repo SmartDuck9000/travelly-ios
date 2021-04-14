@@ -31,6 +31,10 @@ class EditProfilePresenter: EditProfilePresenterProtocol {
         interactor.loadImage(to: imageView, with: cornerRadius, "ImagePlaceholder")
     }
     
+    func goBack() {
+        router.closeEditProfileOption()
+    }
+    
     func saveChanges() {
         guard let firstName = view.getFirstName(), firstName != "" else {
             router.showError(message: "Введите имя")
@@ -54,19 +58,21 @@ class EditProfilePresenter: EditProfilePresenterProtocol {
         
         let newPassword = view.getNewPassword() ?? ""
         
-        var photoUrl = ""
-        if view.isImageChanged(), let newImage = view.getPhotoImageView().image {
-            photoUrl = interactor.getUrl(for: newImage)
-        }
-        
-        let newProfileData = EditProfileData(id: interactor.getUserId(),
+        var newProfileData = EditProfileData(id: interactor.getUserId(),
                                              email: email,
                                              oldPassword: oldPassword,
                                              newPassword: newPassword,
                                              firstName: firstName,
                                              lastName: lastName,
-                                             photoUrl: photoUrl)
+                                             photoUrl: "")
         
-        interactor.updateProfileData(newProfileData)
+        if view.isImageChanged(), let newImage = view.getPhotoImageView().image {
+            interactor.getUrl(for: newImage) { (urlString) in
+                newProfileData.photoUrl = urlString ?? ""
+                self.interactor.updateProfileData(newProfileData)
+            }
+        } else {
+            interactor.updateProfileData(newProfileData)
+        }
     }
 }

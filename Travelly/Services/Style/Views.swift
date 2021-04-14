@@ -20,6 +20,12 @@ struct HeaderAppearance {
     static let font = UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize)
 }
 
+struct NavigationBarAppearance {
+    static let backgroundColor = UIColor.systemOrange
+    static let textColor = UIColor.white
+    static let font = UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize)
+}
+
 struct TableViewAppearance {
     static let backgroungColor = UIColor.systemBackground
     static let textColor = UIColor.label
