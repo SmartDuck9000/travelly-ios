@@ -9,7 +9,7 @@ import UIKit
 
 class EditProfileRouter: EditProfileRouterProtocol {
     
-    private var view: EditProfileViewController
+    private weak var view: EditProfileViewController!
     
     init(view: EditProfileViewController) {
         self.view = view

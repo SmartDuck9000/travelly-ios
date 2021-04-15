@@ -8,11 +8,17 @@
 import UIKit
 
 class HotelFeedViewController: UIViewController {
+    
+    private var presenter: HotelFeedPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func set(presenter: HotelFeedPresenterProtocol) {
+        self.presenter = presenter
     }
     
 

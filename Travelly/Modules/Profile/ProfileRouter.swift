@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileRouter: ProfileRouterProtocol {
     
-    private var view: ProfileViewController
+    private weak var view: ProfileViewController!
     
     init(view: ProfileViewController) {
         self.view = view
