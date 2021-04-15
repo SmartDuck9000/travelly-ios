@@ -56,6 +56,7 @@
 		CE94DAA02627AB590029D768 /* HotelFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DA9F2627AB590029D768 /* HotelFeedInteractor.swift */; };
 		CE94DAA32627AB680029D768 /* HotelFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DAA22627AB680029D768 /* HotelFeedRouter.swift */; };
 		CE94DAA62627AB810029D768 /* HotelFeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DAA52627AB810029D768 /* HotelFeedAssembly.swift */; };
+		CE94DAA92627C0BC0029D768 /* HotelFeedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DAA82627C0BC0029D768 /* HotelFeedFilterViewController.swift */; };
 		CE95B41725E07240008DA51C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95B41625E07240008DA51C /* LoginViewController.swift */; };
 		CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */; };
 		CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */; };
@@ -125,6 +126,7 @@
 		CE94DA9F2627AB590029D768 /* HotelFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelFeedInteractor.swift; sourceTree = "<group>"; };
 		CE94DAA22627AB680029D768 /* HotelFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelFeedRouter.swift; sourceTree = "<group>"; };
 		CE94DAA52627AB810029D768 /* HotelFeedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelFeedAssembly.swift; sourceTree = "<group>"; };
+		CE94DAA82627C0BC0029D768 /* HotelFeedFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelFeedFilterViewController.swift; sourceTree = "<group>"; };
 		CE95B41625E07240008DA51C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEA6618B25D9BC7700998F66 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CEA6618F25D9BC9900998F66 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				CE94DA952627A9EA0029D768 /* HotelFeedProtocols.swift */,
 				CE94DA992627AACD0029D768 /* HotelFeedViewController.swift */,
+				CE94DAA82627C0BC0029D768 /* HotelFeedFilterViewController.swift */,
 				CE94DA9C2627AB4A0029D768 /* HotelFeedPresenter.swift */,
 				CE94DA9F2627AB590029D768 /* HotelFeedInteractor.swift */,
 				CE94DAA22627AB680029D768 /* HotelFeedRouter.swift */,
@@ -540,6 +543,7 @@
 				CE483F4D25E70F0100806B44 /* AlamofireNetworkService.swift in Sources */,
 				CE2FEABA2618770D00AD5360 /* EditProfileData.swift in Sources */,
 				CE8F202A25DC672A00B508D8 /* Buttons.swift in Sources */,
+				CE94DAA92627C0BC0029D768 /* HotelFeedFilterViewController.swift in Sources */,
 				CE4647A82608F0F900359F91 /* ProfileRouter.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
 				CE2FEAC62618799700AD5360 /* EditProfileRouter.swift in Sources */,
