@@ -34,7 +34,7 @@ class EditProfileInteractor: EditProfileInteractorProtocol {
     func updateProfileData(_ newProfileData: EditProfileData, complition: @escaping (Error?, Bool, Bool) -> Void) {
         networkService.put(query: "0.0.0.0:5001/api/users", tokens: tokens, data: newProfileData, type: .http) { (data, error, statusCode) in
             if statusCode == 401 {
-                self.networkService.refreshToken(query: "api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
+                self.networkService.refreshToken(query: "0.0.0.0:5002/api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
                     guard let data = data else {
                         self.dataStorage.deleteAuthData()
                         complition(error, false, true)

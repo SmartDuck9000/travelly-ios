@@ -41,7 +41,9 @@ class ProfileRouter: ProfileRouterProtocol {
     }
     
     func openHotels(with userId: Int, _ tokens: SecurityTokens) {
-        
+        let hotelFeedAssembly: HotelFeedAssemblyProtocol = HotelFeedAssembly()
+        let hotelFeedView = hotelFeedAssembly.createModule(with: userId, tokens)
+        view.navigationController?.pushViewController(hotelFeedView, animated: true)
     }
     
     func openRestaurants(with userId: Int, _ tokens: SecurityTokens) {

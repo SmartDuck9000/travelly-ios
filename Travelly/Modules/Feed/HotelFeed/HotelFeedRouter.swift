@@ -19,7 +19,15 @@ class HotelFeedRouter: HotelFeedRouterProtocol {
     }
     
     func openFullInfo(with id: Int, _ tokens: SecurityTokens) {
-        
+        let hotelInfoAssembly: HotelInfoAssemblyProtocol = HotelInfoAssembly()
+        let hotelInfoView = hotelInfoAssembly.createModule(with: id, tokens)
+        view.navigationController?.pushViewController(hotelInfoView, animated: true)
+    }
+    
+    func openFilter(with presenter: HotelFilterPresenterProtocol) {
+        let filterAssembly: HotelFilterAssemblyProtocol = HotelFilterAssembly()
+        let filterView = filterAssembly.createModule(with: presenter)
+        view.navigationController?.pushViewController(filterView, animated: true)
     }
     
     func openAuth() {

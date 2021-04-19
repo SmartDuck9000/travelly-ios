@@ -20,3 +20,8 @@ struct AuthTextFieldAppearance {
     static let font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
 }
 
+struct TextFieldAppearance {
+    static let leftPadding: CGFloat = 5
+    static let rightPadding: CGFloat = 5
+    static let backgroungColor = UIColor(red: 240.0 / 256, green: 240.0 / 256, blue: 240.0 / 256, alpha: 1.0)
+}

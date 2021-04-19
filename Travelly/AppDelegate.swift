@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registrators.append(EditProfileAssembly())
         
         registrators.append(HotelFeedAssembly())
+        registrators.append(HotelFilterAssembly())
+        registrators.append(HotelInfoAssembly())
         
         for registrator in registrators {
             registrator.registerDependencies()

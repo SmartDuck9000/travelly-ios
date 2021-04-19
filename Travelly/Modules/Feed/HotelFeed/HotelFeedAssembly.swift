@@ -22,7 +22,7 @@ class HotelFeedAssembly: HotelFeedAssemblyProtocol, DependencyRegistratorProtoco
             return HotelFeedPresenter(view: vc, router: router, interactor: interactor)
         }
         
-        AppDelegate.container.register(service: HotelFeedViewController.self, name: "HotelFeedViewController") { (userId: Int, tokens: SecurityTokens, profileData: ProfileData) -> HotelFeedViewController in
+        AppDelegate.container.register(service: HotelFeedViewController.self, name: "HotelFeedViewController") { (userId: Int, tokens: SecurityTokens) -> HotelFeedViewController in
             let vc = HotelFeedViewController()
             
             guard let router = AppDelegate.container.resolve(service: HotelFeedRouterProtocol.self, name: "HotelFeedRouter", argument: vc)
@@ -38,7 +38,7 @@ class HotelFeedAssembly: HotelFeedAssemblyProtocol, DependencyRegistratorProtoco
                 return HotelFeedViewController()
             }
             
-            guard let interactor = AppDelegate.container.resolve(service: HotelFeedInteractorProtocol.self, name: "HotelFeedInteractor", arguments: networkService, dataStorage, userId, tokens, profileData)
+            guard let interactor = AppDelegate.container.resolve(service: HotelFeedInteractorProtocol.self, name: "HotelFeedInteractor", arguments: networkService, dataStorage, userId, tokens)
             else {
                 return HotelFeedViewController()
             }
