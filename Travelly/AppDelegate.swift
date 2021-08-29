@@ -29,12 +29,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registrators.append(RegisterAssembly())
         registrators.append(LoginAssembly())
         
+        registrators.append(ToursAssembly())
+        registrators.append(CityToursAssembly())
+        registrators.append(CityTourInfoAssembly())
         registrators.append(ProfileAssembly())
         registrators.append(EditProfileAssembly())
         
         registrators.append(HotelFeedAssembly())
         registrators.append(HotelFilterAssembly())
         registrators.append(HotelInfoAssembly())
+        
+        registrators.append(RestaurantsFeedAssembly())
+        registrators.append(RestaurantsFilterAssembly())
+        registrators.append(RestaurantInfoAssembly())
+        
+        registrators.append(TicketsFeedAssembly())
+        registrators.append(TicketsFilterAssembly())
+        registrators.append(TicketInfoAssembly())
+        
+        registrators.append(EventsFeedAssembly())
+        registrators.append(EventsFilterAssembly())
+        registrators.append(EventInfoAssembly())
         
         for registrator in registrators {
             registrator.registerDependencies()

@@ -12,6 +12,27 @@
 		CE0E1BBA2606B6B8004E8589 /* RealmDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BB92606B6B8004E8589 /* RealmDataStorage.swift */; };
 		CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */; };
 		CE0E1BD72606D78C004E8589 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E1BD62606D78C004E8589 /* AuthData.swift */; };
+		CE11F92C26B5838B001D722E /* RestaurantInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91526B5838B001D722E /* RestaurantInfoViewController.swift */; };
+		CE11F92D26B5838B001D722E /* RestaurantInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91626B5838B001D722E /* RestaurantInfoInteractor.swift */; };
+		CE11F92E26B5838B001D722E /* RestaurantInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91726B5838B001D722E /* RestaurantInfoAssembly.swift */; };
+		CE11F92F26B5838B001D722E /* RestaurantInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91826B5838B001D722E /* RestaurantInfoRouter.swift */; };
+		CE11F93026B5838B001D722E /* RestaurantInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91926B5838B001D722E /* RestaurantInfoData.swift */; };
+		CE11F93126B5838B001D722E /* RestaurantInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91A26B5838B001D722E /* RestaurantInfoPresenter.swift */; };
+		CE11F93226B5838B001D722E /* RestaurantInfoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91B26B5838B001D722E /* RestaurantInfoProtocols.swift */; };
+		CE11F93326B5838B001D722E /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91D26B5838B001D722E /* EventInfoViewController.swift */; };
+		CE11F93426B5838B001D722E /* EventInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91E26B5838B001D722E /* EventInfoInteractor.swift */; };
+		CE11F93526B5838B001D722E /* EventInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F91F26B5838B001D722E /* EventInfoAssembly.swift */; };
+		CE11F93626B5838B001D722E /* EventInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92026B5838B001D722E /* EventInfoRouter.swift */; };
+		CE11F93726B5838B001D722E /* EventInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92126B5838B001D722E /* EventInfoData.swift */; };
+		CE11F93826B5838B001D722E /* EventInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92226B5838B001D722E /* EventInfoPresenter.swift */; };
+		CE11F93926B5838B001D722E /* EventInfoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92326B5838B001D722E /* EventInfoProtocols.swift */; };
+		CE11F93A26B5838B001D722E /* TicketInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92526B5838B001D722E /* TicketInfoViewController.swift */; };
+		CE11F93B26B5838B001D722E /* TicketInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92626B5838B001D722E /* TicketInfoInteractor.swift */; };
+		CE11F93C26B5838B001D722E /* TicketInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92726B5838B001D722E /* TicketInfoAssembly.swift */; };
+		CE11F93D26B5838B001D722E /* TicketInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92826B5838B001D722E /* TicketInfoRouter.swift */; };
+		CE11F93E26B5838B001D722E /* TicketInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92926B5838B001D722E /* TicketInfoData.swift */; };
+		CE11F93F26B5838B001D722E /* TicketInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92A26B5838B001D722E /* TicketInfoPresenter.swift */; };
+		CE11F94026B5838B001D722E /* TicketInfoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11F92B26B5838B001D722E /* TicketInfoProtocols.swift */; };
 		CE28642B26281F960082FFCD /* HotelFilterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28642A26281F960082FFCD /* HotelFilterProtocols.swift */; };
 		CE298D98262C643B00E5DBDC /* HotelInfoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE298D97262C643B00E5DBDC /* HotelInfoProtocols.swift */; };
 		CE298D9C262C648700E5DBDC /* HotelInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE298D9B262C648700E5DBDC /* HotelInfoPresenter.swift */; };
@@ -30,6 +51,26 @@
 		CE39863426109FA100267569 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39863326109FA100267569 /* Views.swift */; };
 		CE3986412610BEFA00267569 /* ImageLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3986402610BEFA00267569 /* ImageLoaderProtocol.swift */; };
 		CE3986452610C02400267569 /* KingfisherImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3986442610C02400267569 /* KingfisherImageLoader.swift */; };
+		CE43EF3826D9A48A0053EDA3 /* ToursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF3726D9A48A0053EDA3 /* ToursViewController.swift */; };
+		CE43EF3C26D9A4D20053EDA3 /* ToursPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF3B26D9A4D20053EDA3 /* ToursPresenter.swift */; };
+		CE43EF3F26D9A4DF0053EDA3 /* ToursModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF3E26D9A4DF0053EDA3 /* ToursModel.swift */; };
+		CE43EF4226D9A5580053EDA3 /* ToursAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF4126D9A5580053EDA3 /* ToursAssembly.swift */; };
+		CE43EF4526D9A5EC0053EDA3 /* CityToursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF4426D9A5EC0053EDA3 /* CityToursViewController.swift */; };
+		CE43EF4826D9A6000053EDA3 /* CityToursPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF4726D9A6000053EDA3 /* CityToursPresenter.swift */; };
+		CE43EF4B26D9A60A0053EDA3 /* CityToursModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF4A26D9A60A0053EDA3 /* CityToursModel.swift */; };
+		CE43EF4E26D9A6150053EDA3 /* CityToursAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF4D26D9A6150053EDA3 /* CityToursAssembly.swift */; };
+		CE43EF5526DA5D3E0053EDA3 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF5426DA5D3D0053EDA3 /* TourTableViewCell.swift */; };
+		CE43EF5926DA5D720053EDA3 /* CreateTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF5826DA5D720053EDA3 /* CreateTourViewController.swift */; };
+		CE43EF5C26DAAF9C0053EDA3 /* CreateCityTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF5B26DAAF9C0053EDA3 /* CreateCityTourViewController.swift */; };
+		CE43EF5F26DAAFBA0053EDA3 /* CityTourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF5E26DAAFBA0053EDA3 /* CityTourTableViewCell.swift */; };
+		CE43EF6C26DBCD450053EDA3 /* CityTourInfoOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6326DBCD440053EDA3 /* CityTourInfoOptionTableViewCell.swift */; };
+		CE43EF6D26DBCD450053EDA3 /* CityTourInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6426DBCD440053EDA3 /* CityTourInfoPresenter.swift */; };
+		CE43EF6E26DBCD450053EDA3 /* CityTourInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6526DBCD440053EDA3 /* CityTourInfoData.swift */; };
+		CE43EF7026DBCD450053EDA3 /* CityTourInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6726DBCD440053EDA3 /* CityTourInfoAssembly.swift */; };
+		CE43EF7126DBCD450053EDA3 /* CityTourInfoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6826DBCD440053EDA3 /* CityTourInfoProtocols.swift */; };
+		CE43EF7226DBCD450053EDA3 /* CityTourInfoOptionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6926DBCD440053EDA3 /* CityTourInfoOptionsInteractor.swift */; };
+		CE43EF7326DBCD450053EDA3 /* CityTourInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6A26DBCD440053EDA3 /* CityTourInfoRouter.swift */; };
+		CE43EF7426DBCD450053EDA3 /* CityTourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6B26DBCD440053EDA3 /* CityTourInfoViewController.swift */; };
 		CE4647962608ECA700359F91 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647952608ECA700359F91 /* ProfileProtocols.swift */; };
 		CE46479A2608ED7900359F91 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647992608ED7900359F91 /* ProfileData.swift */; };
 		CE46479E2608EF3D00359F91 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46479D2608EF3D00359F91 /* ProfileViewController.swift */; };
@@ -51,6 +92,39 @@
 		CE6829CF25E8583200D894E4 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829CE25E8583200D894E4 /* LoginData.swift */; };
 		CE6829D225E858E900D894E4 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6829D125E858E900D894E4 /* LoginAssembly.swift */; };
 		CE6BC3C02611D3BA00E27653 /* ProfileOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6BC3BF2611D3BA00E27653 /* ProfileOptionTableViewCell.swift */; };
+		CE88E2F82698C9EB003162A0 /* TicketsFeedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2ED2698C9EB003162A0 /* TicketsFeedFilterViewController.swift */; };
+		CE88E2F92698C9EB003162A0 /* TicketsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2EE2698C9EB003162A0 /* TicketsFeedViewController.swift */; };
+		CE88E2FA2698C9EB003162A0 /* TicketsFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2EF2698C9EB003162A0 /* TicketsFeedPresenter.swift */; };
+		CE88E2FB2698C9EB003162A0 /* TicketsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2F02698C9EB003162A0 /* TicketsTableViewCell.swift */; };
+		CE88E2FC2698C9EB003162A0 /* TicketsFeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2F12698C9EB003162A0 /* TicketsFeedProtocols.swift */; };
+		CE88E2FD2698C9EB003162A0 /* TicketsFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2F22698C9EB003162A0 /* TicketsFeedInteractor.swift */; };
+		CE88E2FE2698C9EB003162A0 /* TicketsFeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2F32698C9EB003162A0 /* TicketsFeedData.swift */; };
+		CE88E2FF2698C9EB003162A0 /* TicketsFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2F42698C9EB003162A0 /* TicketsFeedRouter.swift */; };
+		CE88E3002698C9EB003162A0 /* TicketsFilterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2F52698C9EB003162A0 /* TicketsFilterAssembly.swift */; };
+		CE88E3012698C9EB003162A0 /* TicketsFeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2F62698C9EB003162A0 /* TicketsFeedAssembly.swift */; };
+		CE88E3022698C9EB003162A0 /* TicketsFilterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E2F72698C9EB003162A0 /* TicketsFilterProtocols.swift */; };
+		CE88E30F2698C9F8003162A0 /* EventsFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3042698C9F8003162A0 /* EventsFeedInteractor.swift */; };
+		CE88E3102698C9F8003162A0 /* EventsFeedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3052698C9F8003162A0 /* EventsFeedFilterViewController.swift */; };
+		CE88E3112698C9F8003162A0 /* EventsFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3062698C9F8003162A0 /* EventsFeedRouter.swift */; };
+		CE88E3122698C9F8003162A0 /* EventsFeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3072698C9F8003162A0 /* EventsFeedProtocols.swift */; };
+		CE88E3132698C9F8003162A0 /* EventsFeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3082698C9F8003162A0 /* EventsFeedAssembly.swift */; };
+		CE88E3142698C9F8003162A0 /* EventsFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3092698C9F8003162A0 /* EventsFeedPresenter.swift */; };
+		CE88E3152698C9F8003162A0 /* EventsFeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E30A2698C9F8003162A0 /* EventsFeedData.swift */; };
+		CE88E3162698C9F8003162A0 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E30B2698C9F8003162A0 /* EventsTableViewCell.swift */; };
+		CE88E3172698C9F8003162A0 /* EventsFilterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E30C2698C9F8003162A0 /* EventsFilterAssembly.swift */; };
+		CE88E3182698C9F8003162A0 /* EventsFilterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E30D2698C9F8003162A0 /* EventsFilterProtocols.swift */; };
+		CE88E3192698C9F8003162A0 /* EventsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E30E2698C9F8003162A0 /* EventsFeedViewController.swift */; };
+		CE88E3262698CA03003162A0 /* RestaurantsFeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E31B2698CA03003162A0 /* RestaurantsFeedData.swift */; };
+		CE88E3272698CA03003162A0 /* RestaurantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E31C2698CA03003162A0 /* RestaurantsTableViewCell.swift */; };
+		CE88E3282698CA03003162A0 /* RestaurantsFilterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E31D2698CA03003162A0 /* RestaurantsFilterProtocols.swift */; };
+		CE88E3292698CA03003162A0 /* RestaurantsFeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E31E2698CA03003162A0 /* RestaurantsFeedAssembly.swift */; };
+		CE88E32A2698CA03003162A0 /* RestaurantsFeedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E31F2698CA03003162A0 /* RestaurantsFeedFilterViewController.swift */; };
+		CE88E32B2698CA03003162A0 /* RestaurantsFilterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3202698CA03003162A0 /* RestaurantsFilterAssembly.swift */; };
+		CE88E32C2698CA03003162A0 /* RestaurantsFeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3212698CA03003162A0 /* RestaurantsFeedProtocols.swift */; };
+		CE88E32D2698CA03003162A0 /* RestaurantsFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3222698CA03003162A0 /* RestaurantsFeedInteractor.swift */; };
+		CE88E32E2698CA03003162A0 /* RestaurantsFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3232698CA03003162A0 /* RestaurantsFeedPresenter.swift */; };
+		CE88E32F2698CA03003162A0 /* RestaurantsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3242698CA03003162A0 /* RestaurantsFeedViewController.swift */; };
+		CE88E3302698CA03003162A0 /* RestaurantsFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88E3252698CA03003162A0 /* RestaurantsFeedRouter.swift */; };
 		CE8C9DA826272BE6003E9563 /* ImageHostingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C9DA726272BE6003E9563 /* ImageHostingServiceProtocol.swift */; };
 		CE8C9DAC26272C71003E9563 /* CloudinaryImageHostingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C9DAB26272C71003E9563 /* CloudinaryImageHostingService.swift */; };
 		CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F201825DC636300B508D8 /* AuthViewController.swift */; };
@@ -93,6 +167,27 @@
 		CE0E1BB92606B6B8004E8589 /* RealmDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStorage.swift; sourceTree = "<group>"; };
 		CE0E1BCE2606CE7D004E8589 /* ServicesRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesRegistrator.swift; sourceTree = "<group>"; };
 		CE0E1BD62606D78C004E8589 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
+		CE11F91526B5838B001D722E /* RestaurantInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoViewController.swift; sourceTree = "<group>"; };
+		CE11F91626B5838B001D722E /* RestaurantInfoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoInteractor.swift; sourceTree = "<group>"; };
+		CE11F91726B5838B001D722E /* RestaurantInfoAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoAssembly.swift; sourceTree = "<group>"; };
+		CE11F91826B5838B001D722E /* RestaurantInfoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoRouter.swift; sourceTree = "<group>"; };
+		CE11F91926B5838B001D722E /* RestaurantInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoData.swift; sourceTree = "<group>"; };
+		CE11F91A26B5838B001D722E /* RestaurantInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoPresenter.swift; sourceTree = "<group>"; };
+		CE11F91B26B5838B001D722E /* RestaurantInfoProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoProtocols.swift; sourceTree = "<group>"; };
+		CE11F91D26B5838B001D722E /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
+		CE11F91E26B5838B001D722E /* EventInfoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoInteractor.swift; sourceTree = "<group>"; };
+		CE11F91F26B5838B001D722E /* EventInfoAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoAssembly.swift; sourceTree = "<group>"; };
+		CE11F92026B5838B001D722E /* EventInfoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoRouter.swift; sourceTree = "<group>"; };
+		CE11F92126B5838B001D722E /* EventInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoData.swift; sourceTree = "<group>"; };
+		CE11F92226B5838B001D722E /* EventInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoPresenter.swift; sourceTree = "<group>"; };
+		CE11F92326B5838B001D722E /* EventInfoProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoProtocols.swift; sourceTree = "<group>"; };
+		CE11F92526B5838B001D722E /* TicketInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoViewController.swift; sourceTree = "<group>"; };
+		CE11F92626B5838B001D722E /* TicketInfoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoInteractor.swift; sourceTree = "<group>"; };
+		CE11F92726B5838B001D722E /* TicketInfoAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoAssembly.swift; sourceTree = "<group>"; };
+		CE11F92826B5838B001D722E /* TicketInfoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoRouter.swift; sourceTree = "<group>"; };
+		CE11F92926B5838B001D722E /* TicketInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoData.swift; sourceTree = "<group>"; };
+		CE11F92A26B5838B001D722E /* TicketInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoPresenter.swift; sourceTree = "<group>"; };
+		CE11F92B26B5838B001D722E /* TicketInfoProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketInfoProtocols.swift; sourceTree = "<group>"; };
 		CE28642A26281F960082FFCD /* HotelFilterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelFilterProtocols.swift; sourceTree = "<group>"; };
 		CE298D97262C643B00E5DBDC /* HotelInfoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelInfoProtocols.swift; sourceTree = "<group>"; };
 		CE298D9B262C648700E5DBDC /* HotelInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelInfoPresenter.swift; sourceTree = "<group>"; };
@@ -111,6 +206,26 @@
 		CE39863326109FA100267569 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		CE3986402610BEFA00267569 /* ImageLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderProtocol.swift; sourceTree = "<group>"; };
 		CE3986442610C02400267569 /* KingfisherImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageLoader.swift; sourceTree = "<group>"; };
+		CE43EF3726D9A48A0053EDA3 /* ToursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursViewController.swift; sourceTree = "<group>"; };
+		CE43EF3B26D9A4D20053EDA3 /* ToursPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursPresenter.swift; sourceTree = "<group>"; };
+		CE43EF3E26D9A4DF0053EDA3 /* ToursModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursModel.swift; sourceTree = "<group>"; };
+		CE43EF4126D9A5580053EDA3 /* ToursAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursAssembly.swift; sourceTree = "<group>"; };
+		CE43EF4426D9A5EC0053EDA3 /* CityToursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityToursViewController.swift; sourceTree = "<group>"; };
+		CE43EF4726D9A6000053EDA3 /* CityToursPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityToursPresenter.swift; sourceTree = "<group>"; };
+		CE43EF4A26D9A60A0053EDA3 /* CityToursModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityToursModel.swift; sourceTree = "<group>"; };
+		CE43EF4D26D9A6150053EDA3 /* CityToursAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityToursAssembly.swift; sourceTree = "<group>"; };
+		CE43EF5426DA5D3D0053EDA3 /* TourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
+		CE43EF5826DA5D720053EDA3 /* CreateTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTourViewController.swift; sourceTree = "<group>"; };
+		CE43EF5B26DAAF9C0053EDA3 /* CreateCityTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCityTourViewController.swift; sourceTree = "<group>"; };
+		CE43EF5E26DAAFBA0053EDA3 /* CityTourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTourTableViewCell.swift; sourceTree = "<group>"; };
+		CE43EF6326DBCD440053EDA3 /* CityTourInfoOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoOptionTableViewCell.swift; sourceTree = "<group>"; };
+		CE43EF6426DBCD440053EDA3 /* CityTourInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoPresenter.swift; sourceTree = "<group>"; };
+		CE43EF6526DBCD440053EDA3 /* CityTourInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoData.swift; sourceTree = "<group>"; };
+		CE43EF6726DBCD440053EDA3 /* CityTourInfoAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoAssembly.swift; sourceTree = "<group>"; };
+		CE43EF6826DBCD440053EDA3 /* CityTourInfoProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoProtocols.swift; sourceTree = "<group>"; };
+		CE43EF6926DBCD440053EDA3 /* CityTourInfoOptionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoOptionsInteractor.swift; sourceTree = "<group>"; };
+		CE43EF6A26DBCD440053EDA3 /* CityTourInfoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoRouter.swift; sourceTree = "<group>"; };
+		CE43EF6B26DBCD440053EDA3 /* CityTourInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoViewController.swift; sourceTree = "<group>"; };
 		CE4647952608ECA700359F91 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		CE4647992608ED7900359F91 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		CE46479D2608EF3D00359F91 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +247,39 @@
 		CE6829CE25E8583200D894E4 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		CE6829D125E858E900D894E4 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		CE6BC3BF2611D3BA00E27653 /* ProfileOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionTableViewCell.swift; sourceTree = "<group>"; };
+		CE88E2ED2698C9EB003162A0 /* TicketsFeedFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFeedFilterViewController.swift; sourceTree = "<group>"; };
+		CE88E2EE2698C9EB003162A0 /* TicketsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFeedViewController.swift; sourceTree = "<group>"; };
+		CE88E2EF2698C9EB003162A0 /* TicketsFeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFeedPresenter.swift; sourceTree = "<group>"; };
+		CE88E2F02698C9EB003162A0 /* TicketsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsTableViewCell.swift; sourceTree = "<group>"; };
+		CE88E2F12698C9EB003162A0 /* TicketsFeedProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFeedProtocols.swift; sourceTree = "<group>"; };
+		CE88E2F22698C9EB003162A0 /* TicketsFeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFeedInteractor.swift; sourceTree = "<group>"; };
+		CE88E2F32698C9EB003162A0 /* TicketsFeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFeedData.swift; sourceTree = "<group>"; };
+		CE88E2F42698C9EB003162A0 /* TicketsFeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFeedRouter.swift; sourceTree = "<group>"; };
+		CE88E2F52698C9EB003162A0 /* TicketsFilterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFilterAssembly.swift; sourceTree = "<group>"; };
+		CE88E2F62698C9EB003162A0 /* TicketsFeedAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFeedAssembly.swift; sourceTree = "<group>"; };
+		CE88E2F72698C9EB003162A0 /* TicketsFilterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsFilterProtocols.swift; sourceTree = "<group>"; };
+		CE88E3042698C9F8003162A0 /* EventsFeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFeedInteractor.swift; sourceTree = "<group>"; };
+		CE88E3052698C9F8003162A0 /* EventsFeedFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFeedFilterViewController.swift; sourceTree = "<group>"; };
+		CE88E3062698C9F8003162A0 /* EventsFeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFeedRouter.swift; sourceTree = "<group>"; };
+		CE88E3072698C9F8003162A0 /* EventsFeedProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFeedProtocols.swift; sourceTree = "<group>"; };
+		CE88E3082698C9F8003162A0 /* EventsFeedAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFeedAssembly.swift; sourceTree = "<group>"; };
+		CE88E3092698C9F8003162A0 /* EventsFeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFeedPresenter.swift; sourceTree = "<group>"; };
+		CE88E30A2698C9F8003162A0 /* EventsFeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFeedData.swift; sourceTree = "<group>"; };
+		CE88E30B2698C9F8003162A0 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		CE88E30C2698C9F8003162A0 /* EventsFilterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFilterAssembly.swift; sourceTree = "<group>"; };
+		CE88E30D2698C9F8003162A0 /* EventsFilterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFilterProtocols.swift; sourceTree = "<group>"; };
+		CE88E30E2698C9F8003162A0 /* EventsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsFeedViewController.swift; sourceTree = "<group>"; };
+		CE88E31B2698CA03003162A0 /* RestaurantsFeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFeedData.swift; sourceTree = "<group>"; };
+		CE88E31C2698CA03003162A0 /* RestaurantsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewCell.swift; sourceTree = "<group>"; };
+		CE88E31D2698CA03003162A0 /* RestaurantsFilterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFilterProtocols.swift; sourceTree = "<group>"; };
+		CE88E31E2698CA03003162A0 /* RestaurantsFeedAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFeedAssembly.swift; sourceTree = "<group>"; };
+		CE88E31F2698CA03003162A0 /* RestaurantsFeedFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFeedFilterViewController.swift; sourceTree = "<group>"; };
+		CE88E3202698CA03003162A0 /* RestaurantsFilterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFilterAssembly.swift; sourceTree = "<group>"; };
+		CE88E3212698CA03003162A0 /* RestaurantsFeedProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFeedProtocols.swift; sourceTree = "<group>"; };
+		CE88E3222698CA03003162A0 /* RestaurantsFeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFeedInteractor.swift; sourceTree = "<group>"; };
+		CE88E3232698CA03003162A0 /* RestaurantsFeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFeedPresenter.swift; sourceTree = "<group>"; };
+		CE88E3242698CA03003162A0 /* RestaurantsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFeedViewController.swift; sourceTree = "<group>"; };
+		CE88E3252698CA03003162A0 /* RestaurantsFeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsFeedRouter.swift; sourceTree = "<group>"; };
 		CE8C9DA726272BE6003E9563 /* ImageHostingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHostingServiceProtocol.swift; sourceTree = "<group>"; };
 		CE8C9DAB26272C71003E9563 /* CloudinaryImageHostingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinaryImageHostingService.swift; sourceTree = "<group>"; };
 		CE8F201825DC636300B508D8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -208,9 +356,54 @@
 			path = Registrator;
 			sourceTree = "<group>";
 		};
+		CE11F91426B5838B001D722E /* RestaurantInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE11F91526B5838B001D722E /* RestaurantInfoViewController.swift */,
+				CE11F91626B5838B001D722E /* RestaurantInfoInteractor.swift */,
+				CE11F91726B5838B001D722E /* RestaurantInfoAssembly.swift */,
+				CE11F91826B5838B001D722E /* RestaurantInfoRouter.swift */,
+				CE11F91926B5838B001D722E /* RestaurantInfoData.swift */,
+				CE11F91A26B5838B001D722E /* RestaurantInfoPresenter.swift */,
+				CE11F91B26B5838B001D722E /* RestaurantInfoProtocols.swift */,
+			);
+			path = RestaurantInfo;
+			sourceTree = "<group>";
+		};
+		CE11F91C26B5838B001D722E /* EventInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE11F91D26B5838B001D722E /* EventInfoViewController.swift */,
+				CE11F91E26B5838B001D722E /* EventInfoInteractor.swift */,
+				CE11F91F26B5838B001D722E /* EventInfoAssembly.swift */,
+				CE11F92026B5838B001D722E /* EventInfoRouter.swift */,
+				CE11F92126B5838B001D722E /* EventInfoData.swift */,
+				CE11F92226B5838B001D722E /* EventInfoPresenter.swift */,
+				CE11F92326B5838B001D722E /* EventInfoProtocols.swift */,
+			);
+			path = EventInfo;
+			sourceTree = "<group>";
+		};
+		CE11F92426B5838B001D722E /* TicketInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE11F92526B5838B001D722E /* TicketInfoViewController.swift */,
+				CE11F92626B5838B001D722E /* TicketInfoInteractor.swift */,
+				CE11F92726B5838B001D722E /* TicketInfoAssembly.swift */,
+				CE11F92826B5838B001D722E /* TicketInfoRouter.swift */,
+				CE11F92926B5838B001D722E /* TicketInfoData.swift */,
+				CE11F92A26B5838B001D722E /* TicketInfoPresenter.swift */,
+				CE11F92B26B5838B001D722E /* TicketInfoProtocols.swift */,
+			);
+			path = TicketInfo;
+			sourceTree = "<group>";
+		};
 		CE298D95262C63FB00E5DBDC /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				CE11F92426B5838B001D722E /* TicketInfo */,
+				CE11F91C26B5838B001D722E /* EventInfo */,
+				CE11F91426B5838B001D722E /* RestaurantInfo */,
 				CE298D96262C641F00E5DBDC /* HotelInfo */,
 			);
 			path = Info;
@@ -237,6 +430,67 @@
 				CE3986442610C02400267569 /* KingfisherImageLoader.swift */,
 			);
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		CE43EF3626D9968C0053EDA3 /* CityTours */ = {
+			isa = PBXGroup;
+			children = (
+				CE43EF6126DBCB780053EDA3 /* CityTourInfo */,
+				CE43EF4426D9A5EC0053EDA3 /* CityToursViewController.swift */,
+				CE43EF4726D9A6000053EDA3 /* CityToursPresenter.swift */,
+				CE43EF4A26D9A60A0053EDA3 /* CityToursModel.swift */,
+				CE43EF4D26D9A6150053EDA3 /* CityToursAssembly.swift */,
+				CE43EF5B26DAAF9C0053EDA3 /* CreateCityTourViewController.swift */,
+				CE43EF5E26DAAFBA0053EDA3 /* CityTourTableViewCell.swift */,
+			);
+			path = CityTours;
+			sourceTree = "<group>";
+		};
+		CE43EF5026D9A6530053EDA3 /* CityTourHotel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityTourHotel;
+			sourceTree = "<group>";
+		};
+		CE43EF5126D9A6640053EDA3 /* CityTourTickets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityTourTickets;
+			sourceTree = "<group>";
+		};
+		CE43EF5226D9A67F0053EDA3 /* CityTourEvents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityTourEvents;
+			sourceTree = "<group>";
+		};
+		CE43EF5326D9A6870053EDA3 /* CityTourRestaurants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityTourRestaurants;
+			sourceTree = "<group>";
+		};
+		CE43EF6126DBCB780053EDA3 /* CityTourInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE43EF6726DBCD440053EDA3 /* CityTourInfoAssembly.swift */,
+				CE43EF6526DBCD440053EDA3 /* CityTourInfoData.swift */,
+				CE43EF6926DBCD440053EDA3 /* CityTourInfoOptionsInteractor.swift */,
+				CE43EF6326DBCD440053EDA3 /* CityTourInfoOptionTableViewCell.swift */,
+				CE43EF6426DBCD440053EDA3 /* CityTourInfoPresenter.swift */,
+				CE43EF6826DBCD440053EDA3 /* CityTourInfoProtocols.swift */,
+				CE43EF6A26DBCD440053EDA3 /* CityTourInfoRouter.swift */,
+				CE43EF6B26DBCD440053EDA3 /* CityTourInfoViewController.swift */,
+				CE43EF5026D9A6530053EDA3 /* CityTourHotel */,
+				CE43EF5126D9A6640053EDA3 /* CityTourTickets */,
+				CE43EF5226D9A67F0053EDA3 /* CityTourEvents */,
+				CE43EF5326D9A6870053EDA3 /* CityTourRestaurants */,
+			);
+			path = CityTourInfo;
 			sourceTree = "<group>";
 		};
 		CE4647922608EC8F00359F91 /* Profile */ = {
@@ -292,15 +546,69 @@
 		CE57F6062617A72E00706327 /* Tours */ = {
 			isa = PBXGroup;
 			children = (
+				CE43EF3626D9968C0053EDA3 /* CityTours */,
+				CE43EF3726D9A48A0053EDA3 /* ToursViewController.swift */,
+				CE43EF3B26D9A4D20053EDA3 /* ToursPresenter.swift */,
+				CE43EF3E26D9A4DF0053EDA3 /* ToursModel.swift */,
+				CE43EF4126D9A5580053EDA3 /* ToursAssembly.swift */,
+				CE43EF5426DA5D3D0053EDA3 /* TourTableViewCell.swift */,
+				CE43EF5826DA5D720053EDA3 /* CreateTourViewController.swift */,
 			);
 			path = Tours;
 			sourceTree = "<group>";
 		};
-		CE57F6072617A74E00706327 /* CreateTour */ = {
+		CE88E2EA2698C76F003162A0 /* RestaurantsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				CE88E31E2698CA03003162A0 /* RestaurantsFeedAssembly.swift */,
+				CE88E31B2698CA03003162A0 /* RestaurantsFeedData.swift */,
+				CE88E31F2698CA03003162A0 /* RestaurantsFeedFilterViewController.swift */,
+				CE88E3222698CA03003162A0 /* RestaurantsFeedInteractor.swift */,
+				CE88E3232698CA03003162A0 /* RestaurantsFeedPresenter.swift */,
+				CE88E3212698CA03003162A0 /* RestaurantsFeedProtocols.swift */,
+				CE88E3252698CA03003162A0 /* RestaurantsFeedRouter.swift */,
+				CE88E3242698CA03003162A0 /* RestaurantsFeedViewController.swift */,
+				CE88E3202698CA03003162A0 /* RestaurantsFilterAssembly.swift */,
+				CE88E31D2698CA03003162A0 /* RestaurantsFilterProtocols.swift */,
+				CE88E31C2698CA03003162A0 /* RestaurantsTableViewCell.swift */,
 			);
-			path = CreateTour;
+			path = RestaurantsFeed;
+			sourceTree = "<group>";
+		};
+		CE88E2EB2698C7CF003162A0 /* EventsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				CE88E3082698C9F8003162A0 /* EventsFeedAssembly.swift */,
+				CE88E30A2698C9F8003162A0 /* EventsFeedData.swift */,
+				CE88E3052698C9F8003162A0 /* EventsFeedFilterViewController.swift */,
+				CE88E3042698C9F8003162A0 /* EventsFeedInteractor.swift */,
+				CE88E3092698C9F8003162A0 /* EventsFeedPresenter.swift */,
+				CE88E3072698C9F8003162A0 /* EventsFeedProtocols.swift */,
+				CE88E3062698C9F8003162A0 /* EventsFeedRouter.swift */,
+				CE88E30E2698C9F8003162A0 /* EventsFeedViewController.swift */,
+				CE88E30C2698C9F8003162A0 /* EventsFilterAssembly.swift */,
+				CE88E30D2698C9F8003162A0 /* EventsFilterProtocols.swift */,
+				CE88E30B2698C9F8003162A0 /* EventsTableViewCell.swift */,
+			);
+			path = EventsFeed;
+			sourceTree = "<group>";
+		};
+		CE88E2EC2698C7E1003162A0 /* TicketsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				CE88E2F62698C9EB003162A0 /* TicketsFeedAssembly.swift */,
+				CE88E2F32698C9EB003162A0 /* TicketsFeedData.swift */,
+				CE88E2ED2698C9EB003162A0 /* TicketsFeedFilterViewController.swift */,
+				CE88E2F22698C9EB003162A0 /* TicketsFeedInteractor.swift */,
+				CE88E2EF2698C9EB003162A0 /* TicketsFeedPresenter.swift */,
+				CE88E2F12698C9EB003162A0 /* TicketsFeedProtocols.swift */,
+				CE88E2F42698C9EB003162A0 /* TicketsFeedRouter.swift */,
+				CE88E2EE2698C9EB003162A0 /* TicketsFeedViewController.swift */,
+				CE88E2F52698C9EB003162A0 /* TicketsFilterAssembly.swift */,
+				CE88E2F72698C9EB003162A0 /* TicketsFilterProtocols.swift */,
+				CE88E2F02698C9EB003162A0 /* TicketsTableViewCell.swift */,
+			);
+			path = TicketsFeed;
 			sourceTree = "<group>";
 		};
 		CE8C9DA626272BD2003E9563 /* ImageHosting */ = {
@@ -339,6 +647,9 @@
 		CE94DA912627A9100029D768 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				CE88E2EC2698C7E1003162A0 /* TicketsFeed */,
+				CE88E2EB2698C7CF003162A0 /* EventsFeed */,
+				CE88E2EA2698C76F003162A0 /* RestaurantsFeed */,
 				CE94DA942627A9D80029D768 /* HotelFeed */,
 			);
 			path = Feed;
@@ -367,7 +678,6 @@
 			children = (
 				CE298D95262C63FB00E5DBDC /* Info */,
 				CE94DA912627A9100029D768 /* Feed */,
-				CE57F6072617A74E00706327 /* CreateTour */,
 				CE57F6062617A72E00706327 /* Tours */,
 				CE57F6052617A71A00706327 /* EditProfile */,
 				CE4647922608EC8F00359F91 /* Profile */,
@@ -582,6 +892,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE88E3102698C9F8003162A0 /* EventsFeedFilterViewController.swift in Sources */,
+				CE11F93326B5838B001D722E /* EventInfoViewController.swift in Sources */,
+				CE11F93C26B5838B001D722E /* TicketInfoAssembly.swift in Sources */,
 				CE3986452610C02400267569 /* KingfisherImageLoader.swift in Sources */,
 				CE298DA0262C649500E5DBDC /* HotelInfoViewController.swift in Sources */,
 				CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */,
@@ -589,63 +902,132 @@
 				CE94DAA02627AB590029D768 /* HotelFeedInteractor.swift in Sources */,
 				CEFBE9E1262361B800B12566 /* OptionsInteractor.swift in Sources */,
 				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
+				CE88E3132698C9F8003162A0 /* EventsFeedAssembly.swift in Sources */,
 				CE30094F2629B8D500CBF86D /* HotelTableViewCell.swift in Sources */,
+				CE88E32B2698CA03003162A0 /* RestaurantsFilterAssembly.swift in Sources */,
 				CE298DAA262C64C100E5DBDC /* HotelInfoAssembly.swift in Sources */,
+				CE43EF5526DA5D3E0053EDA3 /* TourTableViewCell.swift in Sources */,
+				CE43EF7326DBCD450053EDA3 /* CityTourInfoRouter.swift in Sources */,
+				CE88E3262698CA03003162A0 /* RestaurantsFeedData.swift in Sources */,
 				CE6829CC25E857F300D894E4 /* LoginInteractor.swift in Sources */,
 				CE483F4D25E70F0100806B44 /* AlamofireNetworkService.swift in Sources */,
 				CE2FEABA2618770D00AD5360 /* EditProfileData.swift in Sources */,
+				CE11F93026B5838B001D722E /* RestaurantInfoData.swift in Sources */,
+				CE43EF3F26D9A4DF0053EDA3 /* ToursModel.swift in Sources */,
+				CE88E2FD2698C9EB003162A0 /* TicketsFeedInteractor.swift in Sources */,
 				CE8F202A25DC672A00B508D8 /* Buttons.swift in Sources */,
+				CE11F93F26B5838B001D722E /* TicketInfoPresenter.swift in Sources */,
 				CE94DAA92627C0BC0029D768 /* HotelFeedFilterViewController.swift in Sources */,
+				CE43EF4E26D9A6150053EDA3 /* CityToursAssembly.swift in Sources */,
 				CE4647A82608F0F900359F91 /* ProfileRouter.swift in Sources */,
+				CE43EF4B26D9A60A0053EDA3 /* CityToursModel.swift in Sources */,
+				CE88E3022698C9EB003162A0 /* TicketsFilterProtocols.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
 				CE2FEAC62618799700AD5360 /* EditProfileRouter.swift in Sources */,
+				CE11F92C26B5838B001D722E /* RestaurantInfoViewController.swift in Sources */,
+				CE88E2FB2698C9EB003162A0 /* TicketsTableViewCell.swift in Sources */,
 				CEA9AADE25E1C70200BBE98C /* TextFields.swift in Sources */,
+				CE88E3302698CA03003162A0 /* RestaurantsFeedRouter.swift in Sources */,
+				CE43EF6D26DBCD450053EDA3 /* CityTourInfoPresenter.swift in Sources */,
 				CE94DA9A2627AACD0029D768 /* HotelFeedViewController.swift in Sources */,
+				CE11F93726B5838B001D722E /* EventInfoData.swift in Sources */,
+				CE43EF7126DBCD450053EDA3 /* CityTourInfoProtocols.swift in Sources */,
+				CE88E2F82698C9EB003162A0 /* TicketsFeedFilterViewController.swift in Sources */,
 				CEA9AAD225E1B83400BBE98C /* RegisterInteractor.swift in Sources */,
 				CE8C9DA826272BE6003E9563 /* ImageHostingServiceProtocol.swift in Sources */,
 				CE46479A2608ED7900359F91 /* ProfileData.swift in Sources */,
+				CE11F93B26B5838B001D722E /* TicketInfoInteractor.swift in Sources */,
 				CE4647A52608F0CC00359F91 /* ProfileInteractor.swift in Sources */,
+				CE11F93D26B5838B001D722E /* TicketInfoRouter.swift in Sources */,
 				CE39863426109FA100267569 /* Views.swift in Sources */,
+				CE88E3122698C9F8003162A0 /* EventsFeedProtocols.swift in Sources */,
 				CE483F4A25E70E9B00806B44 /* NetworkProtocol.swift in Sources */,
 				CE6829C325E8526D00D894E4 /* LoginProtocols.swift in Sources */,
+				CE43EF6E26DBCD450053EDA3 /* CityTourInfoData.swift in Sources */,
+				CE88E3192698C9F8003162A0 /* EventsFeedViewController.swift in Sources */,
 				CE6829CF25E8583200D894E4 /* LoginData.swift in Sources */,
+				CE88E3152698C9F8003162A0 /* EventsFeedData.swift in Sources */,
+				CE11F93926B5838B001D722E /* EventInfoProtocols.swift in Sources */,
+				CE88E30F2698C9F8003162A0 /* EventsFeedInteractor.swift in Sources */,
+				CE88E3002698C9EB003162A0 /* TicketsFilterAssembly.swift in Sources */,
+				CE88E2FE2698C9EB003162A0 /* TicketsFeedData.swift in Sources */,
+				CE43EF3826D9A48A0053EDA3 /* ToursViewController.swift in Sources */,
 				CEA9AACF25E1B81100BBE98C /* RegisterRouter.swift in Sources */,
+				CE11F92D26B5838B001D722E /* RestaurantInfoInteractor.swift in Sources */,
+				CE11F92F26B5838B001D722E /* RestaurantInfoRouter.swift in Sources */,
+				CE88E2FA2698C9EB003162A0 /* TicketsFeedPresenter.swift in Sources */,
 				CE0E1BD72606D78C004E8589 /* AuthData.swift in Sources */,
 				CEE890F425D96D5F006EA513 /* ViewController.swift in Sources */,
 				CE3986412610BEFA00267569 /* ImageLoaderProtocol.swift in Sources */,
 				CE6829C625E8571000D894E4 /* LoginPresenter.swift in Sources */,
+				CE11F93526B5838B001D722E /* EventInfoAssembly.swift in Sources */,
 				CE0E1BBA2606B6B8004E8589 /* RealmDataStorage.swift in Sources */,
 				CE4647A22608F0A800359F91 /* ProfilePresenter.swift in Sources */,
+				CE88E32E2698CA03003162A0 /* RestaurantsFeedPresenter.swift in Sources */,
 				CE8F201925DC636300B508D8 /* AuthViewController.swift in Sources */,
+				CE11F94026B5838B001D722E /* TicketInfoProtocols.swift in Sources */,
 				CE4647962608ECA700359F91 /* ProfileProtocols.swift in Sources */,
+				CE88E3172698C9F8003162A0 /* EventsFilterAssembly.swift in Sources */,
+				CE43EF3C26D9A4D20053EDA3 /* ToursPresenter.swift in Sources */,
 				CE8F201F25DC638500B508D8 /* AuthPresenter.swift in Sources */,
+				CE88E32D2698CA03003162A0 /* RestaurantsFeedInteractor.swift in Sources */,
+				CE43EF4526D9A5EC0053EDA3 /* CityToursViewController.swift in Sources */,
 				CEE890F025D96D5F006EA513 /* AppDelegate.swift in Sources */,
 				CE8F201C25DC637900B508D8 /* AuthProtocols.swift in Sources */,
+				CE43EF7426DBCD450053EDA3 /* CityTourInfoViewController.swift in Sources */,
 				CEE890F225D96D5F006EA513 /* SceneDelegate.swift in Sources */,
 				CE4647AB2608F10A00359F91 /* ProfileAssembly.swift in Sources */,
 				CE298D9C262C648700E5DBDC /* HotelInfoPresenter.swift in Sources */,
 				CEA9AACC25E1B65200BBE98C /* RegisterData.swift in Sources */,
+				CE88E3182698C9F8003162A0 /* EventsFilterProtocols.swift in Sources */,
 				CE0E1BB62606A602004E8589 /* DataStorageProtocol.swift in Sources */,
+				CE88E3292698CA03003162A0 /* RestaurantsFeedAssembly.swift in Sources */,
 				CE57F60A2617A85C00706327 /* EditProfileProtocols.swift in Sources */,
 				CEA9AAD525E1BA3500BBE98C /* RegisterAssembly.swift in Sources */,
 				CE94DAB02627C8B20029D768 /* HotelFeedData.swift in Sources */,
+				CE11F93826B5838B001D722E /* EventInfoPresenter.swift in Sources */,
+				CE11F92E26B5838B001D722E /* RestaurantInfoAssembly.swift in Sources */,
 				CE2FEAC32618795100AD5360 /* EditProfileInteractor.swift in Sources */,
+				CE88E3272698CA03003162A0 /* RestaurantsTableViewCell.swift in Sources */,
+				CE11F93626B5838B001D722E /* EventInfoRouter.swift in Sources */,
+				CE43EF6C26DBCD450053EDA3 /* CityTourInfoOptionTableViewCell.swift in Sources */,
 				CE8C9DAC26272C71003E9563 /* CloudinaryImageHostingService.swift in Sources */,
+				CE43EF7226DBCD450053EDA3 /* CityTourInfoOptionsInteractor.swift in Sources */,
 				CE8F202525DC639E00B508D8 /* AuthRouter.swift in Sources */,
+				CE11F93E26B5838B001D722E /* TicketInfoData.swift in Sources */,
+				CE88E3112698C9F8003162A0 /* EventsFeedRouter.swift in Sources */,
 				CEA9AADA25E1C67A00BBE98C /* UITextFieldExtension.swift in Sources */,
+				CE88E3162698C9F8003162A0 /* EventsTableViewCell.swift in Sources */,
 				CE28642B26281F960082FFCD /* HotelFilterProtocols.swift in Sources */,
+				CE11F93A26B5838B001D722E /* TicketInfoViewController.swift in Sources */,
+				CE88E3142698C9F8003162A0 /* EventsFeedPresenter.swift in Sources */,
 				CEFD8DF8262BB132003B12D4 /* HotelFilterAssembly.swift in Sources */,
 				CE0E1BCF2606CE7D004E8589 /* ServicesRegistrator.swift in Sources */,
 				CE94DA962627A9EA0029D768 /* HotelFeedProtocols.swift in Sources */,
 				CE298DA4262C64A800E5DBDC /* HotelInfoInteractor.swift in Sources */,
+				CE11F93426B5838B001D722E /* EventInfoInteractor.swift in Sources */,
 				CE298D98262C643B00E5DBDC /* HotelInfoProtocols.swift in Sources */,
+				CE88E32A2698CA03003162A0 /* RestaurantsFeedFilterViewController.swift in Sources */,
 				CEA6618C25D9BC7700998F66 /* RegisterViewController.swift in Sources */,
+				CE88E2FC2698C9EB003162A0 /* TicketsFeedProtocols.swift in Sources */,
 				CE298DA7262C64B400E5DBDC /* HotelInfoRouter.swift in Sources */,
+				CE88E2F92698C9EB003162A0 /* TicketsFeedViewController.swift in Sources */,
+				CE88E32C2698CA03003162A0 /* RestaurantsFeedProtocols.swift in Sources */,
+				CE88E32F2698CA03003162A0 /* RestaurantsFeedViewController.swift in Sources */,
+				CE88E3012698C9EB003162A0 /* TicketsFeedAssembly.swift in Sources */,
 				CE94DAA32627AB680029D768 /* HotelFeedRouter.swift in Sources */,
+				CE11F93126B5838B001D722E /* RestaurantInfoPresenter.swift in Sources */,
+				CE43EF7026DBCD450053EDA3 /* CityTourInfoAssembly.swift in Sources */,
 				CE2FEAC02618792700AD5360 /* EditProfilePresenter.swift in Sources */,
+				CE43EF5C26DAAF9C0053EDA3 /* CreateCityTourViewController.swift in Sources */,
+				CE43EF5F26DAAFBA0053EDA3 /* CityTourTableViewCell.swift in Sources */,
+				CE43EF4226D9A5580053EDA3 /* ToursAssembly.swift in Sources */,
 				CE6829C025E836EC00D894E4 /* NetworkConfig.swift in Sources */,
+				CE88E3282698CA03003162A0 /* RestaurantsFilterProtocols.swift in Sources */,
 				CE4B766225E1504C00E4D8EC /* DependencyRegistratorProtocol.swift in Sources */,
 				CE94DAA62627AB810029D768 /* HotelFeedAssembly.swift in Sources */,
+				CE43EF5926DA5D720053EDA3 /* CreateTourViewController.swift in Sources */,
+				CE11F93226B5838B001D722E /* RestaurantInfoProtocols.swift in Sources */,
 				CE95B41725E07240008DA51C /* LoginViewController.swift in Sources */,
 				CE6829C925E8572E00D894E4 /* LoginRouter.swift in Sources */,
 				CE94DA9D2627AB4A0029D768 /* HotelFeedPresenter.swift in Sources */,
@@ -653,9 +1035,11 @@
 				CE298DAD262CFDF900E5DBDC /* HotelInfoData.swift in Sources */,
 				CE8F202225DC639100B508D8 /* AuthAssembly.swift in Sources */,
 				CE6BC3C02611D3BA00E27653 /* ProfileOptionTableViewCell.swift in Sources */,
+				CE88E2FF2698C9EB003162A0 /* TicketsFeedRouter.swift in Sources */,
 				CE2FEABD2618781500AD5360 /* EditProfileViewController.swift in Sources */,
 				CE6829D225E858E900D894E4 /* LoginAssembly.swift in Sources */,
 				CE2FEAC9261879AB00AD5360 /* EditProfileAssembly.swift in Sources */,
+				CE43EF4826D9A6000053EDA3 /* CityToursPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

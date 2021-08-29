@@ -15,5 +15,7 @@ protocol NetworkProtocol {
     
     func put<PutData: Encodable>(query: String, tokens: SecurityTokens, data: PutData, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void)
     
+    func delete<DeleteData: Encodable>(query: String, tokens: SecurityTokens, data: DeleteData, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void)
+    
     func refreshToken(query: String, tokens: SecurityTokens, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void)
 }

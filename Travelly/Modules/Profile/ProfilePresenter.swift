@@ -58,18 +58,16 @@ class ProfilePresenter: ProfilePresenterProtocol {
         case 0:
             cell.setImage(UIImage(named: "EditImage"))
         case 1:
-            cell.setImage(UIImage(named: "AddImage"))
-        case 2:
             cell.setImage(UIImage(named: "MyToursImage"))
-        case 3:
+        case 2:
             cell.setImage(UIImage(named: "HotelImage"))
-        case 4:
+        case 3:
             cell.setImage(UIImage(named: "RestaurantImage"))
-        case 5:
+        case 4:
             cell.setImage(UIImage(named: "EventImage"))
-        case 6:
+        case 5:
             cell.setImage(UIImage(named: "TicketImage"))
-        case 7:
+        case 6:
             cell.setImage(UIImage(named: "ExitImage"))
             cell.setTextColor(.red)
         default:
@@ -86,18 +84,16 @@ class ProfilePresenter: ProfilePresenterProtocol {
             guard let profileData = profileInteractor.getProfileData() else { return }
             router.openEditProfile(with: userId, tokens, profileData)
         case 1:
-            router.openCreateTour(with: userId, tokens)
-        case 2:
             router.openTours(with: userId, tokens)
-        case 3:
+        case 2:
             router.openHotels(with: userId, tokens)
-        case 4:
+        case 3:
             router.openRestaurants(with: userId, tokens)
-        case 5:
+        case 4:
             router.openEvents(with: userId, tokens)
-        case 6:
+        case 5:
             router.openTickets(with: userId, tokens)
-        case 7:
+        case 6:
             profileInteractor.deleteAuthData()
             router.exit()
         default:

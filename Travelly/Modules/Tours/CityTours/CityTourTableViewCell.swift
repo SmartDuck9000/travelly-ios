@@ -1,0 +1,142 @@
+//
+//  CityTourTableViewCell.swift
+//  Travelly
+//
+//  Created by Георгий Куликов on 28.08.2021.
+//
+
+import UIKit
+
+fileprivate struct LayoutConstants {
+    static let containerViewHeight: CGFloat = 140
+    static let containerViewTopSpace: CGFloat = 10
+    static let containerViewBottomSpace: CGFloat = -10
+    static let containerViewLeftSpace: CGFloat = 15
+    static let containerViewRightSpace: CGFloat = -15
+}
+
+class CityTourTableViewCell: UITableViewCell {
+    
+    private var containerView = UIView()
+    
+    private var countryCityLabel = UILabel()
+    private var priceLabel = UILabel()
+    private var dateFromLabel = UILabel()
+    private var dateToLabel = UILabel()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    func configure(with model: CityTourModel) {
+        countryCityLabel.text = "\(model.country_name), \(model.city_name)"
+        priceLabel.text = "Цена: \(model.city_tour_price)"
+        dateFromLabel.text = "Начало: \(model.date_from)"
+        dateToLabel.text = "Конец: \(model.date_to)"
+    }
+    
+    func setupCell() {
+        containerView.frame = CGRect(x: LayoutConstants.containerViewLeftSpace,
+                                     y: LayoutConstants.containerViewTopSpace,
+                                     width: self.frame.width - LayoutConstants.containerViewLeftSpace * 2,
+                                     height: LayoutConstants.containerViewHeight)
+        containerView.backgroundColor = FeedCellAppearance.backgroungColor
+        containerView.layer.cornerRadius = self.frame.width / 40
+        self.addSubview(containerView)
+        
+        setupCountryCityLabel()
+        setupPriceLabel()
+        setupDateFromLabel()
+        setupDateToLabel()
+    }
+    
+    
+    func setupCountryCityLabel() {
+        containerView.addSubview(countryCityLabel)
+        countryCityLabel.translatesAutoresizingMaskIntoConstraints = false
+        countryCityLabel.textColor = .white
+        countryCityLabel.font = FeedCellAppearance.boldFont
+        
+        countryCityLabel.topAnchor.constraint(
+            equalTo: containerView.topAnchor,
+            constant: 15
+        ).isActive = true
+        
+        countryCityLabel.leftAnchor.constraint(
+            equalTo: containerView.leftAnchor,
+            constant: 10
+        ).isActive = true
+        
+        countryCityLabel.rightAnchor.constraint(
+            equalTo: containerView.rightAnchor,
+            constant: -10
+        ).isActive = true
+    }
+    
+    func setupPriceLabel() {
+        containerView.addSubview(priceLabel)
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        priceLabel.textColor = .white
+        
+        priceLabel.topAnchor.constraint(
+            equalTo: countryCityLabel.bottomAnchor,
+            constant: 10
+        ).isActive = true
+        
+        priceLabel.leftAnchor.constraint(
+            equalTo: containerView.leftAnchor,
+            constant: 10
+        ).isActive = true
+        
+        priceLabel.rightAnchor.constraint(
+            equalTo: containerView.rightAnchor,
+            constant: -10
+        ).isActive = true
+    }
+    
+    func setupDateFromLabel() {
+        containerView.addSubview(dateFromLabel)
+        dateFromLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateFromLabel.textColor = .white
+        
+        dateFromLabel.topAnchor.constraint(
+            equalTo: priceLabel.bottomAnchor,
+            constant: 10
+        ).isActive = true
+        
+        dateFromLabel.leftAnchor.constraint(
+            equalTo: containerView.leftAnchor,
+            constant: 10
+        ).isActive = true
+        
+        dateFromLabel.rightAnchor.constraint(
+            equalTo: containerView.rightAnchor,
+            constant: -10
+        ).isActive = true
+    }
+    
+    func setupDateToLabel() {
+        containerView.addSubview(dateToLabel)
+        dateToLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateToLabel.textColor = .white
+        
+        dateToLabel.topAnchor.constraint(
+            equalTo: dateFromLabel.bottomAnchor,
+            constant: 10
+        ).isActive = true
+        
+        dateToLabel.leftAnchor.constraint(
+            equalTo: containerView.leftAnchor,
+            constant: 10
+        ).isActive = true
+        
+        dateToLabel.rightAnchor.constraint(
+            equalTo: containerView.rightAnchor,
+            constant: -10
+        ).isActive = true
+    }
+}

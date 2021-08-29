@@ -37,7 +37,6 @@ protocol ProfileRouterProtocol {
     func showError(message: String)
     
     func openEditProfile(with userId: Int, _ tokens: SecurityTokens, _ profileData: ProfileData)
-    func openCreateTour(with userId: Int, _ tokens: SecurityTokens)
     func openTours(with userId: Int, _ tokens: SecurityTokens)
     func openHotels(with userId: Int, _ tokens: SecurityTokens)
     func openRestaurants(with userId: Int, _ tokens: SecurityTokens)

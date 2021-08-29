@@ -82,6 +82,9 @@ class HotelFeedViewController: UIViewController {
         searchBar.delegate = self
         searchBar.sizeToFit()
         searchBar.placeholder = LayoutConstants.searchBarPlaceholder
+        searchBar.tintColor = .white
+        searchBar.barTintColor = .white
+        searchBar.searchTextField.textColor = .white
         
         self.navigationItem.titleView = searchBar
     }

@@ -23,7 +23,7 @@ struct HotelInfo: Codable {
 
     var stars: Int
     var hotelRating: Double
-    var averagePrice: Double
+    var averagePrice: String
 
     var nearSea: Bool
 
