@@ -64,7 +64,7 @@ class TicketsTableViewCell: UITableViewCell {
         setupOriginalCountryCityLabel()
         setupDestinationCountryCityLabel()
         
-        transportTypeLabel.text = "Транспорт: \(data.transportType)"
+        transportTypeLabel.text = "Транспорт: самолет"
         priceLabel.text = "Цена: \(data.price)"
         dateLabel.text = "Дата: \(data.date)"
         originalCountryCityLabel.text = "Место отправления: \(data.origCountryName), \(data.origCityName)"

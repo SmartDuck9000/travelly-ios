@@ -12,22 +12,28 @@ class CityTourInfoPresenter: CityTourInfoPresenterProtocol {
     weak var view: CityTourInfoViewController!
     private var optionsInteractor: CityTourInfoOptionsInteractorProtocol
     private var router: CityTourInfoRouterProtocol
+    private var cityTourInfoDelegate: CityTourInfoDelegateProtocol
     
     private var tokens: SecurityTokens
     private(set) var cityTourData: CityTourModel
+    private var postedCityTourData: PostedCityTourModel
     
     init(
         view: CityTourInfoViewController,
         router: CityTourInfoRouterProtocol,
         optionsInteractor: CityTourInfoOptionsInteractorProtocol,
         tokens: SecurityTokens,
-        cityTourData: CityTourModel
+        cityTourData: CityTourModel,
+        postedCityTourData: PostedCityTourModel,
+        cityTourInfoDelegate: CityTourInfoDelegateProtocol
     ) {
         self.view = view
         self.optionsInteractor = optionsInteractor
         self.router = router
         self.tokens = tokens
         self.cityTourData = cityTourData
+        self.postedCityTourData = postedCityTourData
+        self.cityTourInfoDelegate = cityTourInfoDelegate
     }
     
     func optionsCount() -> Int {
@@ -58,11 +64,11 @@ class CityTourInfoPresenter: CityTourInfoPresenterProtocol {
     func selectOption(at index: Int) {
         switch index {
         case 0:
-            router.openHotel(with: cityTourData, tokens: tokens)
+            router.openHotel(with: cityTourData, tokens: tokens, delegate: cityTourInfoDelegate)
         case 1:
-            router.openArrivalTicket(with: cityTourData, tokens: tokens)
+            router.openArrivalTicket(with: cityTourData, tokens: tokens, delegate: cityTourInfoDelegate)
         case 2:
-            router.openDeparturesTicket(with: cityTourData, tokens: tokens)
+            router.openDeparturesTicket(with: cityTourData, tokens: tokens, delegate: cityTourInfoDelegate)
         case 3:
             router.openEvents(with: cityTourData, tokens: tokens)
         case 4:

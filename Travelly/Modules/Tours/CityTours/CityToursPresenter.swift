@@ -176,7 +176,11 @@ class CityToursPresenter: CityToursPresenterProtocol {
     
     func openCityTour(at index: Int) {
         let assembly: CityTourInfoAssemblyProtocol = CityTourInfoAssembly()
-        let vc = assembly.createModule(cityTourData: data[index], tokens: tokens)
+        let vc = assembly.createModule(
+            cityTourData: data[index],
+            postedCityTourData: PostedCityTourModel(from: data[index], tourId: tour_id),
+            tokens: tokens
+        )
         view?.navigationController?.pushViewController(vc, animated: true)
     }
     

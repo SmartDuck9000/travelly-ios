@@ -66,9 +66,9 @@ class RestaurantInfoViewController: UIViewController {
         }
     }
     
-    func setAveragePrice(_ price: Double) {
+    func setAveragePrice(_ price: String) {
         DispatchQueue.main.async {
-            self.priceLabel.text = "Средняя цена: \(price) $"
+            self.priceLabel.text = "Средняя цена: \(price)"
         }
     }
     

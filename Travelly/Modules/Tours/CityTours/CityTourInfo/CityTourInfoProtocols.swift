@@ -21,13 +21,13 @@ protocol CityTourInfoOptionsInteractorProtocol {
 }
 
 protocol CityTourInfoRouterProtocol {
-    func openHotel(with cityTourData: CityTourModel, tokens: SecurityTokens)
-    func openArrivalTicket(with cityTourData: CityTourModel, tokens: SecurityTokens)
-    func openDeparturesTicket(with cityTourData: CityTourModel, tokens: SecurityTokens)
+    func openHotel(with cityTourData: CityTourModel, tokens: SecurityTokens, delegate: CityTourInfoDelegateProtocol)
+    func openArrivalTicket(with cityTourData: CityTourModel, tokens: SecurityTokens, delegate: CityTourInfoDelegateProtocol)
+    func openDeparturesTicket(with cityTourData: CityTourModel, tokens: SecurityTokens, delegate: CityTourInfoDelegateProtocol)
     func openEvents(with cityTourData: CityTourModel, tokens: SecurityTokens)
     func openRestaurants(with cityTourData: CityTourModel, tokens: SecurityTokens)
 }
 
 protocol CityTourInfoAssemblyProtocol {
-    func createModule(cityTourData: CityTourModel, tokens: SecurityTokens) -> CityTourInfoViewController
+    func createModule(cityTourData: CityTourModel, postedCityTourData: PostedCityTourModel, tokens: SecurityTokens) -> CityTourInfoViewController
 }

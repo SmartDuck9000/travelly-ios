@@ -35,17 +35,8 @@ class TicketInfoPresenter: TicketInfoPresenterProtocol {
                 self.router.openAuth()
             }
             
-//            guard let ticketInfo = data else { return }
-//
-//            self.view.setHotelName(ticketInfo.company_name)
-//            self.view.setHotelDescription(ticketInfo.hotelDescription)
-//            self.view.setHotelAddress(ticketInfo.hotelAddr)
-//            self.view.setStars(ticketInfo.stars)
-//            self.view.setHotelRating(ticketInfo.hotelRating)
-//            self.view.setAveragePrice(ticketInfo.averagePrice)
-//            self.view.setNearSea(ticketInfo.nearSea)
-//            self.view.setCountryName(ticketInfo.countryName)
-//            self.view.setCityName(ticketInfo.cityName)
+            guard let ticketInfo = data else { return }
+            self.view.configure(with: ticketInfo)
         }
     }
 }

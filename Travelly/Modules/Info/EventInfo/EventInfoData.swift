@@ -26,12 +26,12 @@ struct EventInfo: Codable {
     
     var eventStart: String
     var eventEnd: String
-    var price: Double
+    var price: String
     var rating: Double
     
     var maxPersons: Int
     var curPersons: Int
-    var languages: [String]
+    var languages: [String]?
     
     enum CodingKeys: String, CodingKey {
         case eventId = "event_id"

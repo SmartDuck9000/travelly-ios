@@ -9,28 +9,23 @@ import UIKit
 
 fileprivate struct LayoutConstants {
     static let topNameLabelSpace: CGFloat = 15
+    static let space: CGFloat = 10
 }
 
 class TicketInfoViewController: UIViewController {
     
     private var presenter: TicketInfoPresenterProtocol?
     
-    private let hotelNameLabel = UILabel()
-    private let hotelDescriptionLabel = UILabel()
-    private let hotelAddressLabel = UILabel()
-    
-    private let starsLabel = UILabel()
-    private let starImageView = UIImageView()
-    
-    private let ratingLabel = UILabel()
-    private let priceLabel = UILabel()
-    
-    private let nearSeaLabel = UILabel()
-    private let nearSeaImageView = UIImageView()
-    
-    private let cityLabel = UILabel()
-    private let countryLabel = UILabel()
+    private var companyNameLabel = UILabel()
+    private var companyRatingLabel = UILabel()
+    private var originalStationAddrLabel = UILabel()
+    private var destinationStationAddrLabel = UILabel()
 
+    private var transportTypeLabel = UILabel()
+    
+    private var priceLabel = UILabel()
+    private var ticketDateLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -40,70 +35,159 @@ class TicketInfoViewController: UIViewController {
     func set(presenter: TicketInfoPresenterProtocol) {
         self.presenter = presenter
     }
+    
+    func configure(with data: TicketInfo) {
+        companyNameLabel.text = "Транспортная компания: \(data.company_name)"
+        companyRatingLabel.text = "Рейтинг компании: \(data.company_rating)"
+        originalStationAddrLabel.text = "Место отправления: \(data.orig_station_name)"
+        destinationStationAddrLabel.text = "Место прибытия: \(data.dest_station_name)"
+        
+        transportTypeLabel.text = "Тип транспорта: самолет"
+        priceLabel.text = "Цена: \(data.price)"
+        ticketDateLabel.text = "Дата отправления: \(data.ticket_date)"
+    }
 
-    func setHotelName(_ name: String) {
-        DispatchQueue.main.async {
-            self.hotelNameLabel.text = name
-        }
-    }
-    
-    func setHotelDescription(_ description: String) {
-        DispatchQueue.main.async {
-            // TODO
-        }
-    }
-    
-    func setHotelAddress(_ address: String) {
-        DispatchQueue.main.async {
-            self.hotelAddressLabel.text = address
-        }
-    }
-    
-    func setStars(_ stars: Int) {
-        DispatchQueue.main.async {
-            self.starsLabel.text = "\(stars)"
-        }
-    }
-    
-    func setHotelRating(_ rating: Double) {
-        DispatchQueue.main.async {
-            self.ratingLabel.text = "Рейтинг: \(rating)"
-        }
-    }
-    
-    func setAveragePrice(_ price: Double) {
-        DispatchQueue.main.async {
-            self.priceLabel.text = "Средняя цена: \(price) $"
-        }
-    }
-    
-    func setNearSea(_ nearSea: Bool) {
-        // TODO
-    }
-    
-    func setCountryName(_ country: String) {
-        DispatchQueue.main.async {
-            self.countryLabel.text = "\(country)"
-        }
-    }
-    
-    func setCityName(_ city: String) {
-        DispatchQueue.main.async {
-            self.cityLabel.text = "\(city)"
-        }
-    }
-    
     private func setupView() {
-        setupHotelNameLabel()
+        self.view.backgroundColor = .white
+        setupCompanyNameLabel()
+        setupCompanyRatingLabel()
+        setupOriginalStationAddrLabel()
+        setupDestinationStationAddrLabel()
+        setupTransportTypeLabel()
+        setupPriceLabel()
+        setupTicketDateLabel()
     }
     
-    private func setupHotelNameLabel() {
-        self.view.addSubview(hotelNameLabel)
+    private func setupCompanyNameLabel() {
+        self.view.addSubview(companyNameLabel)
         let safeArea = self.view.safeAreaLayoutGuide
         
-        hotelNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        hotelNameLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: LayoutConstants.topNameLabelSpace).isActive = true
+        companyNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        companyNameLabel.topAnchor.constraint(
+            equalTo: safeArea.topAnchor,
+            constant: LayoutConstants.topNameLabelSpace
+        ).isActive = true
+        companyNameLabel.leftAnchor.constraint(
+            equalTo: safeArea.leftAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        companyNameLabel.rightAnchor.constraint(
+            equalTo: safeArea.rightAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+    }
+    
+    private func setupCompanyRatingLabel() {
+        self.view.addSubview(companyRatingLabel)
+        companyRatingLabel.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = self.view.safeAreaLayoutGuide
         
+        companyRatingLabel.topAnchor.constraint(
+            equalTo: companyNameLabel.bottomAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        companyRatingLabel.leftAnchor.constraint(
+            equalTo: safeArea.leftAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        companyRatingLabel.rightAnchor.constraint(
+            equalTo: safeArea.rightAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+    }
+    
+    private func setupOriginalStationAddrLabel() {
+        self.view.addSubview(originalStationAddrLabel)
+        originalStationAddrLabel.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = self.view.safeAreaLayoutGuide
         
+        originalStationAddrLabel.topAnchor.constraint(
+            equalTo: companyRatingLabel.bottomAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        originalStationAddrLabel.leftAnchor.constraint(
+            equalTo: safeArea.leftAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        originalStationAddrLabel.rightAnchor.constraint(
+            equalTo: safeArea.rightAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+    }
+    
+    private func setupDestinationStationAddrLabel() {
+        self.view.addSubview(destinationStationAddrLabel)
+        destinationStationAddrLabel.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = self.view.safeAreaLayoutGuide
+        
+        destinationStationAddrLabel.topAnchor.constraint(
+            equalTo: originalStationAddrLabel.bottomAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        destinationStationAddrLabel.leftAnchor.constraint(
+            equalTo: safeArea.leftAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        destinationStationAddrLabel.rightAnchor.constraint(
+            equalTo: safeArea.rightAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+    }
+    
+    private func setupTransportTypeLabel() {
+        self.view.addSubview(transportTypeLabel)
+        transportTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = self.view.safeAreaLayoutGuide
+        
+        transportTypeLabel.topAnchor.constraint(
+            equalTo: destinationStationAddrLabel.bottomAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        transportTypeLabel.leftAnchor.constraint(
+            equalTo: safeArea.leftAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        transportTypeLabel.rightAnchor.constraint(
+            equalTo: safeArea.rightAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+    }
+    
+    private func setupPriceLabel() {
+        self.view.addSubview(priceLabel)
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = self.view.safeAreaLayoutGuide
+        
+        priceLabel.topAnchor.constraint(
+            equalTo: transportTypeLabel.bottomAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        priceLabel.leftAnchor.constraint(
+            equalTo: safeArea.leftAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        priceLabel.rightAnchor.constraint(
+            equalTo: safeArea.rightAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+    }
+    
+    private func setupTicketDateLabel() {
+        self.view.addSubview(ticketDateLabel)
+        ticketDateLabel.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = self.view.safeAreaLayoutGuide
+        
+        ticketDateLabel.topAnchor.constraint(
+            equalTo: priceLabel.bottomAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        ticketDateLabel.leftAnchor.constraint(
+            equalTo: safeArea.leftAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
+        ticketDateLabel.rightAnchor.constraint(
+            equalTo: safeArea.rightAnchor,
+            constant: LayoutConstants.space
+        ).isActive = true
     }
 }

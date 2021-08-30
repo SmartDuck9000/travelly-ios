@@ -67,9 +67,9 @@ class EventInfoViewController: UIViewController {
         }
     }
     
-    func setAveragePrice(_ price: Double) {
+    func setAveragePrice(_ price: String) {
         DispatchQueue.main.async {
-            self.priceLabel.text = "Цена: \(price) $"
+            self.priceLabel.text = "Цена: \(price)"
         }
     }
     

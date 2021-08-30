@@ -26,22 +26,38 @@ class CityTourInfoAssembly: CityTourInfoAssemblyProtocol, DependencyRegistratorP
         }
         
         AppDelegate.container.register(
+            service: CityTourInfoDelegateProtocol.self,
+            name: "CityTourInfoDelegate"
+        ) { (cityTourModel, postedCityTourData, networkService, dataStorage, tokens, vc) -> CityTourInfoDelegateProtocol in
+            return CityTourInfoDelegate(
+                cityTourModel: cityTourModel,
+                postedCityTourData: postedCityTourData,
+                networkService: networkService,
+                dataStorage: dataStorage,
+                tokens: tokens,
+                view: vc
+            )
+        }
+        
+        AppDelegate.container.register(
             service: CityTourInfoPresenterProtocol.self,
             name: "CityTourInfoPresenter"
-        ) { (vc, router, optionsInteractor, tokens, cityTourData) -> CityTourInfoPresenterProtocol in
+        ) { (vc, router, optionsInteractor, tokens, cityTourData, postedCityTourData, cityTourInfoDelegate) -> CityTourInfoPresenterProtocol in
             return CityTourInfoPresenter(
                 view: vc,
                 router: router,
                 optionsInteractor: optionsInteractor,
                 tokens: tokens,
-                cityTourData: cityTourData
+                cityTourData: cityTourData,
+                postedCityTourData: postedCityTourData,
+                cityTourInfoDelegate: cityTourInfoDelegate
             )
         }
         
         AppDelegate.container.register(
             service: CityTourInfoViewController.self,
             name: "CityTourInfoViewController"
-        ) { (cityTourData: CityTourModel, tokens: SecurityTokens) -> CityTourInfoViewController in
+        ) { (cityTourData: CityTourModel, postedCityTourData: PostedCityTourModel, tokens: SecurityTokens) -> CityTourInfoViewController in
             let vc = CityTourInfoViewController()
             
             guard let router = AppDelegate.container.resolve(
@@ -59,10 +75,26 @@ class CityTourInfoAssembly: CityTourInfoAssemblyProtocol, DependencyRegistratorP
                 return CityTourInfoViewController()
             }
             
+            guard let networkService = AppDelegate.container.resolve(service: NetworkProtocol.self, name: "AlamofireNetworkProtocol") else {
+                return CityTourInfoViewController()
+            }
+            
+            guard let dataStorage = AppDelegate.container.resolve(service: DataStorageProtocol.self, name: "RealmDataStorage") else {
+                return CityTourInfoViewController()
+            }
+            
+            guard let cityTourInfoDelegate = AppDelegate.container.resolve(
+                service: CityTourInfoDelegateProtocol.self,
+                name: "CityTourInfoDelegate",
+                arguments: cityTourData, postedCityTourData, networkService, dataStorage, tokens, vc
+            ) else {
+                return CityTourInfoViewController()
+            }
+            
             guard let presenter = AppDelegate.container.resolve(
                 service: CityTourInfoPresenterProtocol.self,
                 name: "CityTourInfoPresenter",
-                arguments: vc, router, optionsInteractor, tokens, cityTourData
+                arguments: vc, router, optionsInteractor, tokens, cityTourData, postedCityTourData, cityTourInfoDelegate
             ) else {
                 return CityTourInfoViewController()
             }
@@ -72,11 +104,15 @@ class CityTourInfoAssembly: CityTourInfoAssemblyProtocol, DependencyRegistratorP
         }
     }
     
-    func createModule(cityTourData: CityTourModel, tokens: SecurityTokens) -> CityTourInfoViewController {
+    func createModule(
+        cityTourData: CityTourModel,
+        postedCityTourData: PostedCityTourModel,
+        tokens: SecurityTokens
+    ) -> CityTourInfoViewController {
         return AppDelegate.container.resolve(
             service: CityTourInfoViewController.self,
             name: "CityTourInfoViewController",
-            arguments: cityTourData, tokens
+            arguments: cityTourData, postedCityTourData, tokens
         ) ?? CityTourInfoViewController()
     }
 }

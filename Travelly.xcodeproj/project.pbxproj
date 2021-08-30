@@ -71,6 +71,12 @@
 		CE43EF7226DBCD450053EDA3 /* CityTourInfoOptionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6926DBCD440053EDA3 /* CityTourInfoOptionsInteractor.swift */; };
 		CE43EF7326DBCD450053EDA3 /* CityTourInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6A26DBCD440053EDA3 /* CityTourInfoRouter.swift */; };
 		CE43EF7426DBCD450053EDA3 /* CityTourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF6B26DBCD440053EDA3 /* CityTourInfoViewController.swift */; };
+		CE43EF7826DD34CA0053EDA3 /* CityTourHotelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF7726DD34CA0053EDA3 /* CityTourHotelPresenter.swift */; };
+		CE43EF7B26DD34E50053EDA3 /* CityTourHotelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF7A26DD34E50053EDA3 /* CityTourHotelAssembly.swift */; };
+		CE43EF7E26DD37860053EDA3 /* CityTourInfoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF7D26DD37860053EDA3 /* CityTourInfoDelegate.swift */; };
+		CE43EF8226DD771C0053EDA3 /* CityTourArrivalTicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF8126DD771C0053EDA3 /* CityTourArrivalTicketPresenter.swift */; };
+		CE43EF8526DD77310053EDA3 /* CityTourDeparturePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF8426DD77310053EDA3 /* CityTourDeparturePresenter.swift */; };
+		CE43EF8826DD77490053EDA3 /* CityTourTicketsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43EF8726DD77490053EDA3 /* CityTourTicketsAssembly.swift */; };
 		CE4647962608ECA700359F91 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647952608ECA700359F91 /* ProfileProtocols.swift */; };
 		CE46479A2608ED7900359F91 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4647992608ED7900359F91 /* ProfileData.swift */; };
 		CE46479E2608EF3D00359F91 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46479D2608EF3D00359F91 /* ProfileViewController.swift */; };
@@ -226,6 +232,12 @@
 		CE43EF6926DBCD440053EDA3 /* CityTourInfoOptionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoOptionsInteractor.swift; sourceTree = "<group>"; };
 		CE43EF6A26DBCD440053EDA3 /* CityTourInfoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoRouter.swift; sourceTree = "<group>"; };
 		CE43EF6B26DBCD440053EDA3 /* CityTourInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTourInfoViewController.swift; sourceTree = "<group>"; };
+		CE43EF7726DD34CA0053EDA3 /* CityTourHotelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTourHotelPresenter.swift; sourceTree = "<group>"; };
+		CE43EF7A26DD34E50053EDA3 /* CityTourHotelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTourHotelAssembly.swift; sourceTree = "<group>"; };
+		CE43EF7D26DD37860053EDA3 /* CityTourInfoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTourInfoDelegate.swift; sourceTree = "<group>"; };
+		CE43EF8126DD771C0053EDA3 /* CityTourArrivalTicketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTourArrivalTicketPresenter.swift; sourceTree = "<group>"; };
+		CE43EF8426DD77310053EDA3 /* CityTourDeparturePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTourDeparturePresenter.swift; sourceTree = "<group>"; };
+		CE43EF8726DD77490053EDA3 /* CityTourTicketsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTourTicketsAssembly.swift; sourceTree = "<group>"; };
 		CE4647952608ECA700359F91 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		CE4647992608ED7900359F91 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		CE46479D2608EF3D00359F91 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -449,6 +461,8 @@
 		CE43EF5026D9A6530053EDA3 /* CityTourHotel */ = {
 			isa = PBXGroup;
 			children = (
+				CE43EF7726DD34CA0053EDA3 /* CityTourHotelPresenter.swift */,
+				CE43EF7A26DD34E50053EDA3 /* CityTourHotelAssembly.swift */,
 			);
 			path = CityTourHotel;
 			sourceTree = "<group>";
@@ -456,6 +470,9 @@
 		CE43EF5126D9A6640053EDA3 /* CityTourTickets */ = {
 			isa = PBXGroup;
 			children = (
+				CE43EF8126DD771C0053EDA3 /* CityTourArrivalTicketPresenter.swift */,
+				CE43EF8426DD77310053EDA3 /* CityTourDeparturePresenter.swift */,
+				CE43EF8726DD77490053EDA3 /* CityTourTicketsAssembly.swift */,
 			);
 			path = CityTourTickets;
 			sourceTree = "<group>";
@@ -485,6 +502,7 @@
 				CE43EF6826DBCD440053EDA3 /* CityTourInfoProtocols.swift */,
 				CE43EF6A26DBCD440053EDA3 /* CityTourInfoRouter.swift */,
 				CE43EF6B26DBCD440053EDA3 /* CityTourInfoViewController.swift */,
+				CE43EF7D26DD37860053EDA3 /* CityTourInfoDelegate.swift */,
 				CE43EF5026D9A6530053EDA3 /* CityTourHotel */,
 				CE43EF5126D9A6640053EDA3 /* CityTourTickets */,
 				CE43EF5226D9A67F0053EDA3 /* CityTourEvents */,
@@ -892,6 +910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE43EF8826DD77490053EDA3 /* CityTourTicketsAssembly.swift in Sources */,
 				CE88E3102698C9F8003162A0 /* EventsFeedFilterViewController.swift in Sources */,
 				CE11F93326B5838B001D722E /* EventInfoViewController.swift in Sources */,
 				CE11F93C26B5838B001D722E /* TicketInfoAssembly.swift in Sources */,
@@ -899,6 +918,7 @@
 				CE298DA0262C649500E5DBDC /* HotelInfoViewController.swift in Sources */,
 				CE4B765525E13DC000E4D8EC /* SwinjectContainer.swift in Sources */,
 				CE4B765825E13F5600E4D8EC /* DependencyContainerProtocol.swift in Sources */,
+				CE43EF8226DD771C0053EDA3 /* CityTourArrivalTicketPresenter.swift in Sources */,
 				CE94DAA02627AB590029D768 /* HotelFeedInteractor.swift in Sources */,
 				CEFBE9E1262361B800B12566 /* OptionsInteractor.swift in Sources */,
 				CEA6619325D9BCAD00998F66 /* RegisterProtocols.swift in Sources */,
@@ -909,6 +929,7 @@
 				CE43EF5526DA5D3E0053EDA3 /* TourTableViewCell.swift in Sources */,
 				CE43EF7326DBCD450053EDA3 /* CityTourInfoRouter.swift in Sources */,
 				CE88E3262698CA03003162A0 /* RestaurantsFeedData.swift in Sources */,
+				CE43EF7B26DD34E50053EDA3 /* CityTourHotelAssembly.swift in Sources */,
 				CE6829CC25E857F300D894E4 /* LoginInteractor.swift in Sources */,
 				CE483F4D25E70F0100806B44 /* AlamofireNetworkService.swift in Sources */,
 				CE2FEABA2618770D00AD5360 /* EditProfileData.swift in Sources */,
@@ -922,7 +943,9 @@
 				CE4647A82608F0F900359F91 /* ProfileRouter.swift in Sources */,
 				CE43EF4B26D9A60A0053EDA3 /* CityToursModel.swift in Sources */,
 				CE88E3022698C9EB003162A0 /* TicketsFilterProtocols.swift in Sources */,
+				CE43EF7826DD34CA0053EDA3 /* CityTourHotelPresenter.swift in Sources */,
 				CEA6619025D9BC9900998F66 /* RegisterPresenter.swift in Sources */,
+				CE43EF7E26DD37860053EDA3 /* CityTourInfoDelegate.swift in Sources */,
 				CE2FEAC62618799700AD5360 /* EditProfileRouter.swift in Sources */,
 				CE11F92C26B5838B001D722E /* RestaurantInfoViewController.swift in Sources */,
 				CE88E2FB2698C9EB003162A0 /* TicketsTableViewCell.swift in Sources */,
@@ -1019,6 +1042,7 @@
 				CE11F93126B5838B001D722E /* RestaurantInfoPresenter.swift in Sources */,
 				CE43EF7026DBCD450053EDA3 /* CityTourInfoAssembly.swift in Sources */,
 				CE2FEAC02618792700AD5360 /* EditProfilePresenter.swift in Sources */,
+				CE43EF8526DD77310053EDA3 /* CityTourDeparturePresenter.swift in Sources */,
 				CE43EF5C26DAAF9C0053EDA3 /* CreateCityTourViewController.swift in Sources */,
 				CE43EF5F26DAAFBA0053EDA3 /* CityTourTableViewCell.swift in Sources */,
 				CE43EF4226D9A5580053EDA3 /* ToursAssembly.swift in Sources */,

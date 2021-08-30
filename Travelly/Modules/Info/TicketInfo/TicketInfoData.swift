@@ -32,6 +32,27 @@ struct TicketInfo: Codable {
     var dest_country_name: String
 
     var transport_type: String
-    var price: Double
+    var price: String
     var ticket_date: String
+    
+    enum CodingKeys: String, CodingKey {
+        case ticket_id
+
+        case company_name
+        case company_rating
+
+        case orig_station_name
+        case orig_station_addr
+        case orig_country_name
+        case orig_city_name
+
+        case dest_station_name
+        case dest_station_addr
+        case dest_city_name
+        case dest_country_name
+
+        case transport_type
+        case price
+        case ticket_date
+    }
 }

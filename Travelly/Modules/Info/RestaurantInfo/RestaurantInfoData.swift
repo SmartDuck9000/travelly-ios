@@ -22,7 +22,7 @@ struct RestaurantInfo: Codable {
     var restaurantDescription: String
     var restaurantAddr: String
     
-    var averagePrice: Double
+    var averagePrice: String
     var rating: Double
     
     var childMenu: Bool

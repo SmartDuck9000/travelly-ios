@@ -15,26 +15,38 @@ class CityTourInfoRouter: CityTourInfoRouterProtocol {
         self.view = view
     }
     
-    func openHotel(with cityTourData: CityTourModel, tokens: SecurityTokens) {
+    func openHotel(with cityTourData: CityTourModel, tokens: SecurityTokens, delegate: CityTourInfoDelegateProtocol) {
         if cityTourData.hotel_id != 0 {
             let assembly = HotelInfoAssembly()
             let vc = assembly.createModule(with: cityTourData.hotel_id, tokens)
             view.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
-    func openArrivalTicket(with cityTourData: CityTourModel, tokens: SecurityTokens) {
-        if cityTourData.ticket_arrival_id != 0 {
-            let assembly = TicketInfoAssembly()
-            let vc = assembly.createModule(with: cityTourData.ticket_arrival_id, tokens)
+        } else {
+            let assembly = CityTourHotelAssembly()
+            let vc = assembly.createModule(with: cityTourData.hotel_id, tokens, delegate)
             view.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    func openDeparturesTicket(with cityTourData: CityTourModel, tokens: SecurityTokens) {
+    func openArrivalTicket(with cityTourData: CityTourModel, tokens: SecurityTokens, delegate: CityTourInfoDelegateProtocol) {
+        if cityTourData.ticket_arrival_id != 0 {
+            let assembly = TicketInfoAssembly()
+            let vc = assembly.createModule(with: cityTourData.ticket_arrival_id, tokens)
+            view.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let assembly = CityTourTicketsAssembly()
+            let vc = assembly.createArrivalModule(with: cityTourData.hotel_id, tokens, delegate)
+            view.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func openDeparturesTicket(with cityTourData: CityTourModel, tokens: SecurityTokens, delegate: CityTourInfoDelegateProtocol) {
         if cityTourData.ticket_departure_id != 0 {
             let assembly = TicketInfoAssembly()
             let vc = assembly.createModule(with: cityTourData.ticket_departure_id, tokens)
+            view.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let assembly = CityTourTicketsAssembly()
+            let vc = assembly.createDepartureModule(with: cityTourData.hotel_id, tokens, delegate)
             view.navigationController?.pushViewController(vc, animated: true)
         }
     }

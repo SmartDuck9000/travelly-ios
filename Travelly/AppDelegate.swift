@@ -32,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registrators.append(ToursAssembly())
         registrators.append(CityToursAssembly())
         registrators.append(CityTourInfoAssembly())
+        
+        registrators.append(CityTourHotelAssembly())
+        registrators.append(CityTourTicketsAssembly())
+        
         registrators.append(ProfileAssembly())
         registrators.append(EditProfileAssembly())
         
