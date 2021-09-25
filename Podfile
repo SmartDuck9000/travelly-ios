@@ -8,4 +8,5 @@ target 'Travelly' do
     pod 'RealmSwift'
     pod 'Kingfisher', '~> 6.0'
     pod 'Cloudinary', '~> 2.0'
+    pod 'DropDown'
 end

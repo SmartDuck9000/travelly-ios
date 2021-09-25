@@ -37,3 +37,10 @@ struct TableViewCellAppearance {
     static let textColor = UIColor.label
     static let font = UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize)
 }
+
+struct FeedCellAppearance {
+    static let backgroungColor = UIColor.systemOrange
+    static let textColor = UIColor.white
+    static let font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+    static let boldFont = UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize)
+}

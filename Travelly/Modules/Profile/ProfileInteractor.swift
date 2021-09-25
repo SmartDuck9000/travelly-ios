@@ -31,7 +31,7 @@ class ProfileInteractor: ProfileInteractorProtocol {
         networkService.get(query: "0.0.0.0:5001/api/users", tokens: tokens, parameters: UserIdData(userId: userId), type: .http) { (data, error, statusCode) in
             
             if statusCode == 401 {
-                self.networkService.refreshToken(query: "api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
+                self.networkService.refreshToken(query: "0.0.0.0:5002/api/auth", tokens: self.tokens, type: .http) { (data, error, statusCode) in
                     guard let data = data else {
                         self.dataStorage.deleteAuthData()
                         complition(nil, error, true)

@@ -61,6 +61,17 @@ class AlamofireNetworkService: NetworkProtocol {
         }
     }
     
+    func delete<DeleteData: Encodable>(query: String, tokens: SecurityTokens, data: DeleteData, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
+        
+        let urlQuery = type.rawValue + query
+        let jsonEncoder = JSONParameterEncoder.default
+        let headers = getAuthHeaders(token: tokens.accessToken)
+        
+        AF.request(urlQuery, method: .delete, parameters: data, encoder: jsonEncoder, headers: headers).response { (response) in
+            complition(response.data, self.getError(response: response), response.response?.statusCode)
+        }
+    }
+    
     func refreshToken(query: String, tokens: SecurityTokens, type: ProtocolType, complition: @escaping (Data?, Error?, Int?) -> Void) {
         let urlQuery = type.rawValue + query
         let headers = getAuthHeaders(token: tokens.refreshToken)

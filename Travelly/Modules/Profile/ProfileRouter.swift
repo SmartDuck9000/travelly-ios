@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileRouter: ProfileRouterProtocol {
     
-    private var view: ProfileViewController
+    private weak var view: ProfileViewController!
     
     init(view: ProfileViewController) {
         self.view = view
@@ -32,28 +32,34 @@ class ProfileRouter: ProfileRouterProtocol {
         view.navigationController?.pushViewController(editProfileView, animated: true)
     }
     
-    func openCreateTour(with userId: Int, _ tokens: SecurityTokens) {
-        
-    }
-    
     func openTours(with userId: Int, _ tokens: SecurityTokens) {
-        
+        let toursAssembly: ToursAssemblyProtocol = ToursAssembly()
+        let toursView = toursAssembly.createModule(userId: userId, tokens: tokens)
+        view.navigationController?.pushViewController(toursView, animated: true)
     }
     
     func openHotels(with userId: Int, _ tokens: SecurityTokens) {
-        
+        let hotelFeedAssembly: HotelFeedAssemblyProtocol = HotelFeedAssembly()
+        let hotelFeedView = hotelFeedAssembly.createModule(with: userId, tokens)
+        view.navigationController?.pushViewController(hotelFeedView, animated: true)
     }
     
     func openRestaurants(with userId: Int, _ tokens: SecurityTokens) {
-        
+        let restaurantsFeedAssembly: RestaurantsFeedAssemblyProtocol = RestaurantsFeedAssembly()
+        let restaurantsFeedView = restaurantsFeedAssembly.createModule(with: userId, tokens)
+        view.navigationController?.pushViewController(restaurantsFeedView, animated: true)
     }
     
     func openEvents(with userId: Int, _ tokens: SecurityTokens) {
-        
+        let eventsFeedAssembly: EventsFeedAssemblyProtocol = EventsFeedAssembly()
+        let eventsFeedView = eventsFeedAssembly.createModule(with: userId, tokens)
+        view.navigationController?.pushViewController(eventsFeedView, animated: true)
     }
     
     func openTickets(with userId: Int, _ tokens: SecurityTokens) {
-        
+        let ticketsFeedAssembly: TicketsFeedAssemblyProtocol = TicketsFeedAssembly()
+        let ticketsFeedView = ticketsFeedAssembly.createModule(with: userId, tokens)
+        view.navigationController?.pushViewController(ticketsFeedView, animated: true)
     }
     
     func exit() {

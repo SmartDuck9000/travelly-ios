@@ -21,23 +21,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func registerDependencies() {
-        let serviceRegistrator: DependencyRegistratorProtocol = ServicesRegistrator()
+        var registrators: [DependencyRegistratorProtocol] = []
         
-        let authRegistrator: DependencyRegistratorProtocol = AuthAssembly()
-        let registerRegistrator: DependencyRegistratorProtocol = RegisterAssembly()
-        let loginRegistrator: DependencyRegistratorProtocol = LoginAssembly()
+        registrators.append(ServicesRegistrator())
         
-        let profileRegistrator: DependencyRegistratorProtocol = ProfileAssembly()
-        let editProfileRegistrator: DependencyRegistratorProtocol = EditProfileAssembly()
+        registrators.append(AuthAssembly())
+        registrators.append(RegisterAssembly())
+        registrators.append(LoginAssembly())
         
-        serviceRegistrator.registerDependencies()
+        registrators.append(ToursAssembly())
+        registrators.append(CityToursAssembly())
+        registrators.append(CityTourInfoAssembly())
         
-        authRegistrator.registerDependencies()
-        registerRegistrator.registerDependencies()
-        loginRegistrator.registerDependencies()
+        registrators.append(CityTourHotelAssembly())
+        registrators.append(CityTourTicketsAssembly())
         
-        profileRegistrator.registerDependencies()
-        editProfileRegistrator.registerDependencies()
+        registrators.append(ProfileAssembly())
+        registrators.append(EditProfileAssembly())
+        
+        registrators.append(HotelFeedAssembly())
+        registrators.append(HotelFilterAssembly())
+        registrators.append(HotelInfoAssembly())
+        
+        registrators.append(RestaurantsFeedAssembly())
+        registrators.append(RestaurantsFilterAssembly())
+        registrators.append(RestaurantInfoAssembly())
+        
+        registrators.append(TicketsFeedAssembly())
+        registrators.append(TicketsFilterAssembly())
+        registrators.append(TicketInfoAssembly())
+        
+        registrators.append(EventsFeedAssembly())
+        registrators.append(EventsFilterAssembly())
+        registrators.append(EventInfoAssembly())
+        
+        for registrator in registrators {
+            registrator.registerDependencies()
+        }
     }
 
     // MARK: UISceneSession Lifecycle

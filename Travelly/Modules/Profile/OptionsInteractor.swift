@@ -29,7 +29,6 @@ class OptionsInteractor: OptionsInteractorProtocol {
     
     private func setupOptions() {
         options.append(ProfileOptionData(name: "Редактировать профиль"))
-        options.append(ProfileOptionData(name: "Создать тур"))
         options.append(ProfileOptionData(name: "Мои туры"))
         options.append(ProfileOptionData(name: "Отели"))
         options.append(ProfileOptionData(name: "Рестораны"))
